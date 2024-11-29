@@ -9,11 +9,12 @@ environment:
 dependencies:
   auto_size_text: ^3.0.0
   cupertino_icons: null
+  device_preview: ^1.2.0
   flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
   flutter_localizations:
     sdk: flutter
+  google_fonts: ^6.2.1
   intl: any
 
 dev_dependencies:
