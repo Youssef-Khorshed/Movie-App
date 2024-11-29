@@ -9,4 +9,10 @@ abstract class AppTextStyle {
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.cairo().fontFamily);
+  static TextStyle style18WhiteW500 = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: AppColors.white,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
 }
