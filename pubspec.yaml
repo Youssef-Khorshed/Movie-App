@@ -1,0 +1,30 @@
+name: movie_app
+description: "Movie app is s new Flutter project is created by code craft."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  auto_size_text: ^3.0.0
+  cupertino_icons: null
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
