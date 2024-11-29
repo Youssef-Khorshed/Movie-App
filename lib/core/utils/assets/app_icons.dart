@@ -1,3 +1,33 @@
 class AppIcons {
   // static const String logo = 'assets/images/logo.png';
+  static const String aboutUs = 'assets/icons/about_us.svg';
+  static const String aboutUsDrawer = 'assets/icons/about_us_drawer.svg';
+  static const String actors = 'assets/icons/actors.svg';
+  static const String back = 'assets/icons/back.svg';
+  static const String download = 'assets/icons/download.svg';
+  static const String drawerArrow = 'assets/icons/drawer_arrow.svg';
+  static const String edit = 'assets/icons/edit.svg';
+  static const String emojis = 'assets/icons/emojis.svg';
+  static const String facebook = 'assets/icons/facebook.svg';
+  static const String favorite = 'assets/icons/favorite.svg';
+  static const String filter = 'assets/icons/filter.svg';
+  static const String gmail = 'assets/icons/gmail.svg';
+  static const String hidePassword = 'assets/icons/hide_password.svg';
+  static const String home = 'assets/icons/home .svg';
+  static const String lang = 'assets/icons/lang.svg';
+  static const String lightMode = 'assets/icons/light_mode.svg';
+  static const String menu = 'assets/icons/menu.svg';
+  static const String microphone = 'assets/icons/microphone.svg';
+  static const String nightMode = 'assets/icons/night_mode.svg';
+  static const String notification = 'assets/icons/notification.svg';
+  static const String profile = 'assets/icons/profile.svg';
+  static const String remoteConnection = 'assets/icons/remote_connection.svg';
+  static const String remove = 'assets/icons/remove.svg';
+  static const String search = 'assets/icons/search.svg';
+  static const String setting = 'assets/icons/setting.svg';
+  static const String share = 'assets/icons/share.svg';
+  static const String star = 'assets/icons/star.svg';
+  static const String support = 'assets/icons/support.svg';
+  static const String watchLater = 'assets/icons/watch_later.svg';
+  static const String X = 'assets/icons/x.svg';
 }
