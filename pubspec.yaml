@@ -11,13 +11,20 @@ dependencies:
   cupertino_icons: null
   device_preview: ^1.2.0
   flutter:
+
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   google_fonts: ^6.2.1
+  intl_utils: ^2.6.0  # Use the latest version available
+
   intl: any
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
+  build_runner: ^2.0.0
+
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
