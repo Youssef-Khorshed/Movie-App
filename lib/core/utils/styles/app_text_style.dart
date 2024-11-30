@@ -15,4 +15,33 @@ abstract class AppTextStyle {
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style16WhiteW400 = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: AppColors.gray4,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
+
+
+
+  static TextStyle style14WhiteW400 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: AppColors.white,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle style20WhiteW400 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle style13WhiteW400 = TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
+      color: AppColors.gray3,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
 }
