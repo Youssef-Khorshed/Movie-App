@@ -13,30 +13,25 @@ class MovieApp extends StatelessWidget {
 
   late Locale currentLocale = const Locale('en'); // Fallback
 
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeState>(
       builder: (context, theme) {
-        ThemeCubit themeCubit=ThemeCubit.get(context);
+        ThemeCubit themeCubit = ThemeCubit.get(context);
         return BlocBuilder<LocalCubit, LocalState>(
-
           builder: (context, themeMode) {
-
             return MaterialApp(
-                theme: ThemeData.light(), // Light theme
-                darkTheme: ThemeData.dark(), // Dark theme
-                themeMode: themeCubit.themeModeState == ThemeModeState.light
-                    ? ThemeMode.light
-                    : ThemeMode.dark,
+              theme: ThemeData.light(), // Light theme
+              darkTheme: ThemeData.dark(), // Dark theme
+              themeMode: themeCubit.themeModeState == ThemeModeState.light
+                  ? ThemeMode.light
+                  : ThemeMode.dark,
               debugShowCheckedModeBanner: false,
-              initialRoute: AppRoutes.splash,
+              initialRoute: AppRoutes.welcomeScreen,
               onGenerateRoute: AppRoutes.generateRoute,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              locale: LocalCubit
-                  .get(context)
-                  .localization,
+              locale: LocalCubit.get(context).localization,
               builder: DevicePreview.appBuilder,
               home: Builder(
                 builder: (context) {
