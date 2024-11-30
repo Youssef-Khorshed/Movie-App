@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:movie_app/features/Details/views/movie_details_view.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../core/utils/enums/theme_state.dart';
@@ -13,34 +14,29 @@ class MovieApp extends StatelessWidget {
 
   late Locale currentLocale = const Locale('en'); // Fallback
 
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeState>(
       builder: (context, theme) {
-        ThemeCubit themeCubit=ThemeCubit.get(context);
+        ThemeCubit themeCubit = ThemeCubit.get(context);
         return BlocBuilder<LocalCubit, LocalState>(
-
           builder: (context, themeMode) {
-
             return MaterialApp(
-                theme: ThemeData.light(), // Light theme
-                darkTheme: ThemeData.dark(), // Dark theme
-                themeMode: themeCubit.themeModeState == ThemeModeState.light
-                    ? ThemeMode.light
-                    : ThemeMode.dark,
+              theme: ThemeData.light(), // Light theme
+              darkTheme: ThemeData.dark(), // Dark theme
+              themeMode: themeCubit.themeModeState == ThemeModeState.light
+                  ? ThemeMode.light
+                  : ThemeMode.dark,
               debugShowCheckedModeBanner: false,
-              initialRoute: AppRoutes.splash,
+              initialRoute: AppRoutes.details,
               onGenerateRoute: AppRoutes.generateRoute,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              locale: LocalCubit
-                  .get(context)
-                  .localization,
+              locale: LocalCubit.get(context).localization,
               builder: DevicePreview.appBuilder,
               home: Builder(
                 builder: (context) {
-                  return const Placeholder();
+                  return const MovieDetailsView();
                 },
               ),
             );
