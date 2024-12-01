@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:movie_app/features/App/screens/general_app_screen.dart';
 import 'package:movie_app/features/Preferences/screens/preferences.dart';
+import 'package:movie_app/features/Details/views/movie_details_view.dart';
 import 'package:movie_app/features/Search/screens/filter.dart';
 import 'package:movie_app/features/Search/screens/search.dart';
 import 'package:movie_app/features/settings/views/change_password_view.dart';
@@ -16,6 +17,7 @@ import '../../../features/settings/views/profile_setting_view.dart';
 
 class AppRoutes {
   static const String splash = '/';
+  static const String details = '/';
   static const String search = '/search';
   static const String filter = '/filter';
   static const String preferences = '/preferences';
@@ -116,6 +118,12 @@ class AppRoutes {
           builder: (context) {
             return const PreferencesScreen();
           },
+        );
+          case details:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const MovieDetailsView();
+                 },
         );
 
       default:
