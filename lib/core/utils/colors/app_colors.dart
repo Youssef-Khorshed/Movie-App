@@ -8,8 +8,11 @@ class AppColors {
   static const Color white2 = Color(0xFFF3FDFF);
   static const Color white3 = Color(0xFFEFEFEF);
   static const Color white4 = Color(0xFFF3F3E0);
+  static const Color white5 = Color(0xFFD9d9d9);
   // purple Colors
   static const Color purple = Color(0xFF6C52EE);
+
+  static const Color purple2 = Color(0xFF6C52EE);
   static const Color purpleblue = Color(0xFF2401FE);
   static const Color darkpurple = Color(0xFF3E2F88);
   static const Color lightpurple = Color(0xFFB379DF);
