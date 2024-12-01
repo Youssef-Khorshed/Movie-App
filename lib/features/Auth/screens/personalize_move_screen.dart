@@ -3,8 +3,8 @@ import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
-import '../../App/costume_widgets/costume_app_bar/costume_app_bar.dart';
-import '../../App/costume_widgets/custom_app_button.dart';
+import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
+import '../../App/screens/costume_app_widgets/custom_app_button.dart';
 import '../widgets/custom_auth_subtitle_widget.dart';
 import '../widgets/custom_auth_title_widget.dart';
 import '../widgets/custom_background_continer.dart';
@@ -36,7 +36,6 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(60),

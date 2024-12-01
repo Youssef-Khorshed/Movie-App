@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
-import 'package:movie_app/features/App/costume_widgets/custom_app_button.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
 import '../../../core/utils/Routing/app_routes.dart';
-import '../../App/costume_widgets/costume_app_bar/costume_app_bar.dart';
-import '../../App/costume_widgets/custom_text_form_field.dart';
+import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
+import '../../App/screens/costume_app_widgets/custom_text_form_field.dart';
 import '../widgets/custom_auth_forget_password_textfield.dart';
 import '../widgets/custom_auth_subtitle_widget.dart';
 import '../widgets/custom_auth_title_widget.dart';
@@ -27,10 +27,11 @@ class LogInScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
+                verticalSpace(20),
                 const CustomAuthTitleWidget(
                   title: "Welcome Back!",
                 ),
@@ -53,7 +54,7 @@ class LogInScreen extends StatelessWidget {
                   obscureText: true,
                 ),
                 const CustomAuthForgetPasswordTextfield(),
-                const Spacer(),
+                verticalSpace(10),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(

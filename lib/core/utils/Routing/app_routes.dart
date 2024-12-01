@@ -9,7 +9,6 @@ import '../../../features/Auth/screens/signup_screen.dart';
 import '../../../features/Auth/screens/welcome_screen.dart';
 
 class AppRoutes {
- 
   static const String welcomeScreen = '/welcomeScreen';
   static const String loginScreen = '/loginScreen';
   static const String signUpScreen = '/signUpScreen';
@@ -20,7 +19,6 @@ class AppRoutes {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      
       case welcomeScreen:
         return CupertinoPageRoute(
           builder: (context) {

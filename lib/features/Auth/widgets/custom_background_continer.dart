@@ -9,7 +9,6 @@ class CustomBackgroundContiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.35,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
         gradient: AppColors.backgroundGradientColors,
