@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:movie_app/features/App/screens/costume_app_widgets/costume_app_bar.dart';
 import '../../../../core/utils/assets/app_images.dart';
 import '../widgets/favorite_widget/custom_list_view_favorite.dart';
 
