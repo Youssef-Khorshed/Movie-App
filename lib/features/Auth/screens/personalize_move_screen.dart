@@ -41,13 +41,14 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
           preferredSize: Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "personalize Move",
+            title: "Personalize Movies",
           ),
         ),
         body: Align(
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -60,32 +61,43 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                   subtitle:
                       "Please tell us your preferences so that we can recommend your movie experience as per your want",
                 ),
-                verticalSpace(40),
-                Expanded(
-                  child: Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    children: genres.map((genre) {
-                      return ChoiceChip(
-                        label: Text(genre),
-                        labelStyle: AppTextStyle.style14Gray8W500,
-                        selected: false,
-                        onSelected: (selected) {},
-                        backgroundColor: AppColors.transparent,
-                        selectedColor: AppColors.purple,
-                      );
-                    }).toList(),
-                  ),
+                verticalSpace(20),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: genres.map((genre) {
+                    return ChoiceChip(
+                      label: Text(genre),
+                      labelStyle: AppTextStyle.style14Gray5W500,
+                      selected: false,
+                      onSelected: (selected) {},
+                      backgroundColor: AppColors.white,
+                      selectedColor: AppColors.purple,
+                    );
+                  }).toList(),
                 ),
-                const Spacer(),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  child: CustomAppButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.otpScreen);
-                    },
-                    buttonText: "Continue",
-                  ),
+                verticalSpace(10),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .45,
+                      child: CustomAppButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.otpScreen);
+                        },
+                        buttonText: "Continue",
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .45,
+                      child: CustomAppButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.otpScreen);
+                        },
+                        buttonText: "Skip",
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

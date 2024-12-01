@@ -27,10 +27,11 @@ class OtpScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
+                verticalSpace(20),
                 const CustomAuthTitleWidget(
                   title: "OTP code verification",
                 ),
@@ -41,18 +42,19 @@ class OtpScreen extends StatelessWidget {
                 ),
                 verticalSpace(25),
                 const CustoOtpFormField(),
-                verticalSpace(40),
+                verticalSpace(20),
                 CustomTextRowWidget(
                   firstTitle: "Don’t receive a",
                   secTitle: " OTP ?",
                   onTap: () {},
                 ),
+                verticalSpace(10),
                 CustomTextRowWidget(
                   firstTitle: "You can resend code in",
                   secTitle: " 30 sec",
                   onTap: () {},
                 ),
-                const Spacer(),
+                verticalSpace(10),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(

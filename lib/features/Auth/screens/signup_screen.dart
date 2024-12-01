@@ -70,7 +70,8 @@ class SignupScreen extends StatelessWidget {
                   firstTitle: " have an account ?",
                   secTitle: " Login",
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.loginScreen);
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.loginScreen);
                   },
                 ),
               ],

@@ -26,10 +26,11 @@ class CreateNewPasswordScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
+                verticalSpace(20),
                 const CustomAuthTitleWidget(
                   title: "Create New Password",
                 ),
@@ -54,7 +55,7 @@ class CreateNewPasswordScreen extends StatelessWidget {
                   isPassword: true,
                   obscureText: true,
                 ),
-                const Spacer(),
+                verticalSpace(10),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(

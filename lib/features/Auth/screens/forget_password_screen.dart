@@ -26,10 +26,11 @@ class ForgetPasswordScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
+                verticalSpace(20),
                 const CustomAuthTitleWidget(
                   title: "Forgot Password",
                 ),
@@ -44,7 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   hintText: "Enter your Email Adress",
                   prefixIcon: Icons.person_2_outlined,
                 ),
-                const Spacer(),
+                verticalSpace(10),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(

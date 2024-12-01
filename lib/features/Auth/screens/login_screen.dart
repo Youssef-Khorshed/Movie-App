@@ -66,7 +66,8 @@ class LogInScreen extends StatelessWidget {
                   firstTitle: "Don't have an account ?",
                   secTitle: " SignUp",
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.signUpScreen);
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.signUpScreen);
                   },
                 ),
               ],
