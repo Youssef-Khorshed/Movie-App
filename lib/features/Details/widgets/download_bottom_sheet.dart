@@ -107,6 +107,7 @@ class DownloadBottomSheet extends StatelessWidget {
               buttonheight: 48,
               buttonName: 'DOWNLOAD',
             ),
+            verticalSpace(20),
           ],
         ),
       ),

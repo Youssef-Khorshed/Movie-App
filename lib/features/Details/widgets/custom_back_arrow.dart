@@ -19,7 +19,9 @@ class CustomBackArrow extends StatelessWidget {
       ),
       child: SizedBox(
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: SvgPicture.asset(AppIcons.back),
         ),
       ),

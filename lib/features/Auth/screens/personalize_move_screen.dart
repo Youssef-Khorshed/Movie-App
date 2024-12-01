@@ -80,7 +80,7 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                 Row(
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .45,
+                      width: MediaQuery.of(context).size.width * .44,
                       child: CustomAppButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(
@@ -90,7 +90,7 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .45,
+                      width: MediaQuery.of(context).size.width * .44,
                       child: CustomAppButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(

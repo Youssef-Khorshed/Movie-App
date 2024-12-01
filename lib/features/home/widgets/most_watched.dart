@@ -8,115 +8,69 @@ class MostWatched extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 290,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            const Color(0xFFFFFFFF).withOpacity(0.90),
-            const Color(0xFF6C52EE).withOpacity(0.60),
-            const Color(0xFF828282).withOpacity(0.60),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: CarouselSlider.builder(
-        itemCount: 3,
-        itemBuilder: (context, index, realIndex) {
-          return Stack(
-            children: [
-              // Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  getImageUrl(index),
-                  width: 230,
-                  height: 244.4,
-                  fit: BoxFit.cover,
-                ),
+    return CarouselSlider.builder(
+      itemCount: 3,
+      itemBuilder: (context, index, realIndex) {
+        return Stack(
+          children: [
+            // Image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                getImageUrl(index),
+                width: 230,
+                height: 244.4,
+                fit: BoxFit.cover,
               ),
-
-              // Movie Rating
-              Positioned(
-                top: 20,
-                right: 20,
-                child: Container(
-                  width: 65,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffDADADA).withOpacity(0.30),
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: const LinearGradient(
-                      colors: [
-                        AppColors.white,
-                        AppColors.white,
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 16,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        getMovieRating(index),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
+            ),
+            // Movie Rating
+            Positioned(
+              top: 10,
+              right: 10,
+              child: Container(
+                width: 55,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: const Color(0xffDADADA).withOpacity(0.30),
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                    colors: [
+                      AppColors.white,
+                      AppColors.white,
                     ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
                 ),
-              ),
-
-              // Movie Name
-              Positioned(
-                bottom: 50,
-                left: 10,
-                right: 10,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffDADADA).withOpacity(0.30),
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: const LinearGradient(
-                      colors: [
-                        AppColors.white,
-                        AppColors.white,
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                      size: 16,
                     ),
-                  ),
-                  child: Text(
-                    getMovieName(index),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                    const SizedBox(width: 4),
+                    Text(
+                      getMovieRating(index),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
-            ],
-          );
-        },
-        options: CarouselOptions(
-          height: 280,
-          enableInfiniteScroll: true,
-          enlargeCenterPage: true,
-          viewportFraction: 0.5,
-          aspectRatio: 15 / 9,
-        ),
+            ),
+          ],
+        );
+      },
+      options: CarouselOptions(
+        height: 280,
+        enableInfiniteScroll: true,
+        enlargeCenterPage: true,
+        viewportFraction: 0.5,
+        aspectRatio: 15 / 9,
       ),
     );
   }

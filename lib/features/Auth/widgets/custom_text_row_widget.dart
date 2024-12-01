@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 
 import '../../../core/utils/styles/app_text_style.dart';
 
@@ -22,6 +23,7 @@ class CustomTextRowWidget extends StatelessWidget {
           firstTitle,
           style: AppTextStyle.style12Gray6W500,
         ),
+        horizontalSpace(5),
         InkWell(
           onTap: onTap,
           child: AutoSizeText(

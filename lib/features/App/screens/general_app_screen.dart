@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:day_night_themed_switch/day_night_themed_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/features/Menu/screens/all_movies_screen.dart';
 import 'package:movie_app/features/home/home.dart';
 import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
+import 'package:movie_app/features/notification/notification.dart';
 import '../../../core/utils/assets/app_icons.dart';
 import '../../../core/utils/colors/app_colors.dart';
 import '../../../core/utils/styles/app_text_style.dart';
@@ -28,8 +30,8 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
     const WatchLaterScreen(),
     const MovieDownloadPage(),
     FavoritePage(),
+    const AllMoviesScreen(),
     const ProfileSettingView(),
-    const AllMoviesScreen()
   ];
 
   // Corrected screen names to match the number of screens
@@ -43,11 +45,12 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
   @override
   Widget build(BuildContext context) {
     List<String> names = [
+      "",
       AppLocalizations.of(context)!.watch_later,
       AppLocalizations.of(context)!.download,
       AppLocalizations.of(context)!.favorite,
-      AppLocalizations.of(context)!.settings,
       AppLocalizations.of(context)!.actors_and_artists,
+      AppLocalizations.of(context)!.settings,
     ];
     return Scaffold(
         backgroundColor: AppColors.white,
@@ -68,6 +71,24 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
           ),
           centerTitle: true,
           backgroundColor: AppColors.white,
+          actions: selctedIndex == 0
+              ? [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: GestureDetector(
+                      child: SvgPicture.asset(AppIcons.notification),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const NotificationScreen()));
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                      width: 55,
+                      child: DayNightSwitch(value: false, onChanged: (_) {})),
+                  const SizedBox(width: 10),
+                ]
+              : [],
         ),
         drawer: CustomAppDrawer(
           onItemTap: (index) => onItemTap(index),

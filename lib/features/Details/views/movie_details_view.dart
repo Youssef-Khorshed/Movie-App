@@ -25,7 +25,7 @@ class MovieDetailsView extends StatelessWidget {
               MovieCover(),
               Positioned(
                 top: 40,
-                left: 30,
+                left: 10,
                 child: CustomBackArrow(),
               )
             ],

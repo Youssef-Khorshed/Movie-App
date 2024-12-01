@@ -28,37 +28,23 @@ class Latestseries extends StatelessWidget {
       },
     ];
 
-    return Container(
-      height: 300,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            const Color(0xFFFFFFFF).withOpacity(0.90),
-            const Color(0xFF6C52EE).withOpacity(0.60),
-            const Color(0xFF828282).withOpacity(0.60),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: 270,
+        enableInfiniteScroll: true,
+        enlargeCenterPage: false,
+        autoPlay: false,
+        viewportFraction: 0.4,
+        autoPlayInterval: const Duration(seconds: 3),
       ),
-      child: CarouselSlider(
-        options: CarouselOptions(
-          height: 270,
-          enableInfiniteScroll: true,
-          enlargeCenterPage: false,
-          autoPlay: false,
-          viewportFraction: 0.4,
-          autoPlayInterval: const Duration(seconds: 3),
-        ),
-        items: movies.map((movie) {
-          return Builder(
-            builder: (BuildContext context) {
-              return Column(
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
+      items: movies.map((movie) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 5, left: 5),
+                  child: Container(
                     width: 160,
                     height: 220,
                     decoration: BoxDecoration(
@@ -73,34 +59,34 @@ class Latestseries extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "${movie["title"]!} ",
-                        style: GoogleFonts.lato(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xff000000),
-                        ),
+                ),
+                const SizedBox(height: 10),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "${movie["title"]!} ",
+                      style: GoogleFonts.lato(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff000000),
                       ),
-                      Text(
-                        "(${movie["year"]!})",
-                        style: GoogleFonts.lato(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff000000),
-                        ),
+                    ),
+                    Text(
+                      "(${movie["year"]!})",
+                      style: GoogleFonts.lato(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xff000000),
                       ),
-                    ],
-                  )
-                ],
-              );
-            },
-          );
-        }).toList(),
-      ),
+                    ),
+                  ],
+                )
+              ],
+            );
+          },
+        );
+      }).toList(),
     );
   }
 }

@@ -6,7 +6,6 @@ import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_gridnet_chip_list_search.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_itemsdropdown_filter.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_search_bar_serch.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_textfiledSearch_search.dart';
 import '../../core/utils/mediaquery/mediaquery.dart';
 
@@ -42,7 +41,10 @@ class MovieDetails extends StatelessWidget {
                       top: 20,
                       left: 10,
                       child: GestureDetector(
-                        child: SvgPicture.asset(AppIcons.arrowback),
+                        child: CircleAvatar(
+                            radius: 15,
+                            backgroundColor: AppColors.darkgray,
+                            child: SvgPicture.asset(AppIcons.arrowback)),
                         onTap: () {
                           Navigator.pop(context);
                         },
@@ -134,8 +136,6 @@ class MovieDetails extends StatelessWidget {
               ),
               GradientChipList(
                   categories: Items.categories), // Category filter chips
-
-              const SizedBox(height: 15),
               GridView.builder(
                 padding: const EdgeInsets.all(15),
                 itemCount: images.length,

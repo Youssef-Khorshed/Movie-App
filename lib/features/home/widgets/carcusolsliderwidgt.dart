@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:movie_app/features/home/movie_details.dart';
+import 'package:movie_app/features/Details/views/movie_details_view.dart';
 
 class CarouselWithScore extends StatelessWidget {
   // Constructor with named key parameter
@@ -16,8 +16,11 @@ class CarouselWithScore extends StatelessWidget {
         return Builder(
           builder: (BuildContext context) {
             return GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const MovieDetails()));
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MovieDetailsView()));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -38,14 +41,19 @@ class CarouselWithScore extends StatelessWidget {
                       bottom: 10,
                       right: 10,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15), // Apply border radius for the blur
+                        borderRadius: BorderRadius.circular(
+                            15), // Apply border radius for the blur
                         child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), // Apply blur effect
+                          filter: ImageFilter.blur(
+                              sigmaX: 20, sigmaY: 20), // Apply blur effect
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 6),
                             decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.7), // Semi-transparent black color
-                              borderRadius: BorderRadius.circular(15), // Border radius for the container
+                              color: Colors.black.withOpacity(
+                                  0.7), // Semi-transparent black color
+                              borderRadius: BorderRadius.circular(
+                                  15), // Border radius for the container
                             ),
                             child: const Row(
                               children: [

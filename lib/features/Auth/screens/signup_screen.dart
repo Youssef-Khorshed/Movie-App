@@ -65,7 +65,7 @@ class SignupScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.allMoviesScreen);
+                      Navigator.pushNamed(context, AppRoutes.generalScreen);
                     },
                     buttonText: AppLocalizations.of(context)!.sign_up,
                   ),

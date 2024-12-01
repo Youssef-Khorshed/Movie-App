@@ -126,7 +126,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.favorite),
+                  leading: SvgPicture.asset(AppIcons.home),
                   title: Text(
                     "Favorite Movies",
                     style: AppTextStyle.style14Gray5W500
@@ -172,7 +172,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.setting),
+                  leading: SvgPicture.asset(AppIcons.home),
                   title: Text(
                     "Settings",
                     style: AppTextStyle.style14Gray5W500
