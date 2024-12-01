@@ -38,6 +38,7 @@ flutter:
   generate: true
 
   assets:
+    - lib/core/l10n/
     - assets/images/
     - assets/icons/
     - assets/animation/

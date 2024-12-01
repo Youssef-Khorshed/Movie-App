@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
 import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
@@ -16,11 +16,11 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(60),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "SignUp",
+            title: AppLocalizations.of(context)!.sign_up,
           ),
         ),
         body: Align(
@@ -40,20 +40,22 @@ class SignupScreen extends StatelessWidget {
                   subtitle: "Free Forever. No Credit Card Needed",
                 ),
                 verticalSpace(25),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Email Adress",
-                  hintText: "Enter your Email Adress",
+                CustomAppFormField(
+                  textFormFieldTitle:
+                      AppLocalizations.of(context)!.email_address,
+                  hintText:
+                      AppLocalizations.of(context)!.enter_your_email_address,
                   prefixIcon: Icons.person_2_outlined,
                 ),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Username",
-                  hintText: "Enter your Username",
+                CustomAppFormField(
+                  textFormFieldTitle: AppLocalizations.of(context)!.username,
+                  hintText: AppLocalizations.of(context)!.enter_your_username,
                   prefixIcon: Icons.person_2_outlined,
                 ),
                 verticalSpace(10),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Password",
-                  hintText: "Enter your Password",
+                CustomAppFormField(
+                  textFormFieldTitle: AppLocalizations.of(context)!.password,
+                  hintText: AppLocalizations.of(context)!.enter_your_password,
                   prefixIcon: Icons.password,
                   isPassword: true,
                   obscureText: true,
@@ -63,16 +65,15 @@ class SignupScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(
-                          context, AppRoutes.personalizeMoveScreen);
+                      Navigator.pushNamed(context, AppRoutes.allMoviesScreen);
                     },
-                    buttonText: "Sign Up",
+                    buttonText: AppLocalizations.of(context)!.sign_up,
                   ),
                 ),
                 verticalSpace(5),
                 CustomTextRowWidget(
-                  firstTitle: " have an account ?",
-                  secTitle: " Login",
+                  firstTitle: AppLocalizations.of(context)!.have_an_account,
+                  secTitle: AppLocalizations.of(context)!.log_in,
                   onTap: () {
                     Navigator.pushReplacementNamed(
                         context, AppRoutes.loginScreen);

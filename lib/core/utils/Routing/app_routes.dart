@@ -6,6 +6,9 @@ import 'package:movie_app/features/Search/screens/filter.dart';
 import 'package:movie_app/features/Search/screens/search.dart';
 import 'package:movie_app/features/settings/views/change_password_view.dart';
 import 'package:movie_app/features/settings/views/edit_profile_view.dart';
+import 'package:movie_app/features/Menu/screens/actors_artist_screen.dart';
+import 'package:movie_app/features/Menu/screens/all_movies_screen.dart';
+
 import '../../../features/Auth/screens/create_new_password_screen.dart';
 import '../../../features/Auth/screens/forget_password_screen.dart';
 import '../../../features/Auth/screens/login_screen.dart';
@@ -32,6 +35,8 @@ class AppRoutes {
   static const String profileEditingScreen = '/profileEditing';
   static const String changePasswordScreen = '/cahngePassword';
   static const String generalScreen = '/generalScreen';
+  static const String allMoviesScreen = '/allMoviesScreen';
+  static const String actorsArtistScreen = '/actorsArtistScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -119,13 +124,25 @@ class AppRoutes {
             return const PreferencesScreen();
           },
         );
-          case details:
+      case details:
         return CupertinoPageRoute(
           builder: (context) {
             return const MovieDetailsView();
-                 },
+          },
         );
 
+      case allMoviesScreen:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const AllMoviesScreen();
+          },
+        );
+      case actorsArtistScreen:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const ActorsArtistScreen();
+          },
+        );
       default:
         return CupertinoPageRoute(builder: (_) => const WelcomeScreen());
     }

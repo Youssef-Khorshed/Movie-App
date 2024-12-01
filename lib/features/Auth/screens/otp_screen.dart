@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
 import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
@@ -31,26 +31,25 @@ class OtpScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(20),
-                const CustomAuthTitleWidget(
-                  title: "OTP code verification",
+                verticalSpace(35),
+                CustomAuthTitleWidget(
+                  title: AppLocalizations.of(context)!.otp_code_verification,
                 ),
                 verticalSpace(10),
-                const CustomAuthSubtitleWidget(
-                  subtitle:
-                      "We have send an OTP code to your gmail and enter the OTP code below to verify the code",
+                CustomAuthSubtitleWidget(
+                  subtitle: AppLocalizations.of(context)!.otp_sent_message,
                 ),
                 verticalSpace(25),
                 const CustoOtpFormField(),
                 verticalSpace(20),
                 CustomTextRowWidget(
-                  firstTitle: "Don’t receive a",
+                  firstTitle: AppLocalizations.of(context)!.dont_receive_code,
                   secTitle: " OTP ?",
                   onTap: () {},
                 ),
                 verticalSpace(10),
                 CustomTextRowWidget(
-                  firstTitle: "You can resend code in",
+                  firstTitle: AppLocalizations.of(context)!.resend_code,
                   secTitle: " 30 sec",
                   onTap: () {},
                 ),
@@ -62,7 +61,7 @@ class OtpScreen extends StatelessWidget {
                       Navigator.pushNamed(
                           context, AppRoutes.createNewPasswordScreen);
                     },
-                    buttonText: "Continue",
+                    buttonText: AppLocalizations.of(context)!.continue_buttom,
                   ),
                 ),
               ],

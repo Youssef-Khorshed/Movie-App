@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
 import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
@@ -15,11 +15,11 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(60),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "Forgot Password",
+            title: AppLocalizations.of(context)!.forgot_password,
           ),
         ),
         body: Align(
@@ -30,19 +30,20 @@ class ForgetPasswordScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(20),
-                const CustomAuthTitleWidget(
-                  title: "Forgot Password",
+                verticalSpace(35),
+                CustomAuthTitleWidget(
+                  title: AppLocalizations.of(context)!.forgot_password,
                 ),
                 verticalSpace(10),
-                const CustomAuthSubtitleWidget(
-                  subtitle:
-                      "Please enter your email and we will send the OTP cade in your email address",
+                CustomAuthSubtitleWidget(
+                  subtitle: AppLocalizations.of(context)!.otp_description,
                 ),
                 verticalSpace(40),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Email Adress",
-                  hintText: "Enter your Email Adress",
+                CustomAppFormField(
+                  textFormFieldTitle:
+                      AppLocalizations.of(context)!.email_address,
+                  hintText:
+                      AppLocalizations.of(context)!.enter_your_email_address,
                   prefixIcon: Icons.person_2_outlined,
                 ),
                 verticalSpace(10),
@@ -52,7 +53,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.otpScreen);
                     },
-                    buttonText: "Continue",
+                    buttonText: AppLocalizations.of(context)!.continue_buttom,
                   ),
                 ),
               ],

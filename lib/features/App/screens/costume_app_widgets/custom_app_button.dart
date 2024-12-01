@@ -9,6 +9,7 @@ class CustomAppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color? textColor, buttonColor1, buttonColor2, borderColor;
   final bool? hasIcon;
+  final bool secondaryColor;
 
   final double? borderCornerRadius;
   const CustomAppButton({
@@ -20,6 +21,7 @@ class CustomAppButton extends StatelessWidget {
     this.buttonColor1,
     this.buttonColor2,
     required this.onPressed,
+    this.secondaryColor = true,
     super.key,
     this.width,
   });
@@ -36,10 +38,15 @@ class CustomAppButton extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 transform: const GradientRotation(10),
-                colors: [
-                  buttonColor1 ?? AppColors.lightpurple,
-                  buttonColor2 ?? AppColors.purple,
-                ],
+                colors: secondaryColor
+                    ? [
+                        buttonColor1 ?? AppColors.lightpurple,
+                        buttonColor2 ?? AppColors.purple,
+                      ]
+                    : [
+                        AppColors.purple,
+                        AppColors.white4,
+                      ],
               ),
               borderRadius: BorderRadius.circular(borderCornerRadius ?? 15),
               border: Border.all(
