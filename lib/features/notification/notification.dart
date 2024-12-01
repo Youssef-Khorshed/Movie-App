@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
-import '../home/home.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -15,10 +14,7 @@ class NotificationScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios),
           color: Color(0xff6C52EE),
           onPressed: () {
-            Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => Home()),
-              (route) => false,
-            );
+            Navigator.pop(context);
           },
         ),
         title: Text(
