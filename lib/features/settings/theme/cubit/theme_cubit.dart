@@ -22,5 +22,6 @@ class ThemeCubit extends Cubit<ThemeState> {
 
       emit(ThemeSuccess());
     }
+    print(themeModeState);
   }
 }

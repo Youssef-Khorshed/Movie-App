@@ -12,6 +12,10 @@ import '../../../features/Auth/screens/signup_screen.dart';
 import '../../../features/Auth/screens/welcome_screen.dart';
 
 class AppRoutes {
+  static const String splash = '/';
+  static const String search = '/search';
+  static const String filter = '/filter';
+  static const String preferences = '/preferences';
   static const String welcomeScreen = '/welcomeScreen';
   static const String loginScreen = '/loginScreen';
   static const String signUpScreen = '/signUpScreen';
@@ -23,6 +27,7 @@ class AppRoutes {
   static const String profileEditingScreen = '/profileEditing';
   static const String changePasswordScreen = '/cahngePassword';
   static const String generalScreen = '/generalScreen';
+
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -90,6 +95,27 @@ class AppRoutes {
             return const GeneralAppScreen();
           },
         );
+
+      case search:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const SearchScreen();
+          },
+        );
+      case filter:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const FilterScreen();
+          },
+        );
+
+      case preferences:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const PreferencesScreen();
+          },
+        );
+
       default:
         return CupertinoPageRoute(builder: (_) => const WelcomeScreen());
     }
