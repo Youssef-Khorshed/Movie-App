@@ -1,17 +1,19 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
 
-class CostumeAppBar extends StatelessWidget {
-  const CostumeAppBar({
+class CustumeAppBar extends StatelessWidget {
+  const CustumeAppBar({
     super.key,
-    required this.title,
+    this.title,
     required this.isBack,
     this.onPressed,
     this.textStyle,
   });
 
-  final String title;
+  final String? title;
   final bool isBack;
   final TextStyle? textStyle;
   final void Function()? onPressed;
@@ -21,6 +23,7 @@ class CostumeAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       child: AppBar(
+        backgroundColor: AppColors.white,
         elevation: 0,
         leading: isBack
             ? IconButton(
@@ -29,10 +32,12 @@ class CostumeAppBar extends StatelessWidget {
               )
             : IconButton(
                 icon: SvgPicture.asset(AppIcons.menu),
-                onPressed: onPressed,
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
               ),
-        title: Text(
-          title,
+        title: AutoSizeText(
+          title ?? "",
           style: textStyle,
         ),
         centerTitle: true,
