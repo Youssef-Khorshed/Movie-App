@@ -31,7 +31,8 @@ class OptionCircleContainer extends StatelessWidget {
         onPressed: onPressed,
         icon: SvgPicture.asset(
           svgPath,
-          color: isLight ? AppColors.black : AppColors.white,
+          colorFilter: ColorFilter.mode(
+              isLight ? AppColors.black : AppColors.white, BlendMode.srcIn),
         ),
       ),
     );
