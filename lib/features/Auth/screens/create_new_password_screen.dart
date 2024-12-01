@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
 import '../../App/costume_widgets/costume_app_bar/costume_app_bar.dart';
@@ -15,11 +15,11 @@ class CreateNewPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(60),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "Create New Password",
+            title: AppLocalizations.of(context)!.create_new_password,
           ),
         ),
         body: Align(
@@ -30,26 +30,27 @@ class CreateNewPasswordScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 verticalSpace(35),
-                const CustomAuthTitleWidget(
-                  title: "Create New Password",
+                CustomAuthTitleWidget(
+                  title: AppLocalizations.of(context)!.create_new_password,
                 ),
                 verticalSpace(10),
-                const CustomAuthSubtitleWidget(
+                CustomAuthSubtitleWidget(
                   subtitle:
-                      "You can enter a new password to create a new password",
+                      AppLocalizations.of(context)!.new_password_description,
                 ),
                 verticalSpace(25),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Password",
-                  hintText: "Enter your Password",
+                CustomAppFormField(
+                  textFormFieldTitle: AppLocalizations.of(context)!.password,
+                  hintText: AppLocalizations.of(context)!.enter_your_password,
                   prefixIcon: Icons.password,
                   isPassword: true,
                   obscureText: true,
                 ),
                 verticalSpace(10),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Confirm Password",
-                  hintText: "Confirm Password",
+                CustomAppFormField(
+                  textFormFieldTitle:
+                      AppLocalizations.of(context)!.confirm_password,
+                  hintText: AppLocalizations.of(context)!.enter_your_password,
                   prefixIcon: Icons.password,
                   isPassword: true,
                   obscureText: true,
@@ -62,7 +63,7 @@ class CreateNewPasswordScreen extends StatelessWidget {
                       Navigator.pushNamed(
                           context, AppRoutes.personalizeMoveScreen);
                     },
-                    buttonText: "Continue",
+                    buttonText: AppLocalizations.of(context)!.continue_buttom,
                   ),
                 ),
               ],

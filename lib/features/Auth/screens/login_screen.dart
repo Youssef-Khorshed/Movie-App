@@ -9,6 +9,8 @@ import '../widgets/custom_auth_subtitle_widget.dart';
 import '../widgets/custom_auth_title_widget.dart';
 import '../widgets/custom_background_continer.dart';
 import '../widgets/custom_text_row_widget.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
@@ -16,11 +18,11 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(60),
+        appBar:  PreferredSize(
+          preferredSize:const Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "Login",
+            title: AppLocalizations.of(context)!.log_in,
           ),
         ),
         body: Align(
@@ -31,23 +33,23 @@ class LogInScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 verticalSpace(35),
-                const CustomAuthTitleWidget(
-                  title: "Welcome Back!",
+                 CustomAuthTitleWidget(
+                  title: AppLocalizations.of(context)!.welcome_back,
                 ),
                 verticalSpace(10),
-                const CustomAuthSubtitleWidget(
-                  subtitle: "Welcome back we missed you",
+                 CustomAuthSubtitleWidget(
+                  subtitle:AppLocalizations.of(context)!.welcome_back_message,
                 ),
                 verticalSpace(25),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Username",
-                  hintText: "Enter your Username",
+                 CustomAppFormField(
+                  textFormFieldTitle: AppLocalizations.of(context)!.username,
+                  hintText:AppLocalizations.of(context)!.enter_your_username,
                   prefixIcon: Icons.person_2_outlined,
                 ),
                 verticalSpace(10),
-                const CustomAppFormField(
-                  textFormFieldTitle: "Password",
-                  hintText: "Enter your Password",
+                 CustomAppFormField(
+                  textFormFieldTitle: AppLocalizations.of(context)!.password,
+                  hintText: AppLocalizations.of(context)!.enter_your_password,
                   prefixIcon: Icons.password,
                   isPassword: true,
                   obscureText: true,
@@ -58,12 +60,12 @@ class LogInScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(
                     onPressed: () {},
-                    buttonText: "Login",
+                    buttonText:AppLocalizations.of(context)!.log_in,
                   ),
                 ),
                 CustomTextRowWidget(
-                  firstTitle: "Don't have an account ?",
-                  secTitle: " SignUp",
+                  firstTitle: AppLocalizations.of(context)!.dont_have_an_account,
+                  secTitle: AppLocalizations.of(context)!.sign_up,
                   onTap: () {
                     Navigator.pushNamed(context, AppRoutes.signUpScreen);
                   },

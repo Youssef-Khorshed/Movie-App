@@ -22,6 +22,7 @@ class CustumeAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       child: AppBar(
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: isBack
             ? IconButton(

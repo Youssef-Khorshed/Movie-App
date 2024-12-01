@@ -77,4 +77,20 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+  static Gradient backgroundGradientColors2 = const LinearGradient(
+    colors: [
+      Color(0xff6C52EE),
+      Color(0xff3E2F88),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+  static Gradient backgroundGradientColors3 = const LinearGradient(
+    colors: [
+      white4,
+      Color(0xFFEDE7F6),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }
