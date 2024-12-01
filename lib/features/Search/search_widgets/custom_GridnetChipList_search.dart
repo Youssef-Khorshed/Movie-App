@@ -45,6 +45,17 @@ class _GradientChipListState extends State<GradientChipList> {
     }).toList();
   }
 
+  List<bool> removers = [];
+  List<Widget> iconremove = [];
+
+  @override
+  void initState() {
+    removers = List.filled(widget.categories.length, false);
+    iconremove = List.filled(widget.categories.length, const SizedBox());
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // Get localized categories
@@ -59,42 +70,56 @@ class _GradientChipListState extends State<GradientChipList> {
         itemCount: localizedCategories.length,
         separatorBuilder: (context, _) => const SizedBox(width: 10),
         itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: ThemeCubit.get(context).themeModeState ==
-                        ThemeModeState.light
-                    ? [
-                        AppColors.lightgray,
-                        AppColors.purple,
-                        AppColors.lightpurple
-                      ]
-                    : [AppColors.lightgray, AppColors.gray10, AppColors.gray6],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                removers[index] = !removers[index];
+                removers[index]
+                    ? iconremove[index] = GestureDetector(
+                        child: SvgPicture.asset(AppIcons.remove),
+                        onTap: () {
+                          setState(() {
+                            widget.categories.removeAt(index);
+                          });
+                        },
+                      )
+                    : iconremove[index] = const SizedBox();
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: ThemeCubit.get(context).themeModeState ==
+                          ThemeModeState.light
+                      ? [
+                          AppColors.lightgray,
+                          AppColors.purple,
+                          AppColors.lightpurple
+                        ]
+                      : [
+                          AppColors.lightgray,
+                          AppColors.gray10,
+                          AppColors.gray6
+                        ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(10), // Rounded corners
               ),
-              borderRadius: BorderRadius.circular(10), // Rounded corners
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 17.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AutoSizeText(
-                    localizedCategories[index],
-                    style: AppTextStyle
-                        .style12WhiteW400, // White text for visibility
-                  ),
-                  horizontalSpace(10),
-                  GestureDetector(
-                    child: SvgPicture.asset(AppIcons.remove),
-                    onTap: () {
-                      setState(() {
-                        widget.categories.removeAt(index);
-                      });
-                    },
-                  )
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 17.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AutoSizeText(
+                      localizedCategories[index],
+                      style: AppTextStyle
+                          .style12WhiteW400, // White text for visibility
+                    ),
+                    horizontalSpace(10),
+                    iconremove[index]
+                  ],
+                ),
               ),
             ),
           );

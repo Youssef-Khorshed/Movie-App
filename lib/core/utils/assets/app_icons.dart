@@ -10,7 +10,6 @@ class AppIcons {
   static const String emojis = 'assets/icons/emojis.svg';
   static const String facebook = 'assets/icons/facebook.svg';
   static const String favorite = 'assets/icons/favorite.svg';
-  static const String filter = 'assets/images/filter.png';
   static const String gmail = 'assets/icons/gmail.svg';
   static const String hidePassword = 'assets/icons/hide_password.svg';
   static const String home = 'assets/icons/home .svg';
@@ -20,7 +19,6 @@ class AppIcons {
   static const String microphone = 'assets/icons/microphone.svg';
   static const String nightMode = 'assets/icons/night_mode.svg';
   static const String notification = 'assets/icons/notification.svg';
-  static const String notfound = 'assets/images/notfound.json';
   static const String profile = 'assets/icons/profile.svg';
   static const String remoteConnection = 'assets/icons/remote_connection.svg';
   static const String remove = 'assets/icons/remove.svg';

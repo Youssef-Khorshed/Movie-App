@@ -79,8 +79,8 @@ class _SearchScreenBarState extends State<SearchScreenBar> {
                         ? AppTextStyle.style12Gray9W400
                         : AppTextStyle.style12LightGrayW400, // Hint text style
                     border: InputBorder.none, // Remove default border
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12.0), // Align text and icon
+                    contentPadding: const EdgeInsets.only(
+                        top: 16.0, bottom: 5), // Align text and icon
                   ),
                 ),
               ),

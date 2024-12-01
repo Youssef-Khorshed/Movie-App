@@ -1,6 +1,6 @@
 // Movie Grid Widget
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/assets/app_animation.dart';
 import 'package:movie_app/features/Search/model/movieModel.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_MovieCard_search.dart';
 import 'package:lottie/lottie.dart';
@@ -14,9 +14,8 @@ class MovieGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return movies.isEmpty
         ? Lottie.asset(
-            AppIcons.notfound,
-            height: 200,
-            fit: BoxFit.fill,
+            AppAnimation.notfound,
+            fit: BoxFit.fitWidth,
             repeat: true, // Loop the animation
             reverse: true, // Play animation in reverse
             animate: true, // Whether the animation should animate or not

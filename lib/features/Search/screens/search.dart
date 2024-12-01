@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/features/Search/model/movieModel.dart';
@@ -65,7 +66,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     });
                   });
                 },
-                icon: Image.asset(AppIcons.filter),
+                icon: Image.asset(AppImages.filter),
               ),
             ),
             GradientChipList(

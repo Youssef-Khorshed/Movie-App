@@ -65,16 +65,16 @@ class _CustomNavigatoritemState extends State<CustomNavigatoritem> {
           false, // Prevent dismissing the dialog by tapping outside.
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Are you sure you want to log out?'),
-          content:
-              Text('You will need to log in again to access your account.'),
+          title: const Text('Are you sure you want to log out?'),
+          content: const Text(
+              'You will need to log in again to access your account.'),
           actions: [
             // 'No' button to close the dialog
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('No'),
+              child: const Text('No'),
             ),
             // 'Yes' button to log out
             TextButton(
@@ -82,7 +82,7 @@ class _CustomNavigatoritemState extends State<CustomNavigatoritem> {
                 Navigator.of(context).pop(); // Close the dialog
                 onLogout(); // Perform the logout operation
               },
-              child: Text('Yes'),
+              child: const Text('Yes'),
             ),
           ],
         );

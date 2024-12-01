@@ -4,4 +4,5 @@ class AppImages {
   static const String medium = 'assets/images/mediume.png';
   static const String movieBackground = 'assets/images/movie_background.png';
   static const String searchImage = 'assets/images/search_image.png';
+  static const String filter = 'assets/images/filter.png';
 }
