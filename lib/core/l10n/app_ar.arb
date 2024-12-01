@@ -1,6 +1,9 @@
-{
-    "log_in": "تسجيل الدخول",
-    "create_an_account": "انشاء حساب",
-    "sign_up": "تسجيل"
 
+{
+"log_in": "تسجيل الدخول",
+"create_an_account": "تسجيل حساب",
+"sign_up": "تسجيل حساب",
+"watch_later": "شاهد لاحقاً",
+"download": "تنزيل",
+"favorite": "مفضل"
 }
