@@ -23,8 +23,8 @@ class CustomSettingItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
             colors: [
-              AppColors.purple2.withValues(alpha: 0.3),
-              AppColors.white5.withValues(alpha: 0.6),
+              AppColors.purple2.withOpacity(0.3),
+              AppColors.white5.withOpacity(0.6),
             ],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
@@ -38,7 +38,9 @@ class CustomSettingItem extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 data.svgIcon,
-                color: Colors.black,
+
+                colorFilter: const ColorFilter.mode(
+                    AppColors.black, BlendMode.srcIn), // Colors.black,
               ),
               verticalSpace(12),
               AutoSizeText(

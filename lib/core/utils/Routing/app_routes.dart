@@ -24,7 +24,6 @@ class AppRoutes {
   static const String changePasswordScreen = '/cahngePassword';
   static const String generalScreen = '/generalScreen';
 
-
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case welcomeScreen:
@@ -82,9 +81,9 @@ class AppRoutes {
           },
         );
       case changePasswordScreen:
-        return CupertinoPageRoute(
-          builder: (context) {
-            return const ChangePasswordView();
+        return CupertinoPageRoute(builder: (context) {
+          return const ChangePasswordView();
+        });
       case generalScreen:
         return CupertinoPageRoute(
           builder: (context) {

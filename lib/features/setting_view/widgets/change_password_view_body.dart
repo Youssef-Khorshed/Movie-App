@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
-import 'package:movie_app/features/App/costume_widgets/costume_app_bar/costume_app_bar.dart';
-import 'package:movie_app/features/App/costume_widgets/custom_app_button.dart';
-import 'package:movie_app/features/App/costume_widgets/custom_text_form_field.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/costume_app_bar.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_text_form_field.dart';
 import 'package:movie_app/features/setting_view/data/custom_app_form_field_data.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
@@ -49,9 +49,8 @@ class ChangePasswordViewBody extends StatelessWidget {
         verticalSpace(30),
         CustomAppButton(
           onPressed: () {},
-          buttonColor1: isLight
-              ? AppColors.white5
-              : AppColors.black2.withValues(alpha: 2.5),
+          buttonColor1:
+              isLight ? AppColors.white5 : AppColors.black2.withOpacity(2.5),
           width: 220,
           buttonText: 'Save Change',
           textColor: isLight ? AppColors.black : AppColors.white,
