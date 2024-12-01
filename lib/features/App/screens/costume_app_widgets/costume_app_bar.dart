@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
 
 class CustumeAppBar extends StatelessWidget {
   const CustumeAppBar({
@@ -22,6 +23,7 @@ class CustumeAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       child: AppBar(
+        backgroundColor: AppColors.white,
         elevation: 0,
         leading: isBack
             ? IconButton(

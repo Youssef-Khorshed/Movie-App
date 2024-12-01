@@ -23,6 +23,7 @@ class GridViewSection extends StatelessWidget {
         itemBuilder: (context, index) {
           return CustomSettingItem(
             data: DataOfGridView.gridViewContent[index],
+            index: index,
           );
         },
       ),

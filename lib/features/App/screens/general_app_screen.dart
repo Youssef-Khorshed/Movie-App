@@ -24,7 +24,6 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
   List<Widget> screens = [
     const WatchLaterScreen(),
     const MovieDownloadPage(),
-    const MovieDownloadPage(),
     FavoritePage(),
     const ProfileSettingView(),
   ];
@@ -43,6 +42,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
       AppLocalizations.of(context)!.watch_later,
       AppLocalizations.of(context)!.download,
       AppLocalizations.of(context)!.favorite,
+      AppLocalizations.of(context)!.settings
     ];
     return Scaffold(
         backgroundColor: AppColors.white,
@@ -62,13 +62,14 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
                 AppTextStyle.style18WhiteW500.copyWith(color: AppColors.black),
           ),
           centerTitle: true,
+          backgroundColor: AppColors.white,
         ),
         drawer: CustomAppDrawer(
           onItemTap: (index) => onItemTap(index),
           selectedIndex: selctedIndex,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
+          padding: const EdgeInsets.only(top: 10.0),
           child: screens[selctedIndex],
         ));
   }

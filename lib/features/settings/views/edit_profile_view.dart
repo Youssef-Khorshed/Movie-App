@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
@@ -60,7 +61,7 @@ class EditProfileView extends StatelessWidget {
                 ),
               ],
             ),
-            verticalSpace(28),
+            verticalSpace(15),
             Text(
               'The name',
               style: GoogleFonts.poppins(
@@ -68,7 +69,7 @@ class EditProfileView extends StatelessWidget {
                   fontSize: 20,
                   color: isLight ? AppColors.black : AppColors.white),
             ),
-            verticalSpace(28),
+            verticalSpace(15),
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -85,16 +86,21 @@ class EditProfileView extends StatelessWidget {
               textFormFieldTitle: 'Password',
               isPassword: true,
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  'Change password',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                      color: AppColors.gray8),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.changePasswordScreen);
+              },
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'Change password',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: AppColors.gray8),
+                  ),
                 ),
               ),
             ),

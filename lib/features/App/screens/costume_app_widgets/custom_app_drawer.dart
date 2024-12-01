@@ -56,10 +56,6 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                   ],
                 ),
                 verticalSpace(30),
-                Container(
-                  height: 1,
-                  color: AppColors.purple,
-                ),
                 ListTile(
                   minVerticalPadding: 0,
                   leading: SvgPicture.asset(AppIcons.home),
@@ -154,29 +150,6 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.setting),
-                  title: Text(
-                    "Settings",
-                    style: AppTextStyle.style14Gray5W500
-                        .copyWith(color: AppColors.black),
-                  ),
-                  trailing: const RotatedBox(
-                    quarterTurns: 2,
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      color: AppColors.black,
-                      size: 15,
-                    ),
-                  ),
-                  selected: widget.selectedIndex == 4,
-                  onTap: () => widget.onItemTap(4),
-                ),
-                Container(
-                  height: 1,
-                  color: AppColors.purple,
-                ),
-                ListTile(
-                  minVerticalPadding: 0,
                   leading: SvgPicture.asset(AppIcons.actors),
                   title: Text(
                     "Actors & Artists",
@@ -200,9 +173,9 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.aboutUs),
+                  leading: SvgPicture.asset(AppIcons.setting),
                   title: Text(
-                    "About Us",
+                    "Settings",
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -214,14 +187,9 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                       size: 15,
                     ),
                   ),
-                  selected: widget.selectedIndex == 6,
-                  onTap: () => widget.onItemTap(6),
+                  selected: widget.selectedIndex == 4,
+                  onTap: () => widget.onItemTap(4),
                 ),
-                verticalSpace(20),
-                SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
-                    child: CustomAppButton(
-                        onPressed: () {}, buttonText: "Logout")),
               ],
             ),
           ]),
