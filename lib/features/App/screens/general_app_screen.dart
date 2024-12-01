@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:movie_app/features/Menu/screens/all_movies_screen.dart';
 import 'package:movie_app/features/home/home.dart';
 import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
 import '../../../core/utils/assets/app_icons.dart';
@@ -28,6 +29,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
     const MovieDownloadPage(),
     FavoritePage(),
     const ProfileSettingView(),
+    const AllMoviesScreen()
   ];
 
   // Corrected screen names to match the number of screens
@@ -44,7 +46,8 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
       AppLocalizations.of(context)!.watch_later,
       AppLocalizations.of(context)!.download,
       AppLocalizations.of(context)!.favorite,
-      AppLocalizations.of(context)!.settings
+      AppLocalizations.of(context)!.settings,
+      AppLocalizations.of(context)!.actors_and_artists,
     ];
     return Scaffold(
         backgroundColor: AppColors.white,

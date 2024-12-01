@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/utils/assets/app_images.dart';
+import '../../../../core/utils/colors/app_colors.dart';
 import '../widgets/favorite_widget/custom_list_view_favorite.dart';
 
 class FavoritePage extends StatelessWidget {
@@ -18,6 +19,7 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Column(
         children: [
           Expanded(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
 import '../../../../core/utils/assets/app_images.dart';
 
 import '../widgets/watch_later_widget/custom_list_view_watch_later.dart';
@@ -28,6 +29,7 @@ class _WatchLaterScreenState extends State<WatchLaterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Column(
         children: [
           Expanded(

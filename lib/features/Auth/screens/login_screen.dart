@@ -59,7 +59,12 @@ class LogInScreen extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRoutes.generalScreen,
+                      );
+                    },
                     buttonText: AppLocalizations.of(context)!.log_in,
                   ),
                 ),

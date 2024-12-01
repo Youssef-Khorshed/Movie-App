@@ -10,16 +10,21 @@ class TitleTextBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        gradient: AppColors.backgroundGradientColors2,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: AutoSizeText(
-        title,
-        style: AppTextStyle.style15WhiteW500,
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width * .4,
+        height: 40,
+        decoration: BoxDecoration(
+          gradient: AppColors.backgroundGradientColors2,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: AutoSizeText(
+            title,
+            style: AppTextStyle.style15WhiteW500,
+          ),
+        ),
       ),
     );
   }
