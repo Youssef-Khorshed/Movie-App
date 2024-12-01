@@ -83,7 +83,8 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                       width: MediaQuery.of(context).size.width * .45,
                       child: CustomAppButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.otpScreen);
+                          Navigator.pushReplacementNamed(
+                              context, AppRoutes.generalScreen);
                         },
                         buttonText: "Continue",
                       ),
@@ -92,7 +93,8 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                       width: MediaQuery.of(context).size.width * .45,
                       child: CustomAppButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.otpScreen);
+                          Navigator.pushReplacementNamed(
+                              context, AppRoutes.generalScreen);
                         },
                         buttonText: "Skip",
                       ),

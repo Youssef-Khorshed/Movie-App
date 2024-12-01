@@ -62,10 +62,14 @@ class SignupScreen extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, AppRoutes.personalizeMoveScreen);
+                    },
                     buttonText: "Sign Up",
                   ),
                 ),
+                verticalSpace(5),
                 CustomTextRowWidget(
                   firstTitle: " have an account ?",
                   secTitle: " Login",
@@ -74,6 +78,7 @@ class SignupScreen extends StatelessWidget {
                         context, AppRoutes.loginScreen);
                   },
                 ),
+                verticalSpace(10)
               ],
             ),
           ),

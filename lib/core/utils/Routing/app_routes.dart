@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:movie_app/features/App/screens/general_app_screen.dart';
 
 import '../../../features/Auth/screens/create_new_password_screen.dart';
 import '../../../features/Auth/screens/forget_password_screen.dart';
@@ -16,6 +17,7 @@ class AppRoutes {
   static const String otpScreen = '/otpScreen';
   static const String createNewPasswordScreen = '/createNewPasswordScreen';
   static const String personalizeMoveScreen = '/personalizeMoveScreen';
+  static const String generalScreen = '/generalScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -59,6 +61,12 @@ class AppRoutes {
         return CupertinoPageRoute(
           builder: (context) {
             return const PersonalizeMoveScreen();
+          },
+        );
+      case generalScreen:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const GeneralAppScreen();
           },
         );
       default:
