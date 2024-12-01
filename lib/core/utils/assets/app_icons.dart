@@ -29,4 +29,5 @@ class AppIcons {
   static const String support = 'assets/icons/support.svg';
   static const String watchLater = 'assets/icons/watch_later.svg';
   static const String X = 'assets/icons/x.svg';
+  static const String editImage = 'assets/icons/edit_image.svg';
 }

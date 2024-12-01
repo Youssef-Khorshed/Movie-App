@@ -2,6 +2,9 @@
     "log_in": "Log In",
     "create_an_account": "Sign Up",
     "sign_up": "Sign Up",
+    "watch_later": "Watch Later",
+    "download": "Download",
+    "favorite": "Favorite",
     "filters": "Filters",
     "gender": "Gender",
     "country": "Country",
@@ -40,5 +43,6 @@
     "about_us": "About Us",
     "log_out": "Log Out"
     
+
 
 }
