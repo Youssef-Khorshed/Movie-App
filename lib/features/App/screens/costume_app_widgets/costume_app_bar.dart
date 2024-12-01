@@ -30,7 +30,9 @@ class CustumeAppBar extends StatelessWidget {
               )
             : IconButton(
                 icon: SvgPicture.asset(AppIcons.menu),
-                onPressed: onPressed,
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
               ),
         title: AutoSizeText(
           title ?? "",

@@ -1,6 +1,14 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:movie_app/features/menu_/presentation/screens/watch_later_screen.dart';
+import '../../../core/utils/assets/app_icons.dart';
 import '../../../core/utils/colors/app_colors.dart';
+import '../../../core/utils/styles/app_text_style.dart';
+import '../../menu_/presentation/screens/favorite.dart';
+import '../../menu_/presentation/screens/movie_download_page.dart';
 import 'costume_app_widgets/custom_app_drawer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GeneralAppScreen extends StatefulWidget {
   const GeneralAppScreen({super.key});
@@ -13,13 +21,9 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
   int selctedIndex = 0;
   // Updated list with the correct number of screens
   List<Widget> screens = [
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
+    const WatchLaterScreen(),
+    const MovieDownloadPage(),
+    FavoritePage(),
   ];
 
   // Corrected screen names to match the number of screens
@@ -32,13 +36,37 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: AppColors.white,
-            drawer: CustomAppDrawer(
-              onItemTap: (index) => onItemTap(index),
-              selectedIndex: selctedIndex,
-            ),
-            body: Expanded(child: screens[selctedIndex])));
+    List<String> names = [
+      AppLocalizations.of(context)!.watch_later,
+      AppLocalizations.of(context)!.download,
+      AppLocalizations.of(context)!.favorite
+    ];
+    return Scaffold(
+        backgroundColor: AppColors.white,
+        appBar: AppBar(
+          elevation: 0,
+          leading: Builder(builder: (context) {
+            return IconButton(
+              icon: SvgPicture.asset(AppIcons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }),
+          title: AutoSizeText(
+            names[selctedIndex],
+            style:
+                AppTextStyle.style18WhiteW500.copyWith(color: AppColors.black),
+          ),
+          centerTitle: true,
+        ),
+        drawer: CustomAppDrawer(
+          onItemTap: (index) => onItemTap(index),
+          selectedIndex: selctedIndex,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 15.0),
+          child: screens[selctedIndex],
+        ));
   }
 }

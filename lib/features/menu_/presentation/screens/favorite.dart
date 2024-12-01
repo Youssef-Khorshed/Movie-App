@@ -22,8 +22,6 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          CustumeAppBar(
-              title: AppLocalizations.of(context)!.favorite, isBack: true),
           Expanded(
               child: SingleChildScrollView(
                   child: CustomListViewFavorite(
