@@ -10,7 +10,7 @@ import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_bu
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_text_form_field.dart';
 import 'package:movie_app/features/settings/data/custom_app_form_field_data.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
-import '../../setting_view/widgets/profile_picture.dart';
+import 'package:movie_app/features/settings/widgets/profile_picture.dart';
 
 class EditProfileView extends StatelessWidget {
   const EditProfileView({super.key});

@@ -60,7 +60,10 @@ abstract class AppTextStyle {
 
   static TextStyle style12WhiteW400 = TextStyle(
       fontSize: 12,
-
+      fontWeight: FontWeight.w400,
+      color: AppColors.white,
+      height: 0,
+      fontFamily: GoogleFonts.cairo().fontFamily);
   static TextStyle style16WhiteW400 = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
@@ -70,7 +73,6 @@ abstract class AppTextStyle {
 
   static TextStyle style14WhiteW400 = TextStyle(
       fontSize: 14,
-
       fontWeight: FontWeight.w400,
       color: AppColors.white,
       height: 0,
@@ -105,15 +107,11 @@ abstract class AppTextStyle {
 
   static TextStyle style10DarkGray2W600 = TextStyle(
       fontSize: 10,
-      fontWeight: FontWeight.w600,
       color: AppColors.darkgray2,
       height: 0,
-  static TextStyle style20WhiteW400 = TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w400,
-      color: AppColors.black,
-      height: 0,
+      fontWeight: FontWeight.w600,
       fontFamily: GoogleFonts.poppins().fontFamily);
+
   static TextStyle style13WhiteW400 = TextStyle(
       fontSize: 13,
       fontWeight: FontWeight.w400,

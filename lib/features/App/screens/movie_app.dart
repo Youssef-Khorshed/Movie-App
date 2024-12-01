@@ -29,7 +29,7 @@ class MovieApp extends StatelessWidget {
                   : ThemeMode.dark,
               debugShowCheckedModeBanner: false,
 
-              initialRoute: AppRoutes.changePasswordScreen,
+              initialRoute: AppRoutes.generalScreen,
 
               onGenerateRoute: AppRoutes.generateRoute,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -38,7 +38,7 @@ class MovieApp extends StatelessWidget {
               builder: DevicePreview.appBuilder,
               home: Builder(
                 builder: (context) {
-                  return WatchLaterScreen();
+                  return const WatchLaterScreen();
                 },
               ),
             );

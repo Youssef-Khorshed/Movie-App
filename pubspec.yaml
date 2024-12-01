@@ -15,7 +15,6 @@ dependencies:
   flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.16
   google_fonts: ^6.2.1
   intl: any
   bloc: ^8.1.4

@@ -7,6 +7,7 @@ class WatchLaterHorizontalView extends StatefulWidget {
   const WatchLaterHorizontalView({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WatchLaterHorizontalViewState createState() =>
       _WatchLaterHorizontalViewState();
 }

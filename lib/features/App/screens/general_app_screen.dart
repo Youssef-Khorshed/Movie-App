@@ -24,6 +24,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
   List<Widget> screens = [
     const WatchLaterScreen(),
     const MovieDownloadPage(),
+    const MovieDownloadPage(),
     FavoritePage(),
     const ProfileSettingView(),
   ];

@@ -1,9 +1,10 @@
+// ignore: file_names
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomBottombuttonsFilter extends StatelessWidget {
   const CustomBottombuttonsFilter({

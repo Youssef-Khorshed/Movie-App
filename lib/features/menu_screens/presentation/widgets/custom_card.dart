@@ -4,14 +4,10 @@ import '../../../../core/utils/colors/app_colors.dart';
 import '../../../../core/utils/styles/app_text_style.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({
-    super.key,
-    required this.image,this.text1,this.text2
-  });
-
+  const CustomCard({super.key, required this.image, this.text1, this.text2});
 
   final String image;
-  final String? text1,text2;
+  final String? text1, text2;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,24 +17,26 @@ class CustomCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: AssetImage(image),
-                      fit: BoxFit.fill))),
+                      image: AssetImage(image), fit: BoxFit.fill))),
         ),
         const SizedBox(
           height: 12,
         ),
         Row(
           children: [
-            text2!=null?   Padding(
-              padding: const EdgeInsets.only(right: 2.0),
-              child: Text(
-                text2!,
-                style: AppTextStyle.style16WhiteW400
-                    .copyWith(color: AppColors.black),
-              ),
-            ):SizedBox(),
-
-            text1!=null?   Text("($text1)", style: AppTextStyle.style16WhiteW400):SizedBox()
+            text2 != null
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 2.0),
+                    child: Text(
+                      text2!,
+                      style: AppTextStyle.style16WhiteW400
+                          .copyWith(color: AppColors.black),
+                    ),
+                  )
+                : const SizedBox(),
+            text1 != null
+                ? Text("($text1)", style: AppTextStyle.style16WhiteW400)
+                : const SizedBox()
           ],
         )
       ],

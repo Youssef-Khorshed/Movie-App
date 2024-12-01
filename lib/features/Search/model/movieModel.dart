@@ -1,4 +1,3 @@
-// ignore: file_names
 class Movie {
   final String title;
   final String year;
