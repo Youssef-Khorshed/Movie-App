@@ -75,7 +75,8 @@ class EditProfileView extends StatelessWidget {
               separatorBuilder: (context, index) => verticalSpace(30),
               itemBuilder: (context, index) => CustomAppFormField(
                 hintText: '',
-                textFormFieldTitle: CustomAppFormFieldData.name[index],
+                textFormFieldTitle:
+                    CustomAppFormFieldData.titleOfEdidProfileInfo[index],
               ),
               itemCount: 6,
             ),

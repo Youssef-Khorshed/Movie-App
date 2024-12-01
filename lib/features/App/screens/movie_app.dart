@@ -27,7 +27,7 @@ class MovieApp extends StatelessWidget {
                   ? ThemeMode.light
                   : ThemeMode.dark,
               debugShowCheckedModeBanner: false,
-              initialRoute: AppRoutes.profileEditingScreen,
+              initialRoute: AppRoutes.changePasswordScreen,
               onGenerateRoute: AppRoutes.generateRoute,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,

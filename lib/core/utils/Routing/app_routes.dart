@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:movie_app/features/setting_view/views/change_password_view.dart';
 import 'package:movie_app/features/setting_view/views/edit_profile_view.dart';
 import 'package:movie_app/features/setting_view/views/profile_setting_view.dart';
 
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String personalizeMoveScreen = '/personalizeMoveScreen';
   static const String profileSettingScreen = '/profileSetting';
   static const String profileEditingScreen = '/profileEditing';
+  static const String changePasswordScreen = '/cahngePassword';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -75,6 +77,12 @@ class AppRoutes {
         return CupertinoPageRoute(
           builder: (context) {
             return const EditProfileView();
+          },
+        );
+      case changePasswordScreen:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const ChangePasswordView();
           },
         );
       default:
