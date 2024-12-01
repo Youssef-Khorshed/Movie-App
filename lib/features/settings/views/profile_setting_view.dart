@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/setting_view/widgets/profile_setting_body.dart';
+import 'package:movie_app/features/settings/widgets/profile_setting_body.dart';
 
 class ProfileSettingView extends StatelessWidget {
   const ProfileSettingView({super.key});

@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
-import 'package:movie_app/features/setting_view/data/grid_view_model.dart';
+import 'package:movie_app/features/settings/data/grid_view_model.dart';
 
 class CustomSettingItem extends StatelessWidget {
   const CustomSettingItem({

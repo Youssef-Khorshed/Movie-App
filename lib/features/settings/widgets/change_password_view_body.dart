@@ -6,7 +6,7 @@ import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/costume_app_bar.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_text_form_field.dart';
-import 'package:movie_app/features/setting_view/data/custom_app_form_field_data.dart';
+import 'package:movie_app/features/settings/data/custom_app_form_field_data.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 class ChangePasswordViewBody extends StatelessWidget {

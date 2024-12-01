@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class CustomCard extends StatelessWidget {
@@ -55,10 +54,7 @@ class CustomCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, color: Colors.yellow, size: 16),
                   const SizedBox(width: 4),
-                  Text(
-                    '$rating',
-                    style: AppTextStyle.style14WhiteW400
-                  ),
+                  Text('$rating', style: AppTextStyle.style14WhiteW400),
                 ],
               ),
             ),
@@ -75,12 +71,9 @@ class CustomCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style:
-         AppTextStyle.style14WhiteW400
-                ),
+                child: Text(title,
+                    textAlign: TextAlign.center,
+                    style: AppTextStyle.style14WhiteW400),
               ),
             ),
           ),

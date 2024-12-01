@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:movie_app/features/setting_view/views/change_password_view.dart';
 import 'package:movie_app/features/setting_view/views/edit_profile_view.dart';
-import 'package:movie_app/features/setting_view/views/profile_setting_view.dart';
 import 'package:movie_app/features/App/screens/general_app_screen.dart';
+import 'package:movie_app/features/settings/views/change_password_view.dart';
 import '../../../features/Auth/screens/create_new_password_screen.dart';
 import '../../../features/Auth/screens/forget_password_screen.dart';
 import '../../../features/Auth/screens/login_screen.dart';
@@ -10,6 +9,7 @@ import '../../../features/Auth/screens/otp_screen.dart';
 import '../../../features/Auth/screens/personalize_move_screen.dart';
 import '../../../features/Auth/screens/signup_screen.dart';
 import '../../../features/Auth/screens/welcome_screen.dart';
+import '../../../features/settings/views/profile_setting_view.dart';
 
 class AppRoutes {
   static const String welcomeScreen = '/welcomeScreen';

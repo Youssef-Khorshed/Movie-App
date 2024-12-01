@@ -7,6 +7,7 @@ import '../../../core/utils/colors/app_colors.dart';
 import '../../../core/utils/styles/app_text_style.dart';
 import '../../menu_screens/presentation/screens/favorite.dart';
 import '../../menu_screens/presentation/screens/movie_download_page.dart';
+import '../../settings/views/profile_setting_view.dart';
 import 'costume_app_widgets/custom_app_drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -24,6 +25,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
     const WatchLaterScreen(),
     const MovieDownloadPage(),
     FavoritePage(),
+    const ProfileSettingView(),
   ];
 
   // Corrected screen names to match the number of screens
@@ -39,7 +41,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
     List<String> names = [
       AppLocalizations.of(context)!.watch_later,
       AppLocalizations.of(context)!.download,
-      AppLocalizations.of(context)!.favorite
+      AppLocalizations.of(context)!.favorite,
     ];
     return Scaffold(
         backgroundColor: AppColors.white,

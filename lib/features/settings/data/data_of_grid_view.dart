@@ -1,5 +1,5 @@
 import 'package:movie_app/core/utils/assets/app_icons.dart';
-import 'package:movie_app/features/setting_view/data/grid_view_model.dart';
+import 'package:movie_app/features/settings/data/grid_view_model.dart';
 
 class DataOfGridView {
   static List<SettingGridViewModel> gridViewContent = [

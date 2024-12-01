@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/setting_view/data/data_of_grid_view.dart';
-import 'package:movie_app/features/setting_view/widgets/custom_setting_item.dart';
+import 'package:movie_app/features/settings/data/data_of_grid_view.dart';
+import 'package:movie_app/features/settings/widgets/custom_setting_item.dart';
 
 class GridViewSection extends StatelessWidget {
   const GridViewSection({
