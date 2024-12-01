@@ -8,6 +8,7 @@ import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../core/utils/enums/theme_state.dart';
 import '../../settings/localization/cubit/local_cubit.dart';
 
+// ignore: must_be_immutable
 class MovieApp extends StatelessWidget {
   MovieApp({super.key});
 
