@@ -14,7 +14,6 @@ class TrendingMoviesCardWidget extends StatefulWidget {
 }
 
 class _TrendingMoviesCardWidgetState extends State<TrendingMoviesCardWidget> {
-  @override
   final List<String> trendingMovies = [
     AppImages.cover,
     AppImages.medium,
@@ -22,6 +21,7 @@ class _TrendingMoviesCardWidgetState extends State<TrendingMoviesCardWidget> {
     AppImages.cover,
     AppImages.medium,
   ];
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height / 3.7,

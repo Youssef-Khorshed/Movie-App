@@ -50,7 +50,9 @@ class _SearchScreenState extends State<SearchScreen> {
                 _applyFilter(query); // Apply the filter when user searches
               },
               leadingIcon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: LocalCubit.get(context).localization == const Locale("en")
                     ? SvgPicture.asset(AppIcons.back)
                     : Transform.rotate(

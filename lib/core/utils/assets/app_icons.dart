@@ -30,4 +30,6 @@ class AppIcons {
   static const String watchLater = 'assets/icons/watch_later.svg';
   static const String X = 'assets/icons/x.svg';
   static const String editImage = 'assets/icons/edit_image.svg';
+  static const String settingnotification = 'assets/icons/setting-3.svg';
+  static const String arrowback = 'assets/icons/Back_arrow.svg';
 }

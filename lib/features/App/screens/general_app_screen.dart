@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:movie_app/features/home/home.dart';
 import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
 import '../../../core/utils/assets/app_icons.dart';
 import '../../../core/utils/colors/app_colors.dart';
@@ -22,6 +23,7 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
   int selctedIndex = 0;
   // Updated list with the correct number of screens
   List<Widget> screens = [
+    const Home(),
     const WatchLaterScreen(),
     const MovieDownloadPage(),
     FavoritePage(),

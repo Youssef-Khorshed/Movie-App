@@ -13,7 +13,7 @@ class ActorsArtistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: const Size.fromHeight(60),
         child: CustumeAppBar(
           isBack: true,
           title: AppLocalizations.of(context)!.actors_and_artists,
@@ -35,6 +35,5 @@ class ActorsArtistScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
