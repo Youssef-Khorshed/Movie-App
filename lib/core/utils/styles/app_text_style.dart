@@ -16,16 +16,12 @@ abstract class AppTextStyle {
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
-
   static TextStyle style16WhiteW400 = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       color: AppColors.gray4,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
-
-
-
 
   static TextStyle style14WhiteW400 = TextStyle(
       fontSize: 14,
@@ -45,8 +41,6 @@ abstract class AppTextStyle {
       color: AppColors.gray3,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
-}
-
   static TextStyle style20WhiteW500 = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w500,
@@ -84,4 +78,3 @@ abstract class AppTextStyle {
       color: AppColors.darkpurple,
       fontFamily: GoogleFonts.poppins().fontFamily);
 }
-

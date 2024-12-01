@@ -1,8 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import '../../../../core/utils/colors/app_colors.dart';
-import '../../../../core/utils/styles/app_text_style.dart';
 
 class CustomAppButton extends StatelessWidget {
   final String? buttonText;

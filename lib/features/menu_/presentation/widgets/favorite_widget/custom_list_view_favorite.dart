@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 import '../../../../../core/utils/assets/app_images.dart';
-import '../../screens/favorite.dart';
 import '../custom_card.dart';
 
 class CustomListViewFavorite extends StatelessWidget {
@@ -23,11 +21,15 @@ class CustomListViewFavorite extends StatelessWidget {
         crossAxisSpacing: 22,
         children: List.generate(
           10,
-              (index) {
+          (index) {
             return StaggeredGridTile.count(
                 crossAxisCellCount: 2,
                 mainAxisCellCount: (index) % 2 == 0 ? 2.8 : 2.6,
-                child: const CustomCard(image: AppImages.medium,text1: "2020",text2: "Mulan",));
+                child: const CustomCard(
+                  image: AppImages.medium,
+                  text1: "2020",
+                  text2: "Mulan",
+                ));
           },
         ),
       ),
