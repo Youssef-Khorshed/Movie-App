@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../core/utils/enums/theme_state.dart';
 import '../../settings/localization/cubit/local_cubit.dart';
 
+// ignore: must_be_immutable
 class MovieApp extends StatelessWidget {
   MovieApp({super.key});
 
@@ -35,7 +37,7 @@ class MovieApp extends StatelessWidget {
               builder: DevicePreview.appBuilder,
               home: Builder(
                 builder: (context) {
-                  return const Placeholder();
+                  return WatchLaterScreen();
                 },
               ),
             );

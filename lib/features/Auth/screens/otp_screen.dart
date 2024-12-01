@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/Spacing/app_spacing.dart';
-import '../../App/costume_widgets/costume_app_bar/costume_app_bar.dart';
-import '../../App/costume_widgets/custom_app_button.dart';
+import '../../App/screens/costume_app_widgets/costume_app_bar.dart';
+import '../../App/screens/costume_app_widgets/custom_app_button.dart';
 import '../widgets/custo_otp_form_field.dart';
 import '../widgets/custom_auth_subtitle_widget.dart';
 import '../widgets/custom_auth_title_widget.dart';
@@ -27,10 +27,11 @@ class OtpScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
+                verticalSpace(20),
                 const CustomAuthTitleWidget(
                   title: "OTP code verification",
                 ),
@@ -41,18 +42,19 @@ class OtpScreen extends StatelessWidget {
                 ),
                 verticalSpace(25),
                 const CustoOtpFormField(),
-                verticalSpace(40),
+                verticalSpace(20),
                 CustomTextRowWidget(
                   firstTitle: "Don’t receive a",
                   secTitle: " OTP ?",
                   onTap: () {},
                 ),
+                verticalSpace(10),
                 CustomTextRowWidget(
                   firstTitle: "You can resend code in",
                   secTitle: " 30 sec",
                   onTap: () {},
                 ),
-                const Spacer(),
+                verticalSpace(10),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: CustomAppButton(

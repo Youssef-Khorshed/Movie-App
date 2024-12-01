@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:movie_app/features/setting_view/views/change_password_view.dart';
 import 'package:movie_app/features/setting_view/views/edit_profile_view.dart';
 import 'package:movie_app/features/setting_view/views/profile_setting_view.dart';
-
+import 'package:movie_app/features/App/screens/general_app_screen.dart';
 import '../../../features/Auth/screens/create_new_password_screen.dart';
 import '../../../features/Auth/screens/forget_password_screen.dart';
 import '../../../features/Auth/screens/login_screen.dart';
@@ -22,6 +22,8 @@ class AppRoutes {
   static const String profileSettingScreen = '/profileSetting';
   static const String profileEditingScreen = '/profileEditing';
   static const String changePasswordScreen = '/cahngePassword';
+  static const String generalScreen = '/generalScreen';
+
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -83,6 +85,10 @@ class AppRoutes {
         return CupertinoPageRoute(
           builder: (context) {
             return const ChangePasswordView();
+      case generalScreen:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const GeneralAppScreen();
           },
         );
       default:
