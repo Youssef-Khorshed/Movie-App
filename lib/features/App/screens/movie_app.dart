@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../core/utils/enums/theme_state.dart';
+import '../../home/home.dart';
 import '../../settings/localization/cubit/local_cubit.dart';
 
 class MovieApp extends StatelessWidget {
@@ -38,11 +39,7 @@ class MovieApp extends StatelessWidget {
                   .get(context)
                   .localization,
               builder: DevicePreview.appBuilder,
-              home: Builder(
-                builder: (context) {
-                  return const Placeholder();
-                },
-              ),
+              home: const Home(),
             );
           },
         );
