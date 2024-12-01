@@ -33,8 +33,8 @@ class CustomAppButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onPressed,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 transform: const GradientRotation(10),
@@ -52,10 +52,12 @@ class CustomAppButton extends StatelessWidget {
               border: Border.all(
                   color: borderColor ?? Colors.transparent, width: 2)),
           height: 53,
-          child: AutoSizeText(
-            buttonText ?? "",
-            style: AppTextStyle.style20WhiteW500.copyWith(color: textColor),
-            textAlign: TextAlign.center,
+          child: Center(
+            child: AutoSizeText(
+              buttonText ?? "",
+              style: AppTextStyle.style20WhiteW500.copyWith(color: textColor),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

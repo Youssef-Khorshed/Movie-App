@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
-import 'package:movie_app/features/App/screens/costume_app_widgets/costume_app_bar.dart';
+import '../../../core/utils/colors/app_colors.dart';
 import '../widgets/all_movies_card_widget.dart';
 import '../widgets/title_text_box_widget.dart';
 import '../widgets/trending_movies_card_widget.dart';
@@ -17,13 +17,7 @@ class _AllMoviesScreenState extends State<AllMoviesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: CustumeAppBar(
-          isBack: true,
-          title: AppLocalizations.of(context)!.movies,
-        ),
-      ),
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
         child: Column(

@@ -42,7 +42,7 @@ class CustomSettingItem extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,10 +52,11 @@ class CustomSettingItem extends StatelessWidget {
                   colorFilter: const ColorFilter.mode(
                       AppColors.black, BlendMode.srcIn), // Colors.black,
                 ),
-                verticalSpace(12),
+                verticalSpace(8),
                 AutoSizeText(
                   data.text,
                   textAlign: TextAlign.start,
+                  maxLines: 1,
                   style: GoogleFonts.poppins(
                       fontSize: 16, fontWeight: FontWeight.w400),
                 ),

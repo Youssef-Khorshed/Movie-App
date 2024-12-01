@@ -3,7 +3,6 @@ import 'package:movie_app/features/Menu/widgets/all_movies_card_item_widget.dart
 
 import '../../../core/utils/Routing/app_routes.dart';
 import '../../../core/utils/assets/app_images.dart';
-import '../../../core/utils/colors/app_colors.dart';
 
 class AllMoviesCardWidget extends StatefulWidget {
   const AllMoviesCardWidget({super.key});
@@ -13,7 +12,6 @@ class AllMoviesCardWidget extends StatefulWidget {
 }
 
 class _AllMoviesCardWidgetState extends State<AllMoviesCardWidget> {
-  @override
   final List<String> trendingMovies = [
     AppImages.cover,
     AppImages.medium,
@@ -28,6 +26,7 @@ class _AllMoviesCardWidgetState extends State<AllMoviesCardWidget> {
     "spiderman",
     "soul"
   ];
+  @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
