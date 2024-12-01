@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/menu_/presentation/widgets/watch_later_widget/watch_later_custom_card.dart';
+import 'package:movie_app/features/menu_screens/presentation/widgets/watch_later_widget/watch_later_custom_card.dart';
 
 import '../../../../../core/utils/assets/app_images.dart';
 
@@ -7,7 +7,8 @@ class WatchLaterHorizontalView extends StatefulWidget {
   const WatchLaterHorizontalView({super.key});
 
   @override
-  _WatchLaterHorizontalViewState createState() => _WatchLaterHorizontalViewState();
+  _WatchLaterHorizontalViewState createState() =>
+      _WatchLaterHorizontalViewState();
 }
 
 class _WatchLaterHorizontalViewState extends State<WatchLaterHorizontalView> {

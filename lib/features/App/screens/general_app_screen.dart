@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:movie_app/features/menu_/presentation/screens/watch_later_screen.dart';
+import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
 import '../../../core/utils/assets/app_icons.dart';
 import '../../../core/utils/colors/app_colors.dart';
 import '../../../core/utils/styles/app_text_style.dart';
-import '../../menu_/presentation/screens/favorite.dart';
-import '../../menu_/presentation/screens/movie_download_page.dart';
+import '../../menu_screens/presentation/screens/favorite.dart';
+import '../../menu_screens/presentation/screens/movie_download_page.dart';
 import 'costume_app_widgets/custom_app_drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
