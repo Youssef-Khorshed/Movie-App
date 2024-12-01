@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
-import 'package:movie_app/features/Search/model/movieModel.dart';
+import 'package:movie_app/features/Search/model/movie_model.dart';
 
 class Items {
   static const List<String> arabCountries = [

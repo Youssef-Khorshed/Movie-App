@@ -17,27 +17,25 @@ class MovieDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isLight =
         ThemeCubit.get(context).themeModeState == ThemeModeState.light;
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const MovieNameAndRatingSection(),
-            verticalSpace(10),
-            Text(
-              'Marvel Studios',
-              style: AppTextStyle.style12WhitW400,
-            ),
-            verticalSpace(20),
-            AutoSizeText(
-              movieDetailsText,
-              maxLines: 8,
-              style: AppTextStyle.style14WhitW400.copyWith(
-                  color: isLight ? AppColors.black : AppColors.gray10),
-            ),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const MovieNameAndRatingSection(),
+          verticalSpace(10),
+          Text(
+            'Marvel Studios',
+            style: AppTextStyle.style12WhitW400,
+          ),
+          verticalSpace(20),
+          AutoSizeText(
+            movieDetailsText,
+            maxLines: 8,
+            style: AppTextStyle.style14WhitW400
+                .copyWith(color: isLight ? AppColors.black : AppColors.gray10),
+          ),
+        ],
       ),
     );
   }

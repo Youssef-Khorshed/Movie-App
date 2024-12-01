@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
-import 'package:movie_app/features/Search/model/movieModel.dart';
+import 'package:movie_app/features/Search/model/movie_model.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

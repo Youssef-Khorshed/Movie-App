@@ -5,11 +5,11 @@ import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_bottomButtons_filter.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_buildBottomOptions.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_dropdownList_filter.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_bottom_buttons_filter.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_build_bottom_options.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_drop_down_list_filter.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_ratingbar_filter.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_toggoleButtons_filter.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_toggole_buttons_filter.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 class FilterScreen extends StatefulWidget {
