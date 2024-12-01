@@ -1,8 +1,7 @@
-// Movie Grid Widget
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/assets/app_animation.dart';
-import 'package:movie_app/features/Search/model/movieModel.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_MovieCard_search.dart';
+import 'package:movie_app/features/Search/model/movie_model.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_movie_card_search.dart';
 import 'package:lottie/lottie.dart';
 
 class MovieGrid extends StatelessWidget {

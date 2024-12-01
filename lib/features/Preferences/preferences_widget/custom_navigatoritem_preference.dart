@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
-import 'package:movie_app/features/Preferences/preferences_widget/custom_preferenceItem_preference.dart';
+import 'package:movie_app/features/Preferences/preferences_widget/custom_preference_item_preference.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 // ignore: must_be_immutable

@@ -5,11 +5,11 @@ import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
-import 'package:movie_app/features/Search/model/movieModel.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_GridnetChipList_search.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_MovieGrid_search.dart';
+import 'package:movie_app/features/Search/model/movie_model.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_gridnet_chip_list_search.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_movie_grid_search.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_itemsdropdown_filter.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_searchBar_serch.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_search_bar_serch.dart';
 import 'package:movie_app/features/settings/localization/cubit/local_cubit.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
