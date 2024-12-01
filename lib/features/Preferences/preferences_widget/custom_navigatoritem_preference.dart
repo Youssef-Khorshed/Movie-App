@@ -36,6 +36,7 @@ class _CustomNavigatoritemState extends State<CustomNavigatoritem> {
             : showLogoutDialog(context, () {});
       },
       child: Container(
+          height: 60,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(

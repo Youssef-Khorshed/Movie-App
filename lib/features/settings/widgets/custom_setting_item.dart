@@ -21,7 +21,7 @@ class CustomSettingItem extends StatelessWidget {
         if (index == 0) {
           Navigator.pushNamed(context, AppRoutes.profileEditingScreen);
         } else if (index == 1) {
-          // Navigator.pushNamed(context, AppRoutes.sett);
+          Navigator.pushNamed(context, AppRoutes.preferences);
         } else if (index == 2) {
           BlocProvider.of<LocalCubit>(context).changeLocale();
         }

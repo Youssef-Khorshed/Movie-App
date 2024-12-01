@@ -23,6 +23,10 @@ class PreferencesScreen extends StatelessWidget {
               ? AppColors.white
               : AppColors.black2,
       appBar: AppBar(
+        backgroundColor:
+            ThemeCubit.get(context).themeModeState == ThemeModeState.light
+                ? AppColors.white
+                : AppColors.black2,
         elevation: 0,
         title: AutoSizeText(AppLocalizations.of(context)!.settings,
             style:
@@ -63,13 +67,6 @@ class PreferencesScreen extends StatelessWidget {
           verticalSpace(15),
           CustomNavigatoritem(
               title: AppLocalizations.of(context)!.report_problem),
-          verticalSpace(15),
-          CustomNavigatoritem(title: AppLocalizations.of(context)!.about_us),
-          verticalSpace(15),
-          CustomNavigatoritem(
-            title: AppLocalizations.of(context)!.log_out,
-            navigate: false,
-          ),
         ]),
       ),
     );
