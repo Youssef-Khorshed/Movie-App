@@ -8,7 +8,6 @@ import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/settings/data/grid_view_model.dart';
 import 'package:movie_app/features/settings/localization/cubit/local_cubit.dart';
-import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 class CustomSettingItem extends StatelessWidget {
   const CustomSettingItem({super.key, required this.data, required this.index});

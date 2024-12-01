@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
-import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
 
 import '../../../../Core/Utils/Colors/app_colors.dart';
 import '../../../../Core/Utils/Spacing/app_spacing.dart';
