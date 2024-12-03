@@ -63,7 +63,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 verticalSpace(30),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(AppIcons.imagesHome1,width: 23,height: 23,),
                   title: Text(
                     "Home",
                     style: AppTextStyle.style14Gray5W500
@@ -86,7 +86,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.watchLater),
+                  leading: Image.asset(AppIcons.imagesClock,width: 23,height: 23,),
                   title: Text(
                     "Watch Later",
                     style: AppTextStyle.style14Gray5W500
@@ -109,7 +109,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.download),
+                  leading: Image.asset(AppIcons.imagesDownloading,width: 23,height: 23,),
                   title: Text(
                     "Download",
                     style: AppTextStyle.style14Gray5W500
@@ -132,7 +132,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(AppIcons.imagesFavorite),
                   title: Text(
                     "Favorite Movies",
                     style: AppTextStyle.style14Gray5W500
@@ -155,7 +155,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.actors),
+                  leading: Image.asset(AppIcons.imagesCarnivalMask,width: 23,height: 23,),
                   title: Text(
                     "Actors & Artists",
                     style: AppTextStyle.style14Gray5W500
@@ -178,7 +178,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(AppIcons.imagesVector,width: 23,height: 23,),
                   title: Text(
                     "Settings",
                     style: AppTextStyle.style14Gray5W500

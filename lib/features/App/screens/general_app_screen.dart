@@ -70,7 +70,26 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
               },
             );
           }),
-          title: AutoSizeText(
+          title:selctedIndex == 3 ?Row(
+            children: [
+              AutoSizeText(
+                names[selctedIndex],
+                style:
+                ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppTextStyle.style18WhiteW500:   AppTextStyle.style18WhiteW500.copyWith(color: AppColors.black),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: GestureDetector(
+                  child: SvgPicture.asset(AppIcons.favorite,colorFilter: const ColorFilter.mode(AppColors.purple2, BlendMode.srcIn),height: 20,width: 20,),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const NotificationScreen()));
+                  },
+                ),
+              ),
+            ],
+          ) :AutoSizeText(
             names[selctedIndex],
             style:
              ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppTextStyle.style18WhiteW500:   AppTextStyle.style18WhiteW500.copyWith(color: AppColors.black),

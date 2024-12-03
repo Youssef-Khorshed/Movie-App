@@ -54,15 +54,16 @@ class CustomSettingItem extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsetsDirectional.only(start: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset(
+                Image.asset(
+                  width: 24,
+                  height: 24,
                   data.svgIcon,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.black, BlendMode.srcIn), // Colors.black,
+            color:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? Colors.white:   Colors.black,
                 ),
                 verticalSpace(8),
                 AutoSizeText(

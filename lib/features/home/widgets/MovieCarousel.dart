@@ -42,13 +42,7 @@ class MovieCarousel extends StatelessWidget {
           builder: (BuildContext context) {
             return Column(
               children: [
-                Container(
-                  width: 124,
-                  height: 180,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent,
-                  ),
+                Expanded(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
