@@ -11,6 +11,7 @@ class AppColors {
   static const Color white5 = Color(0xFFD9d9d9);
   // purple Colors
   static const Color purple = Color(0xFF6C52EE);
+  static const Color purple3 = Color(0xFF695CAA);
   static const Color purple2 = Color(0xFF6C52EE);
   static const Color purpleblue = Color(0xFF2401FE);
   static const Color darkpurple = Color(0xFF3E2F88);
@@ -67,6 +68,17 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+  static Gradient formFieldGradientDarkColors = const LinearGradient(
+    colors: [
+      Color(0xFF3B3944),
+      Color(0xFF56526A),
+      Color(0xFF57536B),
+      Color(0xFF36353D),
+      Color(0xFF36314D),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 
   static Gradient backgroundGradientColors = const LinearGradient(
     colors: [
@@ -79,6 +91,29 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+
+  static Gradient backgroundGradientDarkColors = const LinearGradient(
+    colors: [
+      Color(0xFF2C2B30),
+      Color(0xFF2D2C33),
+      Color(0xFF36314D),
+      Color(0xFF695CAA),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
+
+  static Gradient backgroundScreenDarkColors = const LinearGradient(
+    colors: [
+      AppColors.black,
+      Color(0xFF2C2B30),
+      Color(0xFF2D2C33),
+      Color(0xFF36314D),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
+
   static Gradient backgroundGradientColors2 = const LinearGradient(
     colors: [
       Color(0xff6C52EE),

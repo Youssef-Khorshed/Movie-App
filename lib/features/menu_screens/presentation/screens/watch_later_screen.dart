@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../../core/utils/assets/app_images.dart';
 
+import '../../../../core/utils/enums/theme_state.dart';
 import '../widgets/watch_later_widget/custom_list_view_watch_later.dart';
 import '../widgets/watch_later_widget/watch_later_horizontal_view.dart';
 
@@ -29,21 +31,27 @@ class _WatchLaterScreenState extends State<WatchLaterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
-      body: Column(
-        children: [
-          Expanded(
-            child: CustomScrollView(slivers: [
-              const SliverToBoxAdapter(child: WatchLaterHorizontalView()),
-              const SliverToBoxAdapter(
-                  child: SizedBox(
-                height: 40,
-              )),
-              SliverToBoxAdapter(
-                  child: CustomListViewWatchLater(movies: movies)),
-            ]),
-          ),
-        ],
+
+      backgroundColor:ThemeCubit.get(context).themeModeState == ThemeModeState.light? AppColors.white: AppColors.white,
+      body: Container(
+        decoration: BoxDecoration(gradient:
+        ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppColors.backgroundScreenDarkColors:
+        null),
+        child: Column(
+          children: [
+            Expanded(
+              child: CustomScrollView(slivers: [
+                const SliverToBoxAdapter(child: WatchLaterHorizontalView()),
+                const SliverToBoxAdapter(
+                    child: SizedBox(
+                  height: 40,
+                )),
+                SliverToBoxAdapter(
+                    child: CustomListViewWatchLater(movies: movies)),
+              ]),
+            ),
+          ],
+        ),
       ),
     );
   }

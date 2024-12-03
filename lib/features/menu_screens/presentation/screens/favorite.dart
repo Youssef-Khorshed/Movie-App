@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../../core/utils/assets/app_images.dart';
 import '../../../../core/utils/colors/app_colors.dart';
+import '../../../../core/utils/enums/theme_state.dart';
 import '../widgets/favorite_widget/custom_list_view_favorite.dart';
 
 class FavoritePage extends StatelessWidget {
@@ -20,14 +22,17 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: Column(
-        children: [
-          Expanded(
-              child: SingleChildScrollView(
-                  child: CustomListViewFavorite(
-            movies: movies,
-          )))
-        ],
+      body: Container(
+        decoration: BoxDecoration(gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppColors.backgroundScreenDarkColors: null),
+        child: Column(
+          children: [
+            Expanded(
+                child: SingleChildScrollView(
+                    child: CustomListViewFavorite(
+              movies: movies,
+            )))
+          ],
+        ),
       ),
     );
   }

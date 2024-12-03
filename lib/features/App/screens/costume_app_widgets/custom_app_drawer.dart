@@ -1,12 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../../Core/Utils/Colors/app_colors.dart';
 import '../../../../Core/Utils/Spacing/app_spacing.dart';
 import '../../../../core/utils/assets/app_icons.dart';
+import '../../../../core/utils/enums/theme_state.dart';
 
 class CustomAppDrawer extends StatefulWidget {
   final int selectedIndex;
@@ -25,12 +26,19 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width * 0.7,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-              colors: [AppColors.white, AppColors.purple2]),
-          borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+          gradient:
+              ThemeCubit.get(context).themeModeState == ThemeModeState.light
+                  ? const LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      colors: [AppColors.white, AppColors.purple])
+                  : const LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      colors: [AppColors.gray14, AppColors.gray10],
+                    ),
+          borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
       child: ListView(
           padding: EdgeInsets.only(
@@ -57,7 +65,11 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 verticalSpace(30),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(
+                    AppIcons.imagesHome1,
+                    width: 23,
+                    height: 23,
+                  ),
                   title: Text(
                     "Home",
                     style: AppTextStyle.style14Gray5W500
@@ -80,7 +92,11 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.watchLater),
+                  leading: Image.asset(
+                    AppIcons.imagesClock,
+                    width: 23,
+                    height: 23,
+                  ),
                   title: Text(
                     "Watch Later",
                     style: AppTextStyle.style14Gray5W500
@@ -103,7 +119,11 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.download),
+                  leading: Image.asset(
+                    AppIcons.imagesDownloading,
+                    width: 23,
+                    height: 23,
+                  ),
                   title: Text(
                     "Download",
                     style: AppTextStyle.style14Gray5W500
@@ -126,7 +146,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(AppIcons.imagesFavorite),
                   title: Text(
                     "Favorite Movies",
                     style: AppTextStyle.style14Gray5W500
@@ -149,7 +169,11 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.actors),
+                  leading: Image.asset(
+                    AppIcons.imagesCarnivalMask,
+                    width: 23,
+                    height: 23,
+                  ),
                   title: Text(
                     "Actors & Artists",
                     style: AppTextStyle.style14Gray5W500
@@ -172,7 +196,11 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                 ),
                 ListTile(
                   minVerticalPadding: 0,
-                  leading: SvgPicture.asset(AppIcons.home),
+                  leading: Image.asset(
+                    AppIcons.imagesVector,
+                    width: 23,
+                    height: 23,
+                  ),
                   title: Text(
                     "Settings",
                     style: AppTextStyle.style14Gray5W500

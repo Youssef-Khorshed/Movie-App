@@ -24,7 +24,7 @@ class CustomListViewFavorite extends StatelessWidget {
           (index) {
             return StaggeredGridTile.count(
                 crossAxisCellCount: 2,
-                mainAxisCellCount: (index) % 2 == 0 ? 2.8 : 2.6,
+                mainAxisCellCount: (index) % 2 == 0 ? 3 : 2.6,
                 child: const CustomCard(
                   image: AppImages.medium,
                   text1: "2020",
