@@ -48,7 +48,9 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
-            gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark ? AppColors.formFieldGradientDarkColors : AppColors.formFieldGradientColors,
+            gradient: ThemeCubit.get(context).state == ThemeModeState.dark
+                ? AppColors.formFieldGradientDarkColors
+                : AppColors.formFieldGradientColors,
           ),
           child: TextFormField(
             controller: widget.controller,

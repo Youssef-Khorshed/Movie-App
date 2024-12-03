@@ -18,9 +18,7 @@ class ThemeCubit extends Cubit<ThemeState> {
       themeModeState = ThemeModeState.dark;
     } else {
       themeModeState = ThemeModeState.light;
-
     }
     emit(ThemeSuccess());
-
   }
 }

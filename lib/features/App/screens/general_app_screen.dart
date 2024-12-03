@@ -152,4 +152,8 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
       },
     );
   }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
+  }
 }

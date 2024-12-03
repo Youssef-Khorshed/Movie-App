@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
-
 import '../../../../Core/Utils/Colors/app_colors.dart';
 import '../../../../Core/Utils/Spacing/app_spacing.dart';
 import '../../../../core/utils/assets/app_icons.dart';

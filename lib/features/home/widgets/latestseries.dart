@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 
@@ -53,22 +54,20 @@ class Latestseries extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: CustomBuildimageHome(
                       width: 160,
-                      height: 220,
+                      height: 100,
                       imageurl: movie["image"]!,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  Row(
+                  verticalSpace(10),
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: AutoSizeText(
-                          movie["title"]!,
-                          style: AppTextStyle.style16BlackW500,
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow.ellipsis, // Prevents text overflow
-                        ),
+                      AutoSizeText(
+                        movie["title"]!,
+                        style: AppTextStyle.style16BlackW500,
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow.ellipsis, // Prevents text overflow
                       ),
                       AutoSizeText(
                         "(${movie["year"]!})",
@@ -76,6 +75,7 @@ class Latestseries extends StatelessWidget {
                       ),
                     ],
                   ),
+                  verticalSpace(30)
                 ],
               ),
             );

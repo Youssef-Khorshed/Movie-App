@@ -22,6 +22,10 @@ class Home extends StatelessWidget {
     return BlocBuilder<ThemeCubit, ThemeState>(
       builder: (context, state) {
         return Scaffold(
+          backgroundColor:
+              context.watch<ThemeCubit>().themeModeState == ThemeModeState.dark
+                  ? AppColors.black
+                  : null,
           body: SingleChildScrollView(
             child: Container(
               decoration: BoxDecoration(
@@ -63,9 +67,7 @@ class Home extends StatelessWidget {
                   const TitleTextBox(
                     title: 'Latest Series',
                   ),
-                  verticalSpace(5),
-                  SizedBox(height: height * .3, child: const Latestseries()),
-                  verticalSpace(30),
+                  SizedBox(height: height * .3, child: const MovieCarousel()),
                 ],
               ),
             ),

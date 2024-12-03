@@ -1,9 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
-
 import 'package:movie_app/core/utils/colors/app_colors.dart';
+import 'package:movie_app/core/utils/enums/theme_state.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 // ignore: must_be_immutable
 class CustomNoitifcationcardNotification extends StatelessWidget {
@@ -19,10 +21,6 @@ class CustomNoitifcationcardNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildNotificationCard(title, subtitle, isNew);
-  }
-
-  Widget _buildNotificationCard(String title, String subtitle, bool isNew) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -37,10 +35,14 @@ class CustomNoitifcationcardNotification extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16.0),
-                  gradient: LinearGradient(colors: [
-                    AppColors.purple.withOpacity(0.9),
-                    AppColors.white5,
-                  ], end: const Alignment(0, -8)),
+                  gradient: LinearGradient(
+                      colors: gettheme(context)
+                          ? [
+                              AppColors.purple.withOpacity(0.9),
+                              AppColors.white5,
+                            ]
+                          : [AppColors.gray4, AppColors.gray10],
+                      end: const Alignment(0, -8)),
                 ),
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -101,5 +103,9 @@ class CustomNoitifcationcardNotification extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
   }
 }

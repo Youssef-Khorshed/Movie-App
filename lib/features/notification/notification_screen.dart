@@ -1,21 +1,31 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/Core/Utils/Colors/app_colors.dart';
 import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/notification/notification_widget/custom_noitifcationcard_notification.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themecubit = context.watch<ThemeCubit>();
+
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: themecubit.themeModeState == ThemeModeState.dark
+          ? AppColors.black2
+          : AppColors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: themecubit.themeModeState == ThemeModeState.dark
+            ? AppColors.black2
+            : AppColors.white,
         elevation: 0,
         leading: IconButton(
           icon: SvgPicture.asset(AppIcons.back),
@@ -24,7 +34,7 @@ class NotificationScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: AutoSizeText('Notifications',
+        title: AutoSizeText(AppLocalizations.of(context)!.notifications,
             style: AppTextStyle.style20PurpleW700),
         centerTitle: true,
         actions: [
@@ -47,9 +57,11 @@ class NotificationScreen extends StatelessWidget {
                 onPressed: () {
                   // Handle mark all as read
                 },
-                child: const Text(
-                  'Mark all as read',
-                  style: TextStyle(color: Color(0xff777777)),
+                child: AutoSizeText(
+                  AppLocalizations.of(context)!.mark_all_as_read,
+                  style: themecubit.themeModeState == ThemeModeState.dark
+                      ? AppTextStyle.style24WhiteW600
+                      : AppTextStyle.style14Gray10W500,
                 ),
               ),
             ],

@@ -94,7 +94,7 @@ class AppColors {
 
   static Gradient backgroundGradientDarkColors = const LinearGradient(
     colors: [
-      Color(0xFF2C2B30),
+      AppColors.black2,
       Color(0xFF2D2C33),
       Color(0xFF36314D),
       Color(0xFF695CAA),

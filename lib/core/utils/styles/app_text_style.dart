@@ -255,6 +255,11 @@ abstract class AppTextStyle {
       color: AppColors.gray5,
       fontFamily: GoogleFonts.robotoFlex().fontFamily);
 
+  static TextStyle style14Gray10W500 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: AppColors.gray10,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
   static TextStyle style14Gray8W500RobotFlex = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
