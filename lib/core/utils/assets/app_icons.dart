@@ -10,7 +10,6 @@ class AppIcons {
   static const String emojis = 'assets/icons/emojis.svg';
   static const String facebook = 'assets/icons/facebook.svg';
   static const String favorite = 'assets/icons/favorite.svg';
-  static const String filter = 'assets/icons/filter.svg';
   static const String gmail = 'assets/icons/gmail.svg';
   static const String hidePassword = 'assets/icons/hide_password.svg';
   static const String home = 'assets/icons/home .svg';
@@ -30,4 +29,7 @@ class AppIcons {
   static const String support = 'assets/icons/support.svg';
   static const String watchLater = 'assets/icons/watch_later.svg';
   static const String X = 'assets/icons/x.svg';
+  static const String editImage = 'assets/icons/edit_image.svg';
+  static const String settingnotification = 'assets/icons/setting-3.svg';
+  static const String arrowback = 'assets/icons/Back_arrow.svg';
 }
