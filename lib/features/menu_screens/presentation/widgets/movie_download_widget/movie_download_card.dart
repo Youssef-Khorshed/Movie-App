@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../../../core/utils/assets/app_images.dart';
 import '../../../../../core/utils/colors/app_colors.dart';
+import '../../../../../core/utils/enums/theme_state.dart';
 import '../../../../../core/utils/styles/app_text_style.dart';
 
 class MovieDownloadCard extends StatelessWidget {
@@ -10,10 +12,18 @@ class MovieDownloadCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 212,
+
       padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
       decoration: BoxDecoration(
+
         borderRadius: BorderRadius.circular(20),
-        gradient: const LinearGradient(
+        gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? LinearGradient(
+          colors: [AppColors.black2, AppColors.gray1],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ): const
+        LinearGradient(
           colors: [AppColors.purpleblue, AppColors.white],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -29,11 +39,14 @@ class MovieDownloadCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          Align(
+            alignment: Alignment.centerLeft,
             child: ClipRRect(
 
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
+                height:160 ,
+                width: 95,
                 AppImages.movieBackground,
 
                 fit: BoxFit.fill,
@@ -60,27 +73,44 @@ class MovieDownloadCard extends StatelessWidget {
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.purpleblue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                    Container(
+                      height: 40,
+                      width: 99,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? LinearGradient(
+                          colors: [AppColors.purple2, AppColors.gray1],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ): const
+                        LinearGradient(
+                          colors: [AppColors.purpleblue, AppColors.white],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
                       ),
-                      child: Text('Watch',style: AppTextStyle.style14WhiteW400,),
+                      child: Center(child: Text('Watch',style: AppTextStyle.style14WhiteW400,)),
                     ),
                     const SizedBox(width: 16),
-                    IconButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.purpleblue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                    Container(
+                      height: 40,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? LinearGradient(
+                          colors: [AppColors.purple2, AppColors.gray1],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ): const
+                        LinearGradient(
+                          colors: [AppColors.menuPurpleColor, AppColors.darkpurple],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
-                      ),
-                      onPressed: () {},
-                      icon: const Icon(Icons.delete, color: AppColors.white),
-                    ),
+                      )
+                      ,child:  Icon(Icons.delete, color: AppColors.white)),
+
+
                   ],
                 ),
               ],

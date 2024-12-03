@@ -17,7 +17,6 @@ class _AllMoviesScreenState extends State<AllMoviesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
         child: Column(

@@ -25,7 +25,7 @@ class CustomListViewWatchLater extends StatelessWidget {
           (index) {
             return StaggeredGridTile.count(
                 crossAxisCellCount: 2,
-                mainAxisCellCount: (index) % 2 == 0 ? 2.8 : 2.6,
+                mainAxisCellCount: (index) % 2 == 0 ? 3.8 : 2.6,
                 child: const CustomCard(
                   image: AppImages.movieBackground,
                   text2: "2020",

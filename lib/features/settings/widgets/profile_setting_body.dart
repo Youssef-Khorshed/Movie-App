@@ -13,7 +13,6 @@ class ProfileSettingBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

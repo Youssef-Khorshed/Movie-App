@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 
 import '../../../../Core/Utils/Colors/app_colors.dart';
 import '../../../../Core/Utils/Spacing/app_spacing.dart';
 import '../../../../core/utils/assets/app_icons.dart';
+import '../../../../core/utils/enums/theme_state.dart';
 
 class CustomAppDrawer extends StatefulWidget {
   final int selectedIndex;
@@ -25,11 +27,15 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width * 0.7,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
+      decoration:  BoxDecoration(
+          gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.light? LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
-              colors: [AppColors.white, AppColors.menuPurpleColor]),
+              colors: [AppColors.white, AppColors.menuPurpleColor]): LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [AppColors.gray14, AppColors.gray10],
+              ),
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
       child: ListView(

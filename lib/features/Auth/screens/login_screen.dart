@@ -27,6 +27,8 @@ class LogInScreen extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
+
+
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

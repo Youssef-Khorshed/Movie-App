@@ -22,6 +22,7 @@ class MovieApp extends StatelessWidget {
         return BlocBuilder<LocalCubit, LocalState>(
           builder: (context, themeMode) {
             return MaterialApp(
+
               theme: ThemeData.light(), // Light theme
               darkTheme: ThemeData.dark(), // Dark theme
               themeMode: themeCubit.themeModeState == ThemeModeState.light

@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../../core/utils/colors/app_colors.dart';
+import '../../../../core/utils/enums/theme_state.dart';
 
 class CustomAppFormField extends StatefulWidget {
   final String? hintText;
@@ -46,7 +48,7 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
-            gradient: AppColors.formFieldGradientColors,
+            gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.dark ? AppColors.formFieldGradientDarkColors : AppColors.formFieldGradientColors,
           ),
           child: TextFormField(
             controller: widget.controller,

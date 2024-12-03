@@ -44,7 +44,7 @@ class MovieCarousel extends StatelessWidget {
               children: [
                 Container(
                   width: 124,
-                  height: 184,
+                  height: 180,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.redAccent,

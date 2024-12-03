@@ -30,7 +30,6 @@ class ForgetPasswordScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(35),
                 CustomAuthTitleWidget(
                   title: AppLocalizations.of(context)!.forgot_password,
                 ),

@@ -26,61 +26,63 @@ class SignupScreen extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                verticalSpace(20),
-                const CustomAuthTitleWidget(
-                  title: "Get Started Free",
-                ),
-                verticalSpace(10),
-                const CustomAuthSubtitleWidget(
-                  subtitle: "Free Forever. No Credit Card Needed",
-                ),
-                verticalSpace(25),
-                CustomAppFormField(
-                  textFormFieldTitle:
-                      AppLocalizations.of(context)!.email_address,
-                  hintText:
-                      AppLocalizations.of(context)!.enter_your_email_address,
-                  prefixIcon: Icons.person_2_outlined,
-                ),
-                CustomAppFormField(
-                  textFormFieldTitle: AppLocalizations.of(context)!.username,
-                  hintText: AppLocalizations.of(context)!.enter_your_username,
-                  prefixIcon: Icons.person_2_outlined,
-                ),
-                verticalSpace(10),
-                CustomAppFormField(
-                  textFormFieldTitle: AppLocalizations.of(context)!.password,
-                  hintText: AppLocalizations.of(context)!.enter_your_password,
-                  prefixIcon: Icons.password,
-                  isPassword: true,
-                  obscureText: true,
-                ),
-                verticalSpace(10),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  child: CustomAppButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.generalScreen);
-                    },
-                    buttonText: AppLocalizations.of(context)!.sign_up,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  verticalSpace(20),
+                  const CustomAuthTitleWidget(
+                    title: "Get Started Free",
                   ),
-                ),
-                verticalSpace(5),
-                CustomTextRowWidget(
-                  firstTitle: AppLocalizations.of(context)!.have_an_account,
-                  secTitle: AppLocalizations.of(context)!.log_in,
-                  onTap: () {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.loginScreen);
-                  },
-                ),
-                verticalSpace(10)
-              ],
+                  verticalSpace(10),
+                  const CustomAuthSubtitleWidget(
+                    subtitle: "Free Forever. No Credit Card Needed",
+                  ),
+                  verticalSpace(25),
+                  CustomAppFormField(
+                    textFormFieldTitle:
+                        AppLocalizations.of(context)!.email_address,
+                    hintText:
+                        AppLocalizations.of(context)!.enter_your_email_address,
+                    prefixIcon: Icons.person_2_outlined,
+                  ),
+                  CustomAppFormField(
+                    textFormFieldTitle: AppLocalizations.of(context)!.username,
+                    hintText: AppLocalizations.of(context)!.enter_your_username,
+                    prefixIcon: Icons.person_2_outlined,
+                  ),
+                  verticalSpace(10),
+                  CustomAppFormField(
+                    textFormFieldTitle: AppLocalizations.of(context)!.password,
+                    hintText: AppLocalizations.of(context)!.enter_your_password,
+                    prefixIcon: Icons.password,
+                    isPassword: true,
+                    obscureText: true,
+                  ),
+                  verticalSpace(10),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.1,
+                    child: CustomAppButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, AppRoutes.generalScreen);
+                      },
+                      buttonText: AppLocalizations.of(context)!.sign_up,
+                    ),
+                  ),
+                  verticalSpace(5),
+                  CustomTextRowWidget(
+                    firstTitle: AppLocalizations.of(context)!.have_an_account,
+                    secTitle: AppLocalizations.of(context)!.log_in,
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, AppRoutes.loginScreen);
+                    },
+                  ),
+                  verticalSpace(10)
+                ],
+              ),
             ),
           ),
         ));

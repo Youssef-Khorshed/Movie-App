@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/colors/app_colors.dart';
+import '../../../../core/utils/enums/theme_state.dart';
 import '../../../../core/utils/styles/app_text_style.dart';
+import '../../../settings/theme/cubit/theme_cubit.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.image, this.text1, this.text2});
@@ -29,7 +31,7 @@ class CustomCard extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 2.0),
                     child: Text(
                       text2!,
-                      style: AppTextStyle.style16WhiteW400
+                      style:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppTextStyle.style16WhiteW400: AppTextStyle.style16WhiteW400
                           .copyWith(color: AppColors.black),
                     ),
                   )
