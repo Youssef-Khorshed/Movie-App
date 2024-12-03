@@ -1,11 +1,14 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_gridnet_chip_list_search.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_itemsdropdown_filter.dart';
 import '../../core/utils/mediaquery/mediaquery.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 class MovieDetails extends StatelessWidget {
   const MovieDetails({super.key});
@@ -66,13 +69,11 @@ class MovieDetails extends StatelessWidget {
                             end: Alignment.bottomRight,
                           ),
                         ),
-                        child: Text(
-                          "Horror",
-                          style: GoogleFonts.robotoFlex(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            color: AppColors.white,
-                          ),
+                        child: AutoSizeText(
+                          AppLocalizations.of(context)!.horror,
+                          style: 
+                          AppTextStyle.style20WhiteW600,
+                          
                         ),
                       ),
                     ),

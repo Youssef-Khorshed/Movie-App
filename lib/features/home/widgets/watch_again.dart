@@ -1,7 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class WatchAgain extends StatelessWidget {
   const WatchAgain({super.key});
@@ -80,13 +82,9 @@ class WatchAgain extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      AutoSizeText(
                         "${movie["title"]!} ",
-                        style: GoogleFonts.lato(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xff000000),
-                        ),
+                        style: AppTextStyle.style14BlackW700,
                       ),
                     ],
                   ),
@@ -95,13 +93,10 @@ class WatchAgain extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      AutoSizeText(
                         "(${movie["year"]!})",
-                        style: GoogleFonts.lato(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff000000),
-                        ),
+                        style: AppTextStyle.style12BlackW400,
+                        
                       ),
                     ],
                   ),

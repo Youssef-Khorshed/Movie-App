@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class Bannermovie extends StatelessWidget {
   const Bannermovie({super.key, required this.text});
-final String text;
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return     Container(
+    return Container(
       width: 161,
       height: 30,
       decoration: BoxDecoration(
@@ -18,12 +19,13 @@ final String text;
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-
         ),
-
       ),
       alignment: Alignment.center,
-      child: Text(text,style: GoogleFonts.cinzel(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 16),),
+      child: Text(
+        text,
+        style:AppTextStyle.style16WhiteW700,
+      ),
     );
   }
 }

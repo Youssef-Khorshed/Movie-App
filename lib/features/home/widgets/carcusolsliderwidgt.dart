@@ -8,6 +8,8 @@ import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 import 'package:movie_app/features/Details/views/movie_details_view.dart';
 
+import '../../../core/utils/styles/app_text_style.dart';
+
 class CarouselWithScore extends StatelessWidget {
   // Constructor with named key parameter
   const CarouselWithScore({super.key});
@@ -64,14 +66,10 @@ class CarouselWithScore extends StatelessWidget {
                                   color: AppColors.orange,
                                   size: 20,
                                 ),
-                                horizontalSpace(4),
-                                const AutoSizeText(
+                                SizedBox(width: 4),
+                                AutoSizeText(
                                   '9.5',
-                                  style: TextStyle(
-                                    color: AppColors.orange,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppTextStyle.style16OrangeBold,
                                 ),
                               ],
                             ),

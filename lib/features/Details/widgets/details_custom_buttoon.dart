@@ -1,6 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+
 
 class DetailsCustomButton extends StatelessWidget {
   const DetailsCustomButton({
@@ -27,8 +30,8 @@ class DetailsCustomButton extends StatelessWidget {
         ], begin: Alignment.bottomLeft, end: Alignment.topRight),
       ),
       child: Center(
-        child: Text(
-          buttonName ?? 'WATCH NOW',
+        child: AutoSizeText(
+          buttonName ?? AppLocalizations.of(context)!.watch_now,
           style: AppTextStyle.style32WhitW400.copyWith(
               color: AppColors.white,
               fontSize: 20,

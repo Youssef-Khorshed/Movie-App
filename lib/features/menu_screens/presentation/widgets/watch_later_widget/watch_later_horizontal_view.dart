@@ -41,8 +41,7 @@ class _WatchLaterHorizontalViewState extends State<WatchLaterHorizontalView> {
         itemCount: 10,
         itemBuilder: (context, index) {
           double scale = (_currentPage - index).abs().clamp(0.0, 1.0);
-          double size = 1 - scale * 0.2; // تصغير حسب المسافة
-
+          double size = 1 - scale * 0.2; 
           return Transform.scale(
             scale: size,
             child: const CustomCard(

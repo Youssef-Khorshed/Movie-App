@@ -7,6 +7,8 @@ import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/Details/views/movie_details_view.dart';
 import 'package:movie_app/features/Details/widgets/movie_name_and_rating_section.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+
 
 class MovieDetailsWidget extends StatelessWidget {
   const MovieDetailsWidget({
@@ -24,8 +26,8 @@ class MovieDetailsWidget extends StatelessWidget {
         children: [
           const MovieNameAndRatingSection(),
           verticalSpace(10),
-          Text(
-            'Marvel Studios',
+          AutoSizeText(
+            AppLocalizations.of(context)!.marvel_studios,
             style: AppTextStyle.style12WhitW400,
           ),
           verticalSpace(20),

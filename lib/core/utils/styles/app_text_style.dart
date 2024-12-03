@@ -66,6 +66,19 @@ abstract class AppTextStyle {
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
+  static TextStyle style20WBlackW600 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style20blueW700 = TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: 20,
+      color: Color(0xff6C52EE),
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
   static TextStyle style18WhiteW500 = TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w500,
@@ -155,6 +168,13 @@ abstract class AppTextStyle {
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
+  static TextStyle style12BlackW600 = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
   static TextStyle style10DarkGray2W600 = TextStyle(
       fontSize: 10,
       color: AppColors.darkgray2,
@@ -168,12 +188,51 @@ abstract class AppTextStyle {
       color: AppColors.gray3,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style16WhiteW700 = TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+      fontSize: 16,
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
+  static TextStyle style14BlueW700 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+      color: const Color(0xff6C52EE),
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
+  static TextStyle style12grayW400 = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xff828282),
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
+  static TextStyle style20purpleW600 = TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      color: AppColors.purple,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
   static TextStyle style20WhiteW500 = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w500,
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style16OrangeBold = TextStyle(
+      color: Colors.orange,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style14BlackW700 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+      color: const Color(0xff000000),
+      height: 0,
+      fontFamily: GoogleFonts.lato().fontFamily);
 
   static TextStyle style14WhitW400 = GoogleFonts.robotoSlab(
     fontWeight: FontWeight.w400,
@@ -217,5 +276,5 @@ abstract class AppTextStyle {
       fontSize: 12,
       fontWeight: FontWeight.w600,
       color: AppColors.darkpurple,
-      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+      fontFamily: GoogleFonts.poppins().fontFamily);
 }

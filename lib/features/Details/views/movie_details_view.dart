@@ -62,7 +62,6 @@ class MovieDetailsView extends StatelessWidget {
                 const OptionRow(),
                 verticalSpace(40),
                 const DetailsCustomButton(),
-                // verticalSpace(10)s
               ],
             ),
           )

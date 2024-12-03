@@ -8,6 +8,7 @@ import '../../App/screens/costume_app_widgets/custom_app_button.dart';
 import '../widgets/custom_auth_subtitle_widget.dart';
 import '../widgets/custom_auth_title_widget.dart';
 import '../widgets/custom_background_continer.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 class PersonalizeMoveScreen extends StatefulWidget {
   const PersonalizeMoveScreen({super.key});
@@ -53,13 +54,13 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 verticalSpace(35),
-                const CustomAuthTitleWidget(
-                  title: "Personalize your movie experience",
+                CustomAuthTitleWidget(
+                  title: AppLocalizations.of(context)!.personalize_movies,
                 ),
                 verticalSpace(10),
-                const CustomAuthSubtitleWidget(
-                  subtitle:
-                      "Please tell us your preferences so that we can recommend your movie experience as per your want",
+                CustomAuthSubtitleWidget(
+                  subtitle: AppLocalizations.of(context)!
+                      .personalize_your_movie_experience,
                 ),
                 verticalSpace(20),
                 Wrap(
@@ -86,7 +87,8 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                           Navigator.pushReplacementNamed(
                               context, AppRoutes.generalScreen);
                         },
-                        buttonText: "Continue",
+                        buttonText:
+                            AppLocalizations.of(context)!.continue_buttom,
                       ),
                     ),
                     SizedBox(
@@ -96,7 +98,7 @@ class _PersonalizeMoveScreenState extends State<PersonalizeMoveScreen> {
                           Navigator.pushReplacementNamed(
                               context, AppRoutes.generalScreen);
                         },
-                        buttonText: "Skip",
+                        buttonText: AppLocalizations.of(context)!.skip,
                       ),
                     ),
                   ],

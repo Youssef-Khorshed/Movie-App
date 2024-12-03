@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class MovieGridCustom extends StatelessWidget {
   const MovieGridCustom({super.key});
@@ -60,13 +62,10 @@ class MovieGridCustom extends StatelessWidget {
                   color: Colors.black.withOpacity(0.7),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Text(
+                child: AutoSizeText(
                   '⭐ 8.7', // Replace with dynamic rating
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: AppTextStyle.style12WhiteW400
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
             ),
