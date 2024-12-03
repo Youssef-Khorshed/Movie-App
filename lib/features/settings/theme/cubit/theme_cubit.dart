@@ -10,7 +10,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit() : super(ThemeInitial());
 
   static ThemeCubit get(context) => BlocProvider.of(context);
-  ThemeModeState themeModeState = ThemeModeState.light;
+  ThemeModeState themeModeState = ThemeModeState.dark;
   void changeTheme() {
     emit(ThemeLoading());
 

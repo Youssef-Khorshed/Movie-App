@@ -1,8 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../core/utils/colors/app_colors.dart';
 
 class MostWatched extends StatelessWidget {
@@ -106,5 +109,9 @@ class MostWatched extends StatelessWidget {
       default:
         return '';
     }
+  }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
   }
 }

@@ -33,12 +33,12 @@ class SignupScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   verticalSpace(20),
-                  const CustomAuthTitleWidget(
-                    title: "Get Started Free",
+                  CustomAuthTitleWidget(
+                    title: AppLocalizations.of(context)!.welcome_back,
                   ),
                   verticalSpace(10),
-                  const CustomAuthSubtitleWidget(
-                    subtitle: "Free Forever. No Credit Card Needed",
+                  CustomAuthSubtitleWidget(
+                    subtitle: AppLocalizations.of(context)!.freeeverywhare,
                   ),
                   verticalSpace(25),
                   CustomAppFormField(

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../../../core/utils/colors/app_colors.dart';
@@ -48,9 +49,9 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
-            gradient: ThemeCubit.get(context).state == ThemeModeState.dark
-                ? AppColors.formFieldGradientDarkColors
-                : AppColors.formFieldGradientColors,
+            gradient: gettheme(context)
+                ? AppColors.formFieldGradientColors
+                : AppColors.formFieldGradientDarkColors,
           ),
           child: TextFormField(
             controller: widget.controller,
@@ -105,5 +106,9 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
         ),
       ],
     );
+  }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
   }
 }

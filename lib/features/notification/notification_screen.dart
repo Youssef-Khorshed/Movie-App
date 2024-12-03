@@ -16,16 +16,10 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themecubit = context.watch<ThemeCubit>();
-
     return Scaffold(
-      backgroundColor: themecubit.themeModeState == ThemeModeState.dark
-          ? AppColors.black2
-          : AppColors.white,
+      backgroundColor: gettheme(context) ? AppColors.white : AppColors.black2,
       appBar: AppBar(
-        backgroundColor: themecubit.themeModeState == ThemeModeState.dark
-            ? AppColors.black2
-            : AppColors.white,
+        backgroundColor: gettheme(context) ? AppColors.white : AppColors.black2,
         elevation: 0,
         leading: IconButton(
           icon: SvgPicture.asset(AppIcons.back),
@@ -35,7 +29,9 @@ class NotificationScreen extends StatelessWidget {
           },
         ),
         title: AutoSizeText(AppLocalizations.of(context)!.notifications,
-            style: AppTextStyle.style20PurpleW700),
+            style: gettheme(context)
+                ? AppTextStyle.style20PurpleW700
+                : AppTextStyle.style20WhiteW700),
         centerTitle: true,
         actions: [
           Padding(
@@ -59,20 +55,20 @@ class NotificationScreen extends StatelessWidget {
                 },
                 child: AutoSizeText(
                   AppLocalizations.of(context)!.mark_all_as_read,
-                  style: themecubit.themeModeState == ThemeModeState.dark
+                  style: gettheme(context)
                       ? AppTextStyle.style24WhiteW600
                       : AppTextStyle.style14Gray10W500,
                 ),
               ),
             ],
           ),
-          _buildSectionTitle('Today'),
+          _buildSectionTitle(AppLocalizations.of(context)!.today),
           CustomNoitifcationcardNotification(
               title: 'New Movie!', subtitle: 'Details', isNew: true),
           CustomNoitifcationcardNotification(
               title: 'Another Movies!', subtitle: 'Details', isNew: true),
           const SizedBox(height: 16.0),
-          _buildSectionTitle('Yesterday'),
+          _buildSectionTitle(AppLocalizations.of(context)!.yesterday),
           CustomNoitifcationcardNotification(
               title: 'New Update Avsailable',
               subtitle: 'A new update of the app is available',
@@ -80,7 +76,7 @@ class NotificationScreen extends StatelessWidget {
           CustomNoitifcationcardNotification(
               title: 'Yesterday Movsie!', subtitle: 'Details', isNew: false),
           const SizedBox(height: 16.0),
-          _buildSectionTitle('Some days ago'),
+          _buildSectionTitle(AppLocalizations.of(context)!.some_days_ago),
           CustomNoitifcationcardNotification(
               title: 'Old Movie!', subtitle: 'Details', isNew: false),
         ],
@@ -105,5 +101,9 @@ class NotificationScreen extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
   }
 }

@@ -3,7 +3,10 @@ import 'package:day_night_themed_switch/day_night_themed_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/features/Menu/screens/all_movies_screen.dart';
+import 'package:movie_app/features/Search/screens/search.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_search_bar_serch.dart';
 import 'package:movie_app/features/home/home.dart';
 import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
 import 'package:movie_app/features/notification/notification_screen.dart';
@@ -55,102 +58,69 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
       AppLocalizations.of(context)!.actors_and_artists,
       AppLocalizations.of(context)!.settings,
     ];
-    return BlocBuilder<ThemeCubit, ThemeState>(
-      builder: (context, state) {
-        return Scaffold(
-            backgroundColor:
-                ThemeCubit.get(context).themeModeState == ThemeModeState.dark
-                    ? AppColors.black2
-                    : AppColors.white,
-            appBar: AppBar(
-              elevation: 0,
-              leading: Builder(builder: (context) {
-                return IconButton(
-                  icon: SvgPicture.asset(AppIcons.menu),
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                );
-              }),
-              title: selctedIndex == 3
-                  ? Row(
-                      children: [
-                        AutoSizeText(
-                          names[selctedIndex],
-                          style: ThemeCubit.get(context).themeModeState ==
-                                  ThemeModeState.dark
-                              ? AppTextStyle.style18WhiteW500
-                              : AppTextStyle.style18WhiteW500
-                                  .copyWith(color: AppColors.black),
-                        ),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: GestureDetector(
-                            child: SvgPicture.asset(
-                              AppIcons.favorite,
-                              colorFilter: const ColorFilter.mode(
-                                  AppColors.purple2, BlendMode.srcIn),
-                              height: 20,
-                              width: 20,
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      const NotificationScreen()));
-                            },
-                          ),
-                        ),
-                      ],
-                    )
-                  : AutoSizeText(
-                      names[selctedIndex],
-                      style: ThemeCubit.get(context).themeModeState ==
-                              ThemeModeState.dark
-                          ? AppTextStyle.style18WhiteW500
-                          : AppTextStyle.style18WhiteW500
-                              .copyWith(color: AppColors.black),
+
+    return Scaffold(
+        backgroundColor: gettheme(context) ? AppColors.white : AppColors.black,
+        appBar: AppBar(
+          elevation: 0,
+          leading: Builder(builder: (context) {
+            return IconButton(
+              icon: SvgPicture.asset(AppIcons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }),
+          title: selctedIndex == 0
+              ? GestureDetector(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SearchScreen())),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: SearchScreenBar(
+                      isenabled: false,
                     ),
-              centerTitle: true,
-              backgroundColor:
-                  ThemeCubit.get(context).themeModeState == ThemeModeState.dark
-                      ? AppColors.black2
-                      : AppColors.white,
-              actions: selctedIndex == 0
-                  ? [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: GestureDetector(
-                          child: SvgPicture.asset(AppIcons.notification),
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    const NotificationScreen()));
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                          width: 55,
-                          child: DayNightSwitch(
-                              value: ThemeCubit.get(context).themeModeState ==
-                                  ThemeModeState.dark,
-                              onChanged: (e) {
-                                ThemeCubit.get(context).changeTheme();
-                              })),
-                      const SizedBox(width: 10),
-                    ]
-                  : [],
-            ),
-            drawer: CustomAppDrawer(
-              onItemTap: (index) => onItemTap(index),
-              selectedIndex: selctedIndex,
-            ),
-            body: Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: screens[selctedIndex],
-            ));
-      },
-    );
+                  ),
+                )
+              : AutoSizeText(
+                  names[selctedIndex],
+                  style: gettheme(context)
+                      ? AppTextStyle.style18WhiteW500
+                      : AppTextStyle.style18WhiteW500
+                          .copyWith(color: AppColors.black),
+                ),
+          centerTitle: true,
+          backgroundColor: gettheme(context) ? null : AppColors.black,
+          actions: selctedIndex == 0
+              ? [
+                  GestureDetector(
+                    child: SvgPicture.asset(AppIcons.notification),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const NotificationScreen()));
+                    },
+                  ),
+                  horizontalSpace(10),
+                  SizedBox(
+                      width: 55,
+                      child: DayNightSwitch(
+                          value: ThemeCubit.get(context).themeModeState ==
+                              ThemeModeState.dark,
+                          onChanged: (e) {
+                            ThemeCubit.get(context).changeTheme();
+                          })),
+                  horizontalSpace(10),
+                ]
+              : [],
+        ),
+        drawer: CustomAppDrawer(
+          onItemTap: (index) => onItemTap(index),
+          selectedIndex: selctedIndex,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: screens[selctedIndex],
+        ));
   }
 
   bool gettheme(BuildContext context) {

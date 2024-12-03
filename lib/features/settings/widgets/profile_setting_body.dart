@@ -1,9 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/settings/widgets/grid_view_section.dart';
 import 'package:movie_app/features/settings/widgets/profile_picture.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileSettingBody extends StatelessWidget {
   const ProfileSettingBody({
@@ -18,8 +21,8 @@ class ProfileSettingBody extends StatelessWidget {
           children: [
             const ProfilePicture(),
             verticalSpace(15),
-            Text(
-              'The name',
+            AutoSizeText(
+              AppLocalizations.of(context)!.profile,
               style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600, fontSize: 20),
             ),
@@ -29,9 +32,11 @@ class ProfileSettingBody extends StatelessWidget {
               child: const GridViewSection(),
             ),
             TextButton(
-              onPressed: () {},
-              child: Text(
-                'Log Out',
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.welcomeScreen);
+              },
+              child: AutoSizeText(
+                AppLocalizations.of(context)!.log_out,
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
                     fontSize: 20,

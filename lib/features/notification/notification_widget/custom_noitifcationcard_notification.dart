@@ -41,7 +41,11 @@ class CustomNoitifcationcardNotification extends StatelessWidget {
                               AppColors.purple.withOpacity(0.9),
                               AppColors.white5,
                             ]
-                          : [AppColors.gray4, AppColors.gray10],
+                          : [
+                              AppColors.gray4,
+                              AppColors.gray6,
+                              AppColors.gray10
+                            ],
                       end: const Alignment(0, -8)),
                 ),
                 padding: const EdgeInsets.all(16.0),

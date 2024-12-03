@@ -2,6 +2,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class MovieCarousel extends StatelessWidget {
@@ -49,7 +50,7 @@ class MovieCarousel extends StatelessWidget {
                   height: 184,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent,
+                    color: AppColors.gray6,
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),

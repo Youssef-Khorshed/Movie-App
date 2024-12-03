@@ -6,11 +6,9 @@ import 'package:movie_app/features/Menu/widgets/title_text_box_widget.dart';
 import 'package:movie_app/features/home/movie_details.dart';
 import 'package:movie_app/features/home/widgets/movieCarousel.dart';
 import 'package:movie_app/features/home/widgets/carcusolsliderwidgt.dart';
-import 'package:movie_app/features/home/widgets/latestseries.dart';
 import 'package:movie_app/features/home/widgets/most_watched.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
-
 import '../../core/utils/enums/theme_state.dart';
 
 class Home extends StatelessWidget {
@@ -52,20 +50,20 @@ class Home extends StatelessWidget {
                   SizedBox(
                       height: height * .2, child: const CarouselWithScore()),
                   verticalSpace(10),
-                  const TitleTextBox(
-                    title: 'Most Watched',
+                  TitleTextBox(
+                    title: AppLocalizations.of(context)!.latest_movies,
                   ),
                   verticalSpace(5),
                   SizedBox(height: height * .3, child: const MostWatched()),
                   verticalSpace(10),
-                  const TitleTextBox(
-                    title: 'Latest Movies',
+                  TitleTextBox(
+                    title: AppLocalizations.of(context)!.latest_series,
                   ),
                   verticalSpace(5),
                   SizedBox(height: height * .3, child: const MovieCarousel()),
                   verticalSpace(10),
-                  const TitleTextBox(
-                    title: 'Latest Series',
+                  TitleTextBox(
+                    title: AppLocalizations.of(context)!.watch_now,
                   ),
                   SizedBox(height: height * .3, child: const MovieCarousel()),
                 ],

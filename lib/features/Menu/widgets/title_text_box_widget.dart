@@ -22,7 +22,7 @@ class TitleTextBox extends StatelessWidget {
         child: Center(
           child: AutoSizeText(
             title,
-            style: AppTextStyle.style20WhiteW700,
+            style: AppTextStyle.style18WhiteW500,
           ),
         ),
       ),

@@ -7,7 +7,7 @@ import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/settings/data/grid_view_model.dart';
 import 'package:movie_app/features/settings/localization/cubit/local_cubit.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../core/utils/enums/theme_state.dart';
 import '../theme/cubit/theme_cubit.dart';
 
@@ -71,7 +71,7 @@ class CustomSettingItem extends StatelessWidget {
                 ),
                 verticalSpace(8),
                 AutoSizeText(
-                  data.text,
+                  getLocalizedCategories(context, data),
                   textAlign: TextAlign.start,
                   maxLines: 1,
                   style: GoogleFonts.poppins(
@@ -83,5 +83,26 @@ class CustomSettingItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String getLocalizedCategories(
+      BuildContext context, SettingGridViewModel gridViewContent) {
+    switch (gridViewContent.text) {
+      case 'Edit Profile':
+        return AppLocalizations.of(context)!.profile;
+
+      case 'Setting':
+        return AppLocalizations.of(context)!.settings;
+      case 'Change Language':
+        return AppLocalizations.of(context)!.save_changes;
+      case 'Support':
+        return AppLocalizations.of(context)!.help_support;
+      case 'About us':
+        return AppLocalizations.of(context)!.about_us;
+      case 'Devices':
+        return AppLocalizations.of(context)!.details;
+      default:
+        return gridViewContent.text;
+    }
   }
 }

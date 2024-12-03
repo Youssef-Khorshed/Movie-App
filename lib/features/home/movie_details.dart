@@ -1,11 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
+import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_gridnet_chip_list_search.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_itemsdropdown_filter.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import '../../core/utils/mediaquery/mediaquery.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
@@ -59,11 +62,16 @@ class MovieDetails extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          gradient: const LinearGradient(
-                            colors: [
-                              AppColors.lightgray,
-                              AppColors.purple,
-                            ],
+                          gradient: LinearGradient(
+                            colors: gettheme(context)
+                                ? [
+                                    AppColors.lightgray,
+                                    AppColors.purple,
+                                  ]
+                                : [
+                                    AppColors.lightgray,
+                                    AppColors.gray10,
+                                  ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -155,5 +163,7 @@ class MovieDetails extends StatelessWidget {
     );
   }
 
-  onsearch(String p1) {}
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
+  }
 }

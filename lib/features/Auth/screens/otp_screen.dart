@@ -44,7 +44,7 @@ class OtpScreen extends StatelessWidget {
                 verticalSpace(20),
                 CustomTextRowWidget(
                   firstTitle: AppLocalizations.of(context)!.dont_receive_code,
-                  secTitle: " OTP ?",
+                  secTitle: " OTP",
                   onTap: () {},
                 ),
                 verticalSpace(10),

@@ -7,6 +7,7 @@ import '../../../../Core/Utils/Colors/app_colors.dart';
 import '../../../../Core/Utils/Spacing/app_spacing.dart';
 import '../../../../core/utils/assets/app_icons.dart';
 import '../../../../core/utils/enums/theme_state.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomAppDrawer extends StatefulWidget {
   final int selectedIndex;
@@ -55,7 +56,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     ),
                     verticalSpace(10),
                     AutoSizeText(
-                      'Philobater samir',
+                      AppLocalizations.of(context)!.username,
                       style: AppTextStyle.style15WhiteW500
                           .copyWith(color: AppColors.black),
                     )
@@ -70,7 +71,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     height: 23,
                   ),
                   title: Text(
-                    "Home",
+                    AppLocalizations.of(context)!.home,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -97,7 +98,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     height: 23,
                   ),
                   title: Text(
-                    "Watch Later",
+                    AppLocalizations.of(context)!.watch_later,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -124,7 +125,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     height: 23,
                   ),
                   title: Text(
-                    "Download",
+                    AppLocalizations.of(context)!.download,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -147,7 +148,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                   minVerticalPadding: 0,
                   leading: Image.asset(AppIcons.imagesFavorite),
                   title: Text(
-                    "Favorite Movies",
+                    AppLocalizations.of(context)!.favorite,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -174,7 +175,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     height: 23,
                   ),
                   title: Text(
-                    "Actors & Artists",
+                    AppLocalizations.of(context)!.about_us,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),
@@ -200,8 +201,8 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
                     width: 23,
                     height: 23,
                   ),
-                  title: Text(
-                    "Settings",
+                  title: AutoSizeText(
+                    AppLocalizations.of(context)!.settings,
                     style: AppTextStyle.style14Gray5W500
                         .copyWith(color: AppColors.black),
                   ),

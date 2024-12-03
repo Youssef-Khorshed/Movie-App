@@ -236,7 +236,7 @@ abstract class AppTextStyle {
 
   static TextStyle style14WhitW400 = GoogleFonts.robotoSlab(
     fontWeight: FontWeight.w400,
-    color: AppColors.black2,
+    color: AppColors.white,
   );
   static TextStyle style12WhitW400 = GoogleFonts.robotoSlab(
     fontWeight: FontWeight.w400,

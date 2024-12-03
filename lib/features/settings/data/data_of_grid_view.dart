@@ -5,9 +5,12 @@ class DataOfGridView {
   static List<SettingGridViewModel> gridViewContent = [
     SettingGridViewModel(svgIcon: AppIcons.imagesPencil1, text: 'Edit Profile'),
     SettingGridViewModel(svgIcon: AppIcons.imagesVector, text: 'Setting'),
-    SettingGridViewModel(svgIcon: AppIcons.imagesUnion, text: 'Change Language'),
-    SettingGridViewModel(svgIcon: AppIcons.imagesCustomerSupport, text: 'Support'),
+    SettingGridViewModel(
+        svgIcon: AppIcons.imagesUnion, text: 'Change Language'),
+    SettingGridViewModel(
+        svgIcon: AppIcons.imagesCustomerSupport, text: 'Support'),
     SettingGridViewModel(svgIcon: AppIcons.imagesCopywriting, text: 'About us'),
-    SettingGridViewModel(svgIcon: AppIcons.imagesRemoteConnection, text: 'Devices'),
+    SettingGridViewModel(
+        svgIcon: AppIcons.imagesRemoteConnection, text: 'Devices'),
   ];
 }

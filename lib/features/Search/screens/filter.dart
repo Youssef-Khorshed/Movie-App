@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
@@ -27,10 +27,7 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          ThemeCubit.get(context).themeModeState == ThemeModeState.light
-              ? AppColors.white
-              : AppColors.black2,
+      backgroundColor: gettheme(context) ? AppColors.white : AppColors.black2,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -43,12 +40,6 @@ class _FilterScreenState extends State<FilterScreen> {
                   IconButton(
                       onPressed: () => Navigator.pop(context),
                       icon: SvgPicture.asset(AppIcons.back)),
-                  const Spacer(),
-                  IconButton(
-                      onPressed: () => Navigator.of(context).pushNamed(
-                            AppRoutes.preferences,
-                          ),
-                      icon: SvgPicture.asset(AppIcons.setting)),
                 ],
               ),
               verticalSpace(10),
@@ -84,5 +75,9 @@ class _FilterScreenState extends State<FilterScreen> {
         ),
       ),
     );
+  }
+
+  bool gettheme(BuildContext context) {
+    return context.watch<ThemeCubit>().themeModeState == ThemeModeState.light;
   }
 }
