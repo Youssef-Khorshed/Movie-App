@@ -43,11 +43,19 @@ class MovieCarousel extends StatelessWidget {
             return Column(
               children: [
                 Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.network(
-                      movie["image"]!,
-                      fit: BoxFit.cover,
+                  child: Container(
+                    width: 124,
+                    height: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.redAccent,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        movie["image"]!,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
