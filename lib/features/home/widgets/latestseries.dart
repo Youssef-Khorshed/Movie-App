@@ -1,6 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/Core/Utils/Colors/app_colors.dart';
+import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
+
+import '../../../core/utils/enums/theme_state.dart';
 
 class Latestseries extends StatelessWidget {
   const Latestseries({super.key});
@@ -77,7 +81,7 @@ class Latestseries extends StatelessWidget {
                       style: GoogleFonts.lato(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: const Color(0xff000000),
+                        color:ThemeCubit.get(context).themeModeState == ThemeModeState.dark ? const Color(0xff828282) : const Color(0xff000000),
                       ),
                     ),
                   ],
