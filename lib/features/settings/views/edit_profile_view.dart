@@ -35,7 +35,7 @@ class EditProfileView extends StatelessWidget {
                   fontSize: 20,
                   color: isLight ? AppColors.black : AppColors.white),
             ),
-            verticalSpace(20),
+            verticalSpace(10),
             Stack(
               clipBehavior: Clip.none,
               children: [
@@ -44,7 +44,6 @@ class EditProfileView extends StatelessWidget {
                   bottom: -10,
                   right: 16,
                   child: Container(
-                    height: 35,
                     width: 35,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
@@ -54,14 +53,14 @@ class EditProfileView extends StatelessWidget {
                       onPressed: () {},
                       icon: SvgPicture.asset(
                         AppIcons.editImage,
-                        height: 20,
+                        height: 15,
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            verticalSpace(15),
+            verticalSpace(10),
             Text(
               'The name',
               style: GoogleFonts.poppins(
@@ -69,11 +68,11 @@ class EditProfileView extends StatelessWidget {
                   fontSize: 20,
                   color: isLight ? AppColors.black : AppColors.white),
             ),
-            verticalSpace(15),
+            verticalSpace(5),
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) => verticalSpace(30),
+              separatorBuilder: (context, index) => verticalSpace(10),
               itemBuilder: (context, index) => CustomAppFormField(
                 hintText: '',
                 textFormFieldTitle:
@@ -104,7 +103,7 @@ class EditProfileView extends StatelessWidget {
                 ),
               ),
             ),
-            verticalSpace(50),
+            verticalSpace(10),
             CustomAppButton(
               onPressed: () {},
               buttonColor1: isLight

@@ -3,6 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 
 abstract class AppTextStyle {
+  static TextStyle style32WhitW400 = GoogleFonts.robotoSlab(
+    fontWeight: FontWeight.w400,
+    fontSize: 32,
+    color: AppColors.black,
+  );
+  static TextStyle style25DarkpurpleW600 = TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w600,
+      color: AppColors.darkpurple,
+      fontFamily: GoogleFonts.cinzel().fontFamily);
   static TextStyle style24WhiteW600 = TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
@@ -15,13 +25,32 @@ abstract class AppTextStyle {
       color: AppColors.black,
       height: 0,
       fontFamily: GoogleFonts.cairo().fontFamily);
-
   static TextStyle style20WhiteW400 = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w400,
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.cairo().fontFamily);
+  static TextStyle style20WhiteW700 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w700,
+      color: AppColors.white,
+      height: 0,
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
+  static TextStyle style20PurpleW700 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w700,
+      color: AppColors.purple,
+      height: 0,
+      fontFamily: GoogleFonts.cinzel().fontFamily);
+
+  static TextStyle style20BlackW700 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w700,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.cinzel().fontFamily);
 
   static TextStyle style20WhiteW600 = TextStyle(
       fontSize: 20,
@@ -44,10 +73,44 @@ abstract class AppTextStyle {
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
-  static TextStyle style16WBlackW400 = TextStyle(
+  static TextStyle style16BlackW500 = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+
+  static TextStyle style16Gray10W500 = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: AppColors.gray10,
+      height: 0,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+
+  static TextStyle style16BlackW400 = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+
+  static TextStyle style16WhiteW400 = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: AppColors.gray4,
+      height: 0,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+
+  static TextStyle style14BlackW400 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: AppColors.black,
+      height: 0,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+  static TextStyle style14WhiteW400 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
@@ -56,7 +119,7 @@ abstract class AppTextStyle {
       fontWeight: FontWeight.w500,
       color: AppColors.white,
       height: 0,
-      fontFamily: GoogleFonts.cairo().fontFamily);
+      fontFamily: GoogleFonts.cinzel().fontFamily);
 
   static TextStyle style12WhiteW400 = TextStyle(
       fontSize: 12,
@@ -64,19 +127,6 @@ abstract class AppTextStyle {
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.cairo().fontFamily);
-  static TextStyle style16WhiteW400 = TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      color: AppColors.gray4,
-      height: 0,
-      fontFamily: GoogleFonts.poppins().fontFamily);
-
-  static TextStyle style14WhiteW400 = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
-      color: AppColors.white,
-      height: 0,
-      fontFamily: GoogleFonts.poppins().fontFamily);
 
   static TextStyle style12Gray9W400 = TextStyle(
       fontSize: 12,
@@ -124,11 +174,7 @@ abstract class AppTextStyle {
       color: AppColors.white,
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
-  static TextStyle style32WhitW400 = GoogleFonts.robotoSlab(
-    fontWeight: FontWeight.w400,
-    fontSize: 32,
-    color: AppColors.black,
-  );
+
   static TextStyle style14WhitW400 = GoogleFonts.robotoSlab(
     fontWeight: FontWeight.w400,
     color: AppColors.black2,
@@ -143,34 +189,33 @@ abstract class AppTextStyle {
     fontSize: 10,
     color: AppColors.gray6,
   );
-  static TextStyle style25DarkpurpleW600 = TextStyle(
-      fontSize: 25,
-      fontWeight: FontWeight.w600,
-      color: AppColors.darkpurple,
-      fontFamily: GoogleFonts.poppins().fontFamily);
 
   static TextStyle style14Gray5W500 = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: AppColors.gray5,
-      fontFamily: GoogleFonts.poppins().fontFamily);
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
 
-  static TextStyle style14Gray8W500 = TextStyle(
+  static TextStyle style14Gray8W500RobotFlex = TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
+      color: AppColors.gray8,
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
+
+  static TextStyle style14Gray8W500Poppins = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
       color: AppColors.gray8,
       fontFamily: GoogleFonts.poppins().fontFamily);
-
   static TextStyle style12Gray6W500 = TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: AppColors.gray6,
-      fontFamily: GoogleFonts.poppins().fontFamily);
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
 
   static TextStyle style12DarkpurpleW600 = TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w600,
       color: AppColors.darkpurple,
-      fontFamily: GoogleFonts.poppins().fontFamily);
-
+      fontFamily: GoogleFonts.robotoFlex().fontFamily);
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
-
 import '../../../core/utils/Routing/app_routes.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 25),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,6 +32,8 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomAppButton(
+                    buttonColor1: AppColors.purple2,
+                    buttonColor2: AppColors.darkpurple,
                     width: MediaQuery.of(context).size.width / 2 - 20,
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.loginScreen);
@@ -39,6 +41,8 @@ class WelcomeScreen extends StatelessWidget {
                     buttonText: "Login",
                   ),
                   CustomAppButton(
+                    buttonColor1: AppColors.purple2,
+                    buttonColor2: AppColors.darkpurple,
                     width: MediaQuery.of(context).size.width / 2 - 20,
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.signUpScreen);

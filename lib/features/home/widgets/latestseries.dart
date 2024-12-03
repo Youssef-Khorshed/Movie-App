@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 
 class Latestseries extends StatelessWidget {
   const Latestseries({super.key});
@@ -30,59 +32,52 @@ class Latestseries extends StatelessWidget {
 
     return CarouselSlider(
       options: CarouselOptions(
-        height: 270,
+        height: 260,
         enableInfiniteScroll: true,
         enlargeCenterPage: false,
         autoPlay: false,
         viewportFraction: 0.4,
         autoPlayInterval: const Duration(seconds: 3),
+        padEnds: false,
+        enlargeStrategy: CenterPageEnlargeStrategy.scale,
       ),
       items: movies.map((movie) {
         return Builder(
           builder: (BuildContext context) {
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5),
-                  child: Container(
-                    width: 160,
-                    height: 220,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.redAccent,
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
-                        movie["image"]!,
-                        fit: BoxFit.cover,
-                      ),
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: CustomBuildimageHome(
+                      width: 160,
+                      height: 220,
+                      imageurl: movie["image"]!,
                     ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "${movie["title"]!} ",
-                      style: GoogleFonts.lato(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0xff000000),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: AutoSizeText(
+                          movie["title"]!,
+                          style: AppTextStyle.style16BlackW500,
+                          maxLines: 1,
+                          overflow:
+                              TextOverflow.ellipsis, // Prevents text overflow
+                        ),
                       ),
-                    ),
-                    Text(
-                      "(${movie["year"]!})",
-                      style: GoogleFonts.lato(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff000000),
+                      AutoSizeText(
+                        "(${movie["year"]!})",
+                        style: AppTextStyle.style12BlackW400,
                       ),
-                    ),
-                  ],
-                )
-              ],
+                    ],
+                  ),
+                ],
+              ),
             );
           },
         );

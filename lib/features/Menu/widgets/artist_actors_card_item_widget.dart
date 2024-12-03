@@ -34,7 +34,7 @@ class ArtistActorsCardItemWidget extends StatelessWidget {
                     ),
                     AutoSizeText(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ",
-                      style: AppTextStyle.style14Gray8W500,
+                      style: AppTextStyle.style14Gray8W500Poppins,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 5,
                     ),

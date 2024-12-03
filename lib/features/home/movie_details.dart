@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_gridnet_chip_list_search.dart';
 import 'package:movie_app/features/Search/search_widgets/custom_itemsdropdown_filter.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_textfiledSearch_search.dart';
 import '../../core/utils/mediaquery/mediaquery.dart';
 
 class MovieDetails extends StatelessWidget {
@@ -125,15 +123,7 @@ class MovieDetails extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, AppRoutes.search),
-                child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    width: mediaQueryHelper.width,
-                    child: const CustomTextfiledsearchSearch(
-                      isEnabled: false,
-                    )),
-              ),
+
               GradientChipList(
                   categories: Items.categories), // Category filter chips
               GridView.builder(

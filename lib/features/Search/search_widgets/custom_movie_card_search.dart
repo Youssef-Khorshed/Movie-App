@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 import 'package:movie_app/features/Search/model/movie_model.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -34,25 +35,8 @@ class MovieCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(10)),
-                child: CachedNetworkImage(
-                    imageUrl: movie.imageUrl,
-                    imageBuilder: (context, imageProvider) => Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: imageProvider,
-                              fit: BoxFit.cover,
-                              colorFilter: const ColorFilter.mode(
-                                AppColors.gray1,
-                                BlendMode.colorBurn,
-                              ),
-                            ),
-                          ),
-                        ),
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Image.asset(
-                        'assets/images/search_image.png') //const Icon(Icons.error),
-                    ),
+                child: CustomBuildimageHome(
+                    width: 200, height: 200, imageurl: movie.imageUrl),
               ),
             ),
             AutoSizeText(AppLocalizations.of(context)!.movie_title,

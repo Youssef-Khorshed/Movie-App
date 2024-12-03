@@ -65,7 +65,7 @@ class _CustomBuildbottomoptionsState extends State<CustomBuildbottomoptions> {
             title,
             style:
                 ThemeCubit.get(context).themeModeState == ThemeModeState.light
-                    ? AppTextStyle.style16WBlackW400
+                    ? AppTextStyle.style16BlackW400
                     : AppTextStyle.style20WhiteW600,
           ),
           const Spacer(),

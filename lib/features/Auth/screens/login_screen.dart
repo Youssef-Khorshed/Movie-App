@@ -17,69 +17,72 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: AppLocalizations.of(context)!.log_in,
+            //   title: AppLocalizations.of(context)!.log_in,
           ),
         ),
         body: Align(
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                verticalSpace(35),
-                CustomAuthTitleWidget(
-                  title: AppLocalizations.of(context)!.welcome_back,
-                ),
-                verticalSpace(10),
-                CustomAuthSubtitleWidget(
-                  subtitle: AppLocalizations.of(context)!.welcome_back_message,
-                ),
-                verticalSpace(25),
-                CustomAppFormField(
-                  textFormFieldTitle: AppLocalizations.of(context)!.username,
-                  hintText: AppLocalizations.of(context)!.enter_your_username,
-                  prefixIcon: Icons.person_2_outlined,
-                ),
-                verticalSpace(10),
-                CustomAppFormField(
-                  textFormFieldTitle: AppLocalizations.of(context)!.password,
-                  hintText: AppLocalizations.of(context)!.enter_your_password,
-                  prefixIcon: Icons.password,
-                  isPassword: true,
-                  obscureText: true,
-                ),
-                const CustomAuthForgetPasswordTextfield(),
-                verticalSpace(10),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  child: CustomAppButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(
-                        context,
-                        AppRoutes.generalScreen,
-                      );
-                    },
-                    buttonText: AppLocalizations.of(context)!.log_in,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  verticalSpace(35),
+                  CustomAuthTitleWidget(
+                    title: AppLocalizations.of(context)!.welcome_back,
                   ),
-                ),
-                verticalSpace(5),
-                CustomTextRowWidget(
-                  firstTitle:
-                      AppLocalizations.of(context)!.dont_have_an_account,
-                  secTitle: AppLocalizations.of(context)!.sign_up,
-                  onTap: () {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.signUpScreen);
-                  },
-                ),
-                verticalSpace(10)
-              ],
+                  verticalSpace(10),
+                  CustomAuthSubtitleWidget(
+                    subtitle:
+                        AppLocalizations.of(context)!.welcome_back_message,
+                  ),
+                  verticalSpace(25),
+                  CustomAppFormField(
+                    textFormFieldTitle: AppLocalizations.of(context)!.username,
+                    hintText: AppLocalizations.of(context)!.enter_your_username,
+                    prefixIcon: Icons.person_2_outlined,
+                  ),
+                  verticalSpace(10),
+                  CustomAppFormField(
+                    textFormFieldTitle: AppLocalizations.of(context)!.password,
+                    hintText: AppLocalizations.of(context)!.enter_your_password,
+                    prefixIcon: Icons.password,
+                    isPassword: true,
+                    obscureText: true,
+                  ),
+                  const CustomAuthForgetPasswordTextfield(),
+                  verticalSpace(10),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.1,
+                    child: CustomAppButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          AppRoutes.generalScreen,
+                        );
+                      },
+                      buttonText: AppLocalizations.of(context)!.log_in,
+                    ),
+                  ),
+                  verticalSpace(5),
+                  CustomTextRowWidget(
+                    firstTitle:
+                        AppLocalizations.of(context)!.dont_have_an_account,
+                    secTitle: AppLocalizations.of(context)!.sign_up,
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, AppRoutes.signUpScreen);
+                    },
+                  ),
+                  verticalSpace(MediaQuery.of(context).size.height * 0.05)
+                ],
+              ),
             ),
           ),
         ));

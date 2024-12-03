@@ -15,11 +15,11 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: AppLocalizations.of(context)!.forgot_password,
+            //  title: AppLocalizations.of(context)!.forgot_password,
           ),
         ),
         body: Align(

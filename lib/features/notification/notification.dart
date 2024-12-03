@@ -1,7 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/Core/Utils/Colors/app_colors.dart';
+import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
+import 'package:movie_app/features/notification/notification_widget/custom_noitifcationcard_notification.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -9,36 +13,36 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       appBar: AppBar(
+        backgroundColor: AppColors.white,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          color: Color(0xff6C52EE),
+          icon: SvgPicture.asset(AppIcons.back),
+          color: AppColors.purple,
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text(
-          'Notifications',
-          style: GoogleFonts.cinzel(
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-            color: Color(0xff6C52EE),
-          ),
-        ),
+        title: AutoSizeText('Notifications',
+            style: AppTextStyle.style20PurpleW700),
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(AppIcons.settingnotification),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: GestureDetector(
+                onTap: () =>
+                    {Navigator.pushNamed(context, AppRoutes.preferences)},
+                child: SvgPicture.asset(AppIcons.settingnotification)),
           )
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(7.0),
         children: [
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               TextButton(
                 onPressed: () {
                   // Handle mark all as read
@@ -51,16 +55,22 @@ class NotificationScreen extends StatelessWidget {
             ],
           ),
           _buildSectionTitle('Today'),
-          _buildNotificationCard('New Movie!', 'Details', true),
-          _buildNotificationCard('Another Movie!', 'Details', true),
+          CustomNoitifcationcardNotification(
+              title: 'New Movie!', subtitle: 'Details', isNew: true),
+          CustomNoitifcationcardNotification(
+              title: 'Another Movies!', subtitle: 'Details', isNew: true),
           const SizedBox(height: 16.0),
           _buildSectionTitle('Yesterday'),
-          _buildNotificationCard('New Update Available',
-              'A new update of the app is available', false),
-          _buildNotificationCard('Yesterday Movie!', 'Details', false),
+          CustomNoitifcationcardNotification(
+              title: 'New Update Avsailable',
+              subtitle: 'A new update of the app is available',
+              isNew: false),
+          CustomNoitifcationcardNotification(
+              title: 'Yesterday Movsie!', subtitle: 'Details', isNew: false),
           const SizedBox(height: 16.0),
           _buildSectionTitle('Some days ago'),
-          _buildNotificationCard('Old Movie!', 'Details', false),
+          CustomNoitifcationcardNotification(
+              title: 'Old Movie!', subtitle: 'Details', isNew: false),
         ],
       ),
     );
@@ -70,103 +80,18 @@ class NotificationScreen extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Text(
+          child: AutoSizeText(
             title,
-            style: const TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
+            style: AppTextStyle.style16Gray10W500,
           ),
         ),
         const Expanded(
           child: Divider(
-            color: Colors.purpleAccent,
+            color: AppColors.purple,
             thickness: 2.0,
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildNotificationCard(String title, String subtitle, bool isNew) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              elevation: 4.0,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16.0),
-                  gradient: const LinearGradient(
-                    colors: [Colors.purpleAccent, Colors.blue],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 48.0,
-                      height: 48.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      alignment: Alignment.center,
-                      child: const Text('Pic'),
-                    ),
-                    const SizedBox(width: 16.0),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            title,
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            subtitle,
-                            style: const TextStyle(
-                              fontSize: 14.0,
-                              color: Colors.white70,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          if (isNew) ...[
-            const SizedBox(width: 8.0),
-            Container(
-              width: 12.0,
-              height: 12.0,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.circle,
-              ),
-            ),
-          ],
-        ],
-      ),
     );
   }
 }

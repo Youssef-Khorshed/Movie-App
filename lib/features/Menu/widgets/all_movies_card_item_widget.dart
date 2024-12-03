@@ -38,7 +38,7 @@ class AllMoviesCardItemWidget extends StatelessWidget {
             ),
           ),
         ),
-        AutoSizeText(movieTitle, style: AppTextStyle.style14Gray8W500),
+        AutoSizeText(movieTitle, style: AppTextStyle.style14Gray8W500Poppins),
       ],
     );
   }

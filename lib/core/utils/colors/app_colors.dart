@@ -11,12 +11,10 @@ class AppColors {
   static const Color white5 = Color(0xFFD9d9d9);
   // purple Colors
   static const Color purple = Color(0xFF6C52EE);
-
   static const Color purple2 = Color(0xFF6C52EE);
   static const Color purpleblue = Color(0xFF2401FE);
   static const Color darkpurple = Color(0xFF3E2F88);
   static const Color lightpurple = Color(0xFFB379DF);
-  static const Color menuPurpleColor = Color(0xff6C52EE);
 
   // Gray Colors
   static const Color lightgray = Color(0xFFD9D9D9);

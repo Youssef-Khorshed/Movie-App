@@ -3,7 +3,7 @@ import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/features/Menu/widgets/title_text_box_widget.dart';
 import 'package:movie_app/features/home/movie_details.dart';
-import 'package:movie_app/features/home/widgets/MovieCarousel.dart';
+import 'package:movie_app/features/home/widgets/movieCarousel.dart';
 import 'package:movie_app/features/home/widgets/carcusolsliderwidgt.dart';
 import 'package:movie_app/features/home/widgets/latestseries.dart';
 import 'package:movie_app/features/home/widgets/most_watched.dart';
@@ -32,26 +32,35 @@ class Home extends StatelessWidget {
                 title: AppLocalizations.of(context)!.trending,
               ),
             ),
+
+            /// carousel
             verticalSpace(5),
             SizedBox(height: height * .2, child: const CarouselWithScore()),
             verticalSpace(10),
+
+            /// most watched
             const TitleTextBox(
               title: 'Most Watched',
             ),
             verticalSpace(5),
             SizedBox(height: height * .3, child: const MostWatched()),
             verticalSpace(10),
+
+            // /// movies carousel
             const TitleTextBox(
               title: 'Latest Movies',
             ),
+
             verticalSpace(5),
             SizedBox(height: height * .3, child: const MovieCarousel()),
             verticalSpace(10),
+
+            ///latest series
             const TitleTextBox(
               title: 'Latest Series',
             ),
             verticalSpace(5),
-            SizedBox(height: height * .4, child: const Latestseries()),
+            SizedBox(height: height * .3, child: const Latestseries()),
             verticalSpace(30),
           ],
         ),

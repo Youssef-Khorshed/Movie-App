@@ -8,7 +8,7 @@ class ProfilePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CircleAvatar(
-      radius: 70,
+      radius: 60,
       backgroundImage: AssetImage(
         'assets/images/5599e2f071ef55d859463a3be2cb178e.jpg',
       ),

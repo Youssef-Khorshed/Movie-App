@@ -38,7 +38,7 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
       children: [
         AutoSizeText(
           widget.textFormFieldTitle,
-          style: AppTextStyle.style14Gray8W500,
+          style: AppTextStyle.style14Gray8W500RobotFlex,
         ),
         Container(
           margin: const EdgeInsets.symmetric(
@@ -75,7 +75,7 @@ class _CustomAppFormFieldState extends State<CustomAppFormField> {
               ),
               errorMaxLines: 1,
               hintText: widget.hintText,
-              hintStyle: AppTextStyle.style14Gray8W500,
+              hintStyle: AppTextStyle.style14Gray8W500Poppins,
               suffixIcon: widget.isPassword
                   ? IconButton(
                       icon: Icon(

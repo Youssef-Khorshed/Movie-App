@@ -71,6 +71,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 icon: Image.asset(AppImages.filter),
               ),
             ),
+
             GradientChipList(
                 categories: Items.categories), // Category filter chips
 

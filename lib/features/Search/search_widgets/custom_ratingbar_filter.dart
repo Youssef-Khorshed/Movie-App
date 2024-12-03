@@ -66,7 +66,7 @@ class _CustomRatingbarFilterState extends State<CustomRatingbarFilter> {
     return AutoSizeText(
       text,
       style: themeMode == ThemeModeState.light
-          ? AppTextStyle.style16WBlackW400
+          ? AppTextStyle.style16BlackW400
           : AppTextStyle.style20WhiteW600,
     );
   }

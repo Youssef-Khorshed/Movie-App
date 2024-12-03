@@ -55,7 +55,7 @@ class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
       hint: AutoSizeText(
         selectedValue ?? widget.name,
         style: ThemeCubit.get(context).themeModeState == ThemeModeState.light
-            ? AppTextStyle.style16WBlackW400
+            ? AppTextStyle.style16BlackW400
             : AppTextStyle.style20WhiteW600,
         textAlign: TextAlign.center,
       ),

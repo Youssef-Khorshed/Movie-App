@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomTextfiledsearchSearch extends StatefulWidget {
   final Function(String)? onSearch;
-  final bool isEnabled; // Add this parameter
+  final bool isEnabled;
 
   const CustomTextfiledsearchSearch(
       {super.key, this.onSearch, required this.isEnabled});
@@ -47,12 +48,12 @@ class _CustomTextfiledsearchSearchState
           style: AppTextStyle.style12Gray9W400, // Text style
           onChanged: widget.isEnabled
               ? (query) {
-                  widget.onSearch!(query); // Call the onSearch function
+                  if (widget.onSearch != null) {
+                    widget.onSearch!(query); // Call onSearch if it's not null
+                  }
                 }
               : null, // Disable onChanged if not enabled
-
           enabled: widget.isEnabled, // Enable/disable the TextField
-
           decoration: InputDecoration(
             prefixIcon: Padding(
               padding: const EdgeInsets.only(left: 10.0, right: 10.0),

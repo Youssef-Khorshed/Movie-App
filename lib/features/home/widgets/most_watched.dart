@@ -1,6 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 import '../../../core/utils/colors/app_colors.dart';
 
 class MostWatched extends StatelessWidget {
@@ -15,14 +16,9 @@ class MostWatched extends StatelessWidget {
           children: [
             // Image
             ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.network(
-                getImageUrl(index),
-                width: 230,
-                height: 244.4,
-                fit: BoxFit.cover,
-              ),
-            ),
+                borderRadius: BorderRadius.circular(20),
+                child: CustomBuildimageHome(
+                    width: 230, height: 244.4, imageurl: getImageUrl(index))),
             // Movie Rating
             Positioned(
               top: 10,
@@ -31,7 +27,7 @@ class MostWatched extends StatelessWidget {
                 width: 55,
                 height: 30,
                 decoration: BoxDecoration(
-                  color: const Color(0xffDADADA).withOpacity(0.30),
+                  color: AppColors.lightgray.withOpacity(0.30),
                   borderRadius: BorderRadius.circular(10),
                   gradient: const LinearGradient(
                     colors: [
@@ -46,12 +42,12 @@ class MostWatched extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Icon(
-                      Icons.star,
-                      color: Colors.yellow,
+                      Icons.star_rounded,
+                      color: AppColors.yellow,
                       size: 16,
                     ),
                     const SizedBox(width: 4),
-                    Text(
+                    AutoSizeText(
                       getMovieRating(index),
                       style: const TextStyle(
                         color: Colors.white,

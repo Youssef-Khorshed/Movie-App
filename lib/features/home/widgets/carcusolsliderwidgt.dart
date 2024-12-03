@@ -1,7 +1,11 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
+import 'package:movie_app/core/utils/colors/app_colors.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 import 'package:movie_app/features/Details/views/movie_details_view.dart';
 
 class CarouselWithScore extends StatelessWidget {
@@ -10,6 +14,7 @@ class CarouselWithScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return CarouselSlider(
       options: CarouselOptions(height: 250.0),
       items: [1, 2, 3, 4, 5].map((i) {
@@ -27,14 +32,11 @@ class CarouselWithScore extends StatelessWidget {
                 child: Stack(
                   children: [
                     // The main image container
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.network(
-                        'https://s3-alpha-sig.figma.com/img/11e2/7082/801cdcd576d43efbe73256520a804041?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mGiPUhxcTT8O1Uk1wYL6Po2MfW9kny~efO~71nJNdgkZou0R~q~U9H2VETUk~3FwpYaonQreF9ZVef6u-Yl9ydnKs9~nnAYdGnmhlKvx9HmDNZUqoyjGfe4MSt2WAAYwA~Krl6ckuvtYyDr2MhFOEuYKkwxfTZU6kanXNWkZjXIFSDSWnG24N75HWJLuJ54XtOeVgDud7QM2C-ryttEZHhr4mOKrIfwIh-zY0iGuvqD0kD1ZYMceiFkn-rgaZUGH1~SCJayXA4m~Dopinq2d5derjVgHe3MJzprA8f-ei5f-3nJi2x27qnqyfwm7O7HTv8-ThMsKu561-cCqD40Piw__',
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        fit: BoxFit.cover,
-                      ),
+                    CustomBuildimageHome(
+                      width: size.width,
+                      height: 250,
+                      imageurl:
+                          'https://s3-alpha-sig.figma.com/img/11e2/7082/801cdcd576d43efbe73256520a804041?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mGiPUhxcTT8O1Uk1wYL6Po2MfW9kny~efO~71nJNdgkZou0R~q~U9H2VETUk~3FwpYaonQreF9ZVef6u-Yl9ydnKs9~nnAYdGnmhlKvx9HmDNZUqoyjGfe4MSt2WAAYwA~Krl6ckuvtYyDr2MhFOEuYKkwxfTZU6kanXNWkZjXIFSDSWnG24N75HWJLuJ54XtOeVgDud7QM2C-ryttEZHhr4mOKrIfwIh-zY0iGuvqD0kD1ZYMceiFkn-rgaZUGH1~SCJayXA4m~Dopinq2d5derjVgHe3MJzprA8f-ei5f-3nJi2x27qnqyfwm7O7HTv8-ThMsKu561-cCqD40Piw__',
                     ),
                     // The rating container at the bottom right
                     Positioned(
@@ -55,18 +57,18 @@ class CarouselWithScore extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   15), // Border radius for the container
                             ),
-                            child: const Row(
+                            child: Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.star_border,
-                                  color: Colors.orange,
+                                  color: AppColors.orange,
                                   size: 20,
                                 ),
-                                SizedBox(width: 4),
-                                Text(
+                                horizontalSpace(4),
+                                const AutoSizeText(
                                   '9.5',
                                   style: TextStyle(
-                                    color: Colors.orange,
+                                    color: AppColors.orange,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),

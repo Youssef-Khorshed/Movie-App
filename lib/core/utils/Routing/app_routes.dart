@@ -4,6 +4,7 @@ import 'package:movie_app/features/Preferences/screens/preferences.dart';
 import 'package:movie_app/features/Details/views/movie_details_view.dart';
 import 'package:movie_app/features/Search/screens/filter.dart';
 import 'package:movie_app/features/Search/screens/search.dart';
+import 'package:movie_app/features/notification/notification.dart';
 import 'package:movie_app/features/settings/views/change_password_view.dart';
 import 'package:movie_app/features/settings/views/edit_profile_view.dart';
 import 'package:movie_app/features/Menu/screens/actors_artist_screen.dart';
@@ -37,6 +38,7 @@ class AppRoutes {
   static const String generalScreen = '/generalScreen';
   static const String allMoviesScreen = '/allMoviesScreen';
   static const String actorsArtistScreen = '/actorsArtistScreen';
+  static const String notification = '/notification';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -143,6 +145,14 @@ class AppRoutes {
             return const ActorsArtistScreen();
           },
         );
+
+      case notification:
+        return CupertinoPageRoute(
+          builder: (context) {
+            return const NotificationScreen();
+          },
+        );
+
       default:
         return CupertinoPageRoute(builder: (_) => const WelcomeScreen());
     }

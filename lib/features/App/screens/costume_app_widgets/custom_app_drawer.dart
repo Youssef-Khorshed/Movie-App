@@ -29,7 +29,7 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
           gradient: LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
-              colors: [AppColors.white, AppColors.menuPurpleColor]),
+              colors: [AppColors.white, AppColors.purple2]),
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
       child: ListView(

@@ -7,7 +7,7 @@ import 'features/settings/theme/cubit/theme_cubit.dart';
 
 void main() {
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => MultiBlocProvider(
       providers: [
         BlocProvider(

@@ -20,7 +20,7 @@ class CustumeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(0),
       child: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,

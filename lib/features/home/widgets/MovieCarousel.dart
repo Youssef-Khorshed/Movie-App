@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/features/App/screens/costume_app_widgets/custom_buildimage_home.dart';
 
 class MovieCarousel extends StatelessWidget {
   const MovieCarousel({super.key});
@@ -42,20 +44,10 @@ class MovieCarousel extends StatelessWidget {
           builder: (BuildContext context) {
             return Column(
               children: [
-                Container(
-                  width: 124,
-                  height: 184,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.network(
-                      movie["image"]!,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: CustomBuildimageHome(
+                      width: 124, height: 184, imageurl: movie["image"]!),
                 ),
                 const SizedBox(height: 10),
                 Text(

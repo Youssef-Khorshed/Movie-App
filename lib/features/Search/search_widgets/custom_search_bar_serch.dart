@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/Search/search_widgets/custom_textfiledSearch_search.dart';
+import 'package:movie_app/features/Search/search_widgets/custom_textfiledsearch_search.dart';
 
+// ignore: must_be_immutable
 class SearchScreenBar extends StatefulWidget {
   final bool showLeading;
   final bool showTitle;
   final bool showActions;
   final IconButton? leadingIcon;
   final IconButton? actionIcon;
-  final Function(String) onSearch;
-
-  const SearchScreenBar({
+  final Function(String)? onSearch;
+  bool isenabled = true;
+  SearchScreenBar({
     super.key,
+    this.isenabled = true,
     this.showLeading = true,
     this.showTitle = true,
     this.showActions = true,
     this.leadingIcon,
     this.actionIcon,
-    required this.onSearch, // Add this to pass the search handler function
+    this.onSearch, // Add this to pass the search handler function
   });
 
   @override
@@ -35,8 +37,8 @@ class _SearchScreenBarState extends State<SearchScreenBar> {
             widget.leadingIcon!,
           if (widget.showTitle)
             CustomTextfiledsearchSearch(
-              onSearch: widget.onSearch,
-              isEnabled: true,
+              onSearch: widget.isenabled ? widget.onSearch : null,
+              isEnabled: widget.isenabled,
             ),
           if (widget.showActions && widget.actionIcon != null)
             widget.actionIcon!,
