@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class Bannermovie extends StatelessWidget {
@@ -24,7 +23,7 @@ class Bannermovie extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         text,
-        style:AppTextStyle.style16WhiteW700,
+        style: AppTextStyle.style16WhiteW700,
       ),
     );
   }

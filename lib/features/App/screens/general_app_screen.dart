@@ -135,7 +135,6 @@ class _GeneralAppScreenState extends State<GeneralAppScreen> {
                               value: ThemeCubit.get(context).themeModeState ==
                                   ThemeModeState.dark,
                               onChanged: (e) {
-                                print("change theme $e");
                                 ThemeCubit.get(context).changeTheme();
                               })),
                       const SizedBox(width: 10),

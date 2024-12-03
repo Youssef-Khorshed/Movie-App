@@ -15,59 +15,61 @@ class CreateNewPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: AppLocalizations.of(context)!.create_new_password,
+            // title: AppLocalizations.of(context)!.create_new_password,
           ),
         ),
         body: Align(
           alignment: Alignment.bottomCenter,
           child: CustomBackgroundContiner(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                verticalSpace(35),
-                CustomAuthTitleWidget(
-                  title: AppLocalizations.of(context)!.create_new_password,
-                ),
-                verticalSpace(10),
-                CustomAuthSubtitleWidget(
-                  subtitle:
-                      AppLocalizations.of(context)!.new_password_description,
-                ),
-                verticalSpace(25),
-                CustomAppFormField(
-                  textFormFieldTitle: AppLocalizations.of(context)!.password,
-                  hintText: AppLocalizations.of(context)!.enter_your_password,
-                  prefixIcon: Icons.password,
-                  isPassword: true,
-                  obscureText: true,
-                ),
-                verticalSpace(10),
-                CustomAppFormField(
-                  textFormFieldTitle:
-                      AppLocalizations.of(context)!.confirm_password,
-                  hintText: AppLocalizations.of(context)!.enter_your_password,
-                  prefixIcon: Icons.password,
-                  isPassword: true,
-                  obscureText: true,
-                ),
-                verticalSpace(10),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  child: CustomAppButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.personalizeMoveScreen);
-                    },
-                    buttonText: AppLocalizations.of(context)!.continue_buttom,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  verticalSpace(35),
+                  CustomAuthTitleWidget(
+                    title: AppLocalizations.of(context)!.create_new_password,
                   ),
-                ),
-              ],
+                  verticalSpace(10),
+                  CustomAuthSubtitleWidget(
+                    subtitle:
+                        AppLocalizations.of(context)!.new_password_description,
+                  ),
+                  verticalSpace(25),
+                  CustomAppFormField(
+                    textFormFieldTitle: AppLocalizations.of(context)!.password,
+                    hintText: AppLocalizations.of(context)!.enter_your_password,
+                    prefixIcon: Icons.password,
+                    isPassword: true,
+                    obscureText: true,
+                  ),
+                  verticalSpace(10),
+                  CustomAppFormField(
+                    textFormFieldTitle:
+                        AppLocalizations.of(context)!.confirm_password,
+                    hintText: AppLocalizations.of(context)!.enter_your_password,
+                    prefixIcon: Icons.password,
+                    isPassword: true,
+                    obscureText: true,
+                  ),
+                  verticalSpace(10),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.1,
+                    child: CustomAppButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, AppRoutes.personalizeMoveScreen);
+                      },
+                      buttonText: AppLocalizations.of(context)!.continue_buttom,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ));

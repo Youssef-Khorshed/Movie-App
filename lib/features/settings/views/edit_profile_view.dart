@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,12 +7,14 @@ import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/costume_app_bar.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_text_form_field.dart';
 import 'package:movie_app/features/settings/data/custom_app_form_field_data.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import 'package:movie_app/features/settings/widgets/profile_picture.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditProfileView extends StatelessWidget {
   const EditProfileView({super.key});
@@ -29,7 +32,7 @@ class EditProfileView extends StatelessWidget {
           children: [
             CustumeAppBar(
               isBack: true,
-              title: 'Edit Profile',
+              title: AppLocalizations.of(context)!.editProfile,
               textStyle: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
@@ -61,12 +64,11 @@ class EditProfileView extends StatelessWidget {
               ],
             ),
             verticalSpace(10),
-            Text(
-              'The name',
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                  color: isLight ? AppColors.black : AppColors.white),
+            AutoSizeText(
+              AppLocalizations.of(context)!.username,
+              style: isLight
+                  ? AppTextStyle.style20WBlackW600
+                  : AppTextStyle.style20WhiteW600,
             ),
             verticalSpace(5),
             ListView.separated(
@@ -106,11 +108,9 @@ class EditProfileView extends StatelessWidget {
             verticalSpace(10),
             CustomAppButton(
               onPressed: () {},
-              buttonColor1: isLight
-                  ? AppColors.white5
-                  : AppColors.black2.withOpacity(2.5),
+              buttonColor1: isLight ? AppColors.white5 : AppColors.black2,
               width: 220,
-              buttonText: 'Save Change',
+              buttonText: AppLocalizations.of(context)!.save_changes,
               textColor: isLight ? AppColors.black : AppColors.white,
             )
           ],

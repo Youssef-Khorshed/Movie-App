@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class WatchAgain extends StatelessWidget {
@@ -96,7 +95,6 @@ class WatchAgain extends StatelessWidget {
                       AutoSizeText(
                         "(${movie["year"]!})",
                         style: AppTextStyle.style12BlackW400,
-                        
                       ),
                     ],
                   ),

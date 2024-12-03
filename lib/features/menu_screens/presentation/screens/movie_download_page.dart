@@ -9,10 +9,12 @@ class MovieDownloadPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor:  ThemeCubit.get(context).themeModeState == ThemeModeState.dark? AppColors.black2:      AppColors.white,
-
-      body: MovieDownloadBody(),
+    return Scaffold(
+      backgroundColor:
+          ThemeCubit.get(context).themeModeState == ThemeModeState.dark
+              ? AppColors.black2
+              : AppColors.white,
+      body: const MovieDownloadBody(),
     );
   }
 }

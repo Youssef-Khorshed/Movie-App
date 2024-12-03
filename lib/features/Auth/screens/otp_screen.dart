@@ -20,7 +20,7 @@ class OtpScreen extends StatelessWidget {
           preferredSize: Size.fromHeight(60),
           child: CustumeAppBar(
             isBack: true,
-            title: "OTP",
+            // title: "OTP",
           ),
         ),
         body: Align(

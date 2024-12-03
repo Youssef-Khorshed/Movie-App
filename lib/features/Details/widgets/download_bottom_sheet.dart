@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
@@ -9,7 +8,6 @@ import 'package:movie_app/features/Details/widgets/details_custom_buttoon.dart';
 import 'package:movie_app/features/Details/widgets/quality_and_lang_container.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
-
 
 class DownloadBottomSheet extends StatelessWidget {
   const DownloadBottomSheet({
@@ -56,7 +54,7 @@ class DownloadBottomSheet extends StatelessWidget {
             verticalSpace(17),
             AutoSizeText(
               AppLocalizations.of(context)!.download,
-              style:AppTextStyle.style20WhiteW400,
+              style: AppTextStyle.style20WhiteW400,
             ),
             verticalSpace(30),
             Align(
@@ -85,16 +83,16 @@ class DownloadBottomSheet extends StatelessWidget {
               ),
             ),
             verticalSpace(17),
-             QualityAndLangContainer(
+            QualityAndLangContainer(
               text: AppLocalizations.of(context)!.english,
               gbWidget: const SizedBox(),
             ),
-             QualityAndLangContainer(
+            QualityAndLangContainer(
               text: AppLocalizations.of(context)!.arabic,
               gbWidget: const SizedBox(),
             ),
             verticalSpace(30),
-             DetailsCustomButton(
+            DetailsCustomButton(
               buttonWidth: 204,
               buttonheight: 48,
               buttonName: AppLocalizations.of(context)!.download,

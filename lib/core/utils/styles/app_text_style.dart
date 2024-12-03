@@ -73,10 +73,10 @@ abstract class AppTextStyle {
       height: 0,
       fontFamily: GoogleFonts.poppins().fontFamily);
 
-  static TextStyle style20blueW700 = TextStyle(
+  static TextStyle style20purpleW700 = TextStyle(
       fontWeight: FontWeight.w700,
       fontSize: 20,
-      color: Color(0xff6C52EE),
+      color: AppColors.purple,
       fontFamily: GoogleFonts.cinzel().fontFamily);
 
   static TextStyle style18WhiteW500 = TextStyle(

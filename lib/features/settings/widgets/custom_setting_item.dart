@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
@@ -35,23 +34,25 @@ class CustomSettingItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            gradient:ThemeCubit.get(context).themeModeState == ThemeModeState.light? LinearGradient(
-              colors: [
-                AppColors.purple2.withOpacity(0.3),
-                AppColors.white5.withOpacity(0.6),
-              ],
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-            ):LinearGradient(
-              colors: [
-                const Color(0x99D9D9D9),
-                const Color(0x99737373),
-
-                AppColors.white5.withOpacity(0.6),
-              ],
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-            ),
+            gradient:
+                ThemeCubit.get(context).themeModeState == ThemeModeState.light
+                    ? LinearGradient(
+                        colors: [
+                          AppColors.purple2.withOpacity(0.3),
+                          AppColors.white5.withOpacity(0.6),
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          const Color(0x99D9D9D9),
+                          const Color(0x99737373),
+                          AppColors.white5.withOpacity(0.6),
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
           ),
           child: Padding(
             padding: const EdgeInsetsDirectional.only(start: 30),
@@ -63,7 +64,10 @@ class CustomSettingItem extends StatelessWidget {
                   width: 24,
                   height: 24,
                   data.svgIcon,
-            color:ThemeCubit.get(context).themeModeState == ThemeModeState.dark? Colors.white:   Colors.black,
+                  color: ThemeCubit.get(context).themeModeState ==
+                          ThemeModeState.dark
+                      ? Colors.white
+                      : Colors.black,
                 ),
                 verticalSpace(8),
                 AutoSizeText(

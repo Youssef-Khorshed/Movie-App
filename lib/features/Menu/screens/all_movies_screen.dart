@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
-import '../../../core/utils/colors/app_colors.dart';
 import '../widgets/all_movies_card_widget.dart';
 import '../widgets/title_text_box_widget.dart';
 import '../widgets/trending_movies_card_widget.dart';

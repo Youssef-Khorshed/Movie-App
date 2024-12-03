@@ -1,12 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/Core/Utils/Colors/app_colors.dart';
+import 'package:movie_app/core/utils/Routing/app_routes.dart';
 import 'package:movie_app/core/utils/assets/app_icons.dart';
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
-import 'package:movie_app/features/notification/widgets/section_title_widget.dart';
-import 'widgets/build_notification_widget.dart';
+import 'package:movie_app/features/notification/notification_widget/custom_noitifcationcard_notification.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -14,77 +13,85 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       appBar: AppBar(
+        backgroundColor: AppColors.white,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          color: Color(0xff6C52EE),
+          icon: SvgPicture.asset(AppIcons.back),
+          color: AppColors.purple,
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: AutoSizeText(
-          AppLocalizations.of(context)!.notifications,
-          style: AppTextStyle.style20blueW700,
-        ),
+        title: AutoSizeText('Notifications',
+            style: AppTextStyle.style20PurpleW700),
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(AppIcons.settingnotification),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: GestureDetector(
+                onTap: () =>
+                    {Navigator.pushNamed(context, AppRoutes.preferences)},
+                child: SvgPicture.asset(AppIcons.settingnotification)),
           )
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(7.0),
         children: [
           Row(
             children: [
               const Spacer(),
               TextButton(
-                onPressed: () {},
-                child: AutoSizeText(
-                  AppLocalizations.of(context)!.mark_all_as_read,
-                  style: const TextStyle(color: Color(0xff777777)),
+                onPressed: () {
+                  // Handle mark all as read
+                },
+                child: const Text(
+                  'Mark all as read',
+                  style: TextStyle(color: Color(0xff777777)),
                 ),
               ),
             ],
           ),
-          BuildNotification(
-            title: AppLocalizations.of(context)!.today,
-            isNew: false,
-            subtitle: "",
-          ),
-          BuildNotification(
-            title: AppLocalizations.of(context)!.new_movie,
-            subtitle: 'Details',
-            isNew: true,
-          ),
-          BuildNotification(
-            title: AppLocalizations.of(context)!.another_movie,
-            subtitle: 'Details',
-            isNew: true,
-          ),
+          _buildSectionTitle('Today'),
+          CustomNoitifcationcardNotification(
+              title: 'New Movie!', subtitle: 'Details', isNew: true),
+          CustomNoitifcationcardNotification(
+              title: 'Another Movies!', subtitle: 'Details', isNew: true),
           const SizedBox(height: 16.0),
-          SectionTitleWidget(title: AppLocalizations.of(context)!.yesterday),
-          BuildNotification(
-              title: AppLocalizations.of(context)!.new_update_available,
-              subtitle: AppLocalizations.of(context)!.new_update_description,
+          _buildSectionTitle('Yesterday'),
+          CustomNoitifcationcardNotification(
+              title: 'New Update Avsailable',
+              subtitle: 'A new update of the app is available',
               isNew: false),
-          BuildNotification(
-            title: AppLocalizations.of(context)!.yesterday_movie,
-            subtitle: 'Details',
-            isNew: false,
-          ),
+          CustomNoitifcationcardNotification(
+              title: 'Yesterday Movsie!', subtitle: 'Details', isNew: false),
           const SizedBox(height: 16.0),
-          SectionTitleWidget(
-              title: AppLocalizations.of(context)!.some_days_ago),
-          BuildNotification(
-            title: AppLocalizations.of(context)!.old_movie,
-            subtitle: 'Details',
-            isNew: false,
-          ),
+          _buildSectionTitle('Some days ago'),
+          CustomNoitifcationcardNotification(
+              title: 'Old Movie!', subtitle: 'Details', isNew: false),
         ],
       ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Row(
+      children: [
+        Expanded(
+          child: AutoSizeText(
+            title,
+            style: AppTextStyle.style16Gray10W500,
+          ),
+        ),
+        const Expanded(
+          child: Divider(
+            color: AppColors.purple,
+            thickness: 2.0,
+          ),
+        ),
+      ],
     );
   }
 }

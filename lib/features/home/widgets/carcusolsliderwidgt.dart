@@ -66,7 +66,7 @@ class CarouselWithScore extends StatelessWidget {
                                   color: AppColors.orange,
                                   size: 20,
                                 ),
-                                SizedBox(width: 4),
+                                horizontalSpace(4),
                                 AutoSizeText(
                                   '9.5',
                                   style: AppTextStyle.style16OrangeBold,
