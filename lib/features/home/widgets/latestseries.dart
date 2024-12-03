@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class Latestseries extends StatelessWidget {
   const Latestseries({super.key});
@@ -64,21 +66,11 @@ class Latestseries extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "${movie["title"]!} ",
-                      style: GoogleFonts.lato(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                    Text(
+                    AutoSizeText("${movie["title"]!} ",
+                        style: AppTextStyle.style14BlackW700),
+                    AutoSizeText(
                       "(${movie["year"]!})",
-                      style: GoogleFonts.lato(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff000000),
-                      ),
+                      style:AppTextStyle.style12BlackW400,
                     ),
                   ],
                 )

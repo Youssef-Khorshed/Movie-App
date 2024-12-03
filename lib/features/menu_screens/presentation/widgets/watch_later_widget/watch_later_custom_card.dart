@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
@@ -29,7 +30,6 @@ class CustomCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // الخلفية: صورة الفيلم
           SizedBox(
             width: double.infinity,
             child: ClipRRect(
@@ -40,7 +40,6 @@ class CustomCard extends StatelessWidget {
               ),
             ),
           ),
-          // تقييم الفيلم
           Positioned(
             top: 10,
             right: 10,
@@ -54,7 +53,7 @@ class CustomCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, color: Colors.yellow, size: 16),
                   const SizedBox(width: 4),
-                  Text('$rating', style: AppTextStyle.style14WhiteW400),
+                  AutoSizeText('$rating', style: AppTextStyle.style14WhiteW400),
                 ],
               ),
             ),
@@ -71,7 +70,7 @@ class CustomCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text(title,
+                child: AutoSizeText(title,
                     textAlign: TextAlign.center,
                     style: AppTextStyle.style14WhiteW400),
               ),

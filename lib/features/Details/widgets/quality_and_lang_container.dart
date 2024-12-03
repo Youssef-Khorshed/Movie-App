@@ -1,9 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
+
+import '../../../core/utils/styles/app_text_style.dart';
 
 class QualityAndLangContainer extends StatelessWidget {
   const QualityAndLangContainer({
@@ -38,22 +41,17 @@ class QualityAndLangContainer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
-              Text(
+              AutoSizeText(
                 text,
-                style: GoogleFonts.poppins(
-                    color: isLight ? AppColors.black : AppColors.white,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20),
+                style: AppTextStyle.style20WBlackW400.copyWith(
+                  color: isLight ? AppColors.black : AppColors.white,
+                ),
               ),
               const Spacer(),
               gbWidget == null
-                  ? Text(
+                  ? AutoSizeText(
                       '4.2 GB',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12,
-                        color: isLight ? AppColors.black2 : AppColors.gray1,
-                      ),
+                      style: AppTextStyle.style12BlackW600,
                     )
                   : gbWidget!,
               horizontalSpace(10),

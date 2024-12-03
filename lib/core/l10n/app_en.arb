@@ -74,5 +74,39 @@
     "have_an_account": "Have an account?",
     "actors_and_artists":"Actors & Artists",
     "movies": "Movies",
-    "trending": "Trending"
+    "trending": "Trending",
+    "personalize_movies": "Personalize Movies",
+  "personalize_your_movie_experience": "Personalize your movie experience",
+  "preferences_description": "Please tell us your preferences so that we can recommend your movie experience as per your want",
+  "skip": "Skip",
+  "watch_now": "WATCH NOW",
+  "quality": "Quality",
+  "download_setting": "Download Setting",
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "marvel_studios": "Marvel Studios",
+  "venom": "VENOM",
+  "from_342_users": "From 342 users",
+  "most_watched": "Most Watched",
+  "latest_movies": "Latest Movies",
+  "latest_series": "Latest Series",
+   "horror": "Horror",
+   "pic" : "Pic",
+   
+  "mark_all_as_read": "Mark all as read",
+  "today": "Today",
+  "new_movie": "New Movie!",
+  "details": "Details",
+  "yesterday": "Yesterday",
+  "new_update_available": "New Update Available",
+  "new_update_description": "A new update of the app is available",
+  "yesterday_movie": "Yesterday Movie!",
+  "some_days_ago": "Some days ago",
+  "old_movie": "Old Movie!",
+
+
+  "another_movie": "Another Movie"
+
+
 }

@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/styles/app_text_style.dart';
 
 class MovieCarousel extends StatelessWidget {
   const MovieCarousel({super.key});
@@ -58,21 +60,13 @@ class MovieCarousel extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(
+                AutoSizeText(
                   movie["title"]!,
-                  style: GoogleFonts.lato(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xff6C52EE),
-                  ),
+                  style: AppTextStyle.style14BlueW700,
                 ),
-                Text(
+                AutoSizeText(
                   movie["year"]!,
-                  style: GoogleFonts.lato(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xff828282),
-                  ),
+                  style: AppTextStyle.style12grayW400,
                 ),
               ],
             );

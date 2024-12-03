@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/features/Menu/screens/all_movies_screen.dart';
 import 'package:movie_app/features/home/home.dart';
 import 'package:movie_app/features/menu_screens/presentation/screens/watch_later_screen.dart';
-import 'package:movie_app/features/notification/notification.dart';
+import 'package:movie_app/features/notification/notification_screen.dart';
 import '../../../core/utils/assets/app_icons.dart';
 import '../../../core/utils/colors/app_colors.dart';
 import '../../../core/utils/styles/app_text_style.dart';

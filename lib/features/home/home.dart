@@ -35,20 +35,20 @@ class Home extends StatelessWidget {
             verticalSpace(5),
             SizedBox(height: height * .2, child: const CarouselWithScore()),
             verticalSpace(10),
-            const TitleTextBox(
-              title: 'Most Watched',
+            TitleTextBox(
+              title: AppLocalizations.of(context)!.most_watched,
             ),
             verticalSpace(5),
             SizedBox(height: height * .3, child: const MostWatched()),
             verticalSpace(10),
-            const TitleTextBox(
-              title: 'Latest Movies',
+            TitleTextBox(
+              title: AppLocalizations.of(context)!.latest_movies,
             ),
             verticalSpace(5),
             SizedBox(height: height * .3, child: const MovieCarousel()),
             verticalSpace(10),
-            const TitleTextBox(
-              title: 'Latest Series',
+            TitleTextBox(
+              title: AppLocalizations.of(context)!.latest_series,
             ),
             verticalSpace(5),
             SizedBox(height: height * .4, child: const Latestseries()),

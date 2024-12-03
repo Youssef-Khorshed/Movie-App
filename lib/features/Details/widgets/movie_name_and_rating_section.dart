@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
@@ -6,6 +7,8 @@ import 'package:movie_app/core/utils/colors/app_colors.dart';
 import 'package:movie_app/core/utils/enums/theme_state.dart';
 import 'package:movie_app/core/utils/styles/app_text_style.dart';
 import 'package:movie_app/features/settings/theme/cubit/theme_cubit.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+
 
 class MovieNameAndRatingSection extends StatelessWidget {
   const MovieNameAndRatingSection({
@@ -18,15 +21,15 @@ class MovieNameAndRatingSection extends StatelessWidget {
         ThemeCubit.get(context).themeModeState == ThemeModeState.light;
     return Row(
       children: [
-        Text(
-          'VENOM',
+        AutoSizeText(
+          AppLocalizations.of(context)!.venom,
           style: AppTextStyle.style32WhitW400
               .copyWith(color: isLight ? AppColors.black : AppColors.white),
         ),
         horizontalSpace(16),
         Padding(
           padding: const EdgeInsets.only(top: 15.0),
-          child: Text('2018', style: AppTextStyle.style12WhitW400),
+          child: AutoSizeText('2018', style: AppTextStyle.style12WhitW400),
         ),
         const Spacer(),
         Column(
@@ -43,8 +46,8 @@ class MovieNameAndRatingSection extends StatelessWidget {
                   separatorBuilder: (context, index) => horizontalSpace(2),
                   itemCount: 5),
             ),
-            Text(
-              'From 342 users',
+            AutoSizeText(
+              AppLocalizations.of(context)!.from_342_users,
               style: AppTextStyle.style10WhitW400,
             ),
           ],

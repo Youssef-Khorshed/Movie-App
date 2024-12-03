@@ -1,8 +1,11 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:movie_app/features/Details/views/movie_details_view.dart';
+
+import '../../../core/utils/styles/app_text_style.dart';
 
 class CarouselWithScore extends StatelessWidget {
   // Constructor with named key parameter
@@ -55,21 +58,17 @@ class CarouselWithScore extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   15), // Border radius for the container
                             ),
-                            child: const Row(
+                            child: Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.star_border,
                                   color: Colors.orange,
                                   size: 20,
                                 ),
                                 SizedBox(width: 4),
-                                Text(
+                                AutoSizeText(
                                   '9.5',
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppTextStyle.style16OrangeBold,
                                 ),
                               ],
                             ),

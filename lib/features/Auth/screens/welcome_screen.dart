@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/Spacing/app_spacing.dart';
 import 'package:movie_app/core/utils/assets/app_images.dart';
 import 'package:movie_app/features/App/screens/costume_app_widgets/custom_app_button.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../core/utils/Routing/app_routes.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -36,14 +36,14 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.loginScreen);
                     },
-                    buttonText: "Login",
+                    buttonText: AppLocalizations.of(context)!.log_in,
                   ),
                   CustomAppButton(
                     width: MediaQuery.of(context).size.width / 2 - 20,
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.signUpScreen);
                     },
-                    buttonText: "SignUp",
+                    buttonText: AppLocalizations.of(context)!.sign_up,
                   ),
                 ],
               ),

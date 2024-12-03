@@ -1,5 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import '../../../../../core/utils/assets/app_images.dart';
 import '../../../../../core/utils/colors/app_colors.dart';
 import '../../../../../core/utils/styles/app_text_style.dart';
@@ -41,19 +42,19 @@ class MovieDownloadCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
-          // المعلومات والأزرار
+          
           Expanded(
             flex: 2,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                AutoSizeText(
                     'Joker',
                     style: AppTextStyle.style20WhiteW400
                 ),
                 const SizedBox(height: 8),
-                Text(
+                AutoSizeText(
                   '2022, Horror',
                   style: AppTextStyle.style13WhiteW400,
                 ),
@@ -68,7 +69,7 @@ class MovieDownloadCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      child: Text('Watch',style: AppTextStyle.style14WhiteW400,),
+                      child: AutoSizeText(AppLocalizations.of(context)!.watch_now,style: AppTextStyle.style14WhiteW400,),
                     ),
                     const SizedBox(width: 16),
                     IconButton(

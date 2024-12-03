@@ -1,94 +1,19 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/core/utils/assets/app_icons.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({super.key});
+class BuildNotification extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final bool isNew;
+  const BuildNotification(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.isNew});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          color: Color(0xff6C52EE),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          'Notifications',
-          style: GoogleFonts.cinzel(
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-            color: Color(0xff6C52EE),
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(AppIcons.settingnotification),
-          )
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(5.0),
-        children: [
-          Row(
-            children: [
-              Spacer(),
-              TextButton(
-                onPressed: () {
-                  // Handle mark all as read
-                },
-                child: const Text(
-                  'Mark all as read',
-                  style: TextStyle(color: Color(0xff777777)),
-                ),
-              ),
-            ],
-          ),
-          _buildSectionTitle('Today'),
-          _buildNotificationCard('New Movie!', 'Details', true),
-          _buildNotificationCard('Another Movie!', 'Details', true),
-          const SizedBox(height: 16.0),
-          _buildSectionTitle('Yesterday'),
-          _buildNotificationCard('New Update Available',
-              'A new update of the app is available', false),
-          _buildNotificationCard('Yesterday Movie!', 'Details', false),
-          const SizedBox(height: 16.0),
-          _buildSectionTitle('Some days ago'),
-          _buildNotificationCard('Old Movie!', 'Details', false),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSectionTitle(String title) {
-    return Row(
-      children: [
-        Expanded(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        const Expanded(
-          child: Divider(
-            color: Colors.purpleAccent,
-            thickness: 2.0,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildNotificationCard(String title, String subtitle, bool isNew) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -120,14 +45,16 @@ class NotificationScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       alignment: Alignment.center,
-                      child: const Text('Pic'),
+                      child: AutoSizeText(
+                        AppLocalizations.of(context)!.pic,
+                      ),
                     ),
                     const SizedBox(width: 16.0),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          AutoSizeText(
                             title,
                             style: const TextStyle(
                               fontSize: 16.0,
@@ -135,7 +62,7 @@ class NotificationScreen extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
-                          Text(
+                          AutoSizeText(
                             subtitle,
                             style: const TextStyle(
                               fontSize: 14.0,

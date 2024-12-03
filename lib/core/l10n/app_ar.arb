@@ -74,8 +74,40 @@
     "terms_and_policies": "الشروط والسياسات",
     "report_problem": "الإبلاغ عن مشكلة",
     "about_us": "معلومات عنا",
-    "log_out": "تسجيل الخروج"
-    
+    "log_out": "تسجيل الخروج",
+     "personalize_movies": "تخصيص الأفلام",
+  "personalize_your_movie_experience": "قم بتخصيص تجربة الأفلام الخاصة بك",
+  "preferences_description": "يرجى إخبارنا بتفضيلاتك حتى نتمكن من اقتراح تجربة أفلام تناسب احتياجاتك",
+  "skip": "تخطى",
+   "watch_now": "شاهد الآن",
+   "quality": "الجودة",
+  "download_setting": "إعدادات التنزيل",
+  "language": "اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "marvel_studios": "مارفل ستوديوز",
+  "venom": "فينوم",
+  "from_342_users": "من 342 مستخدم",
+  "most_watched": "الأكثر مشاهدة",
+  "latest_movies": "أحدث الأفلام",
+  "latest_series": "أحدث السلاسل",
+   "horror": "رعب",
+   "pic": "صورة",
+   
+  "mark_all_as_read": "تحديد الكل كقراءة",
+  "today": "اليوم",
+  "new_movie": "فيلم جديد!",
+  "details": "التفاصيل",
+  "yesterday": "أمس",
+  "new_update_available": "تحديث جديد متاح",
+  "new_update_description": "تحديث جديد للتطبيق متاح",
+  "yesterday_movie": "فيلم الأمس!",
+  "some_days_ago": "منذ عدة أيام",
+  "old_movie": "فيلم قديم!",
+  "another_movie": "فيلم آخر"
+
+
+
 }
 
 
